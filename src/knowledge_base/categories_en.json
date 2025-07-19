@@ -1,0 +1,74 @@
+{
+  "file_management": {
+    "name": "File Management",
+    "description": "File and directory manipulation commands",
+    "commands": ["ls", "cd", "pwd", "mkdir", "rmdir", "rm", "cp", "mv", "find", "locate", "touch", "ln"],
+    "color": "blue"
+  },
+  "file_viewing": {
+    "name": "File Viewing",
+    "description": "File content viewing and editing commands",
+    "commands": ["cat", "less", "more", "head", "tail", "nano", "vim", "emacs"],
+    "color": "green"
+  },
+  "permissions": {
+    "name": "Permissions",
+    "description": "File permissions and ownership management",
+    "commands": ["chmod", "chown", "chgrp", "umask"],
+    "color": "yellow"
+  },
+  "process_management": {
+    "name": "Process Management",
+    "description": "Process viewing and management commands",
+    "commands": ["ps", "top", "htop", "kill", "killall", "jobs", "nohup", "bg", "fg"],
+    "color": "red"
+  },
+  "network_tools": {
+    "name": "Network Tools",
+    "description": "Network connection and transfer tools",
+    "commands": ["ping", "wget", "curl", "ssh", "scp", "rsync", "netstat", "ss", "telnet"],
+    "color": "cyan"
+  },
+  "system_info": {
+    "name": "System Information",
+    "description": "System status and information queries",
+    "commands": ["df", "du", "free", "uname", "whoami", "which", "whereis", "uptime", "lscpu", "lsblk"],
+    "color": "magenta"
+  },
+  "text_processing": {
+    "name": "Text Processing",
+    "description": "Text search, processing and analysis",
+    "commands": ["grep", "sed", "awk", "sort", "uniq", "wc", "tr", "cut", "paste"],
+    "color": "white"
+  },
+  "compression": {
+    "name": "Compression",
+    "description": "File compression and decompression",
+    "commands": ["tar", "gzip", "gunzip", "zip", "unzip", "7z", "bzip2", "xz"],
+    "color": "lightblue"
+  },
+  "development": {
+    "name": "Development Tools",
+    "description": "Programming and development tools",
+    "commands": ["npm", "pip", "yarn", "composer", "make", "gcc", "node", "python", "go", "rustc"],
+    "color": "lightgreen"
+  },
+  "version_control": {
+    "name": "Version Control",
+    "description": "Version control system commands",
+    "commands": ["git", "svn", "hg"],
+    "color": "lightyellow"
+  },
+  "containerization": {
+    "name": "Containerization",
+    "description": "Container management and orchestration tools",
+    "commands": ["docker", "docker-compose", "kubectl", "podman"],
+    "color": "lightred"
+  },
+  "advanced_tools": {
+    "name": "Advanced Tools",
+    "description": "Advanced system tools and commands",
+    "commands": ["awk", "xargs", "crontab", "systemctl", "service", "mount", "umount"],
+    "color": "lightcyan"
+  }
+}

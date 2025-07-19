@@ -1,0 +1,44 @@
+{
+  "name": "whereis",
+  "description": "查找命令、源代码和手册页的位置",
+  "category": "系统查询",
+  "usage": "whereis [选项] 命令...",
+  "options": [
+    {
+      "option": "-b",
+      "description": "仅查找二进制文件"
+    },
+    {
+      "option": "-m",
+      "description": "仅查找手册页"
+    },
+    {
+      "option": "-s",
+      "description": "仅查找源代码文件"
+    },
+    {
+      "option": "-u",
+      "description": "查找不寻常的条目"
+    }
+  ],
+  "examples": [
+    {
+      "command": "whereis ls",
+      "description": "查找ls命令的所有相关文件"
+    },
+    {
+      "command": "whereis -b python",
+      "description": "仅查找python的二进制文件"
+    },
+    {
+      "command": "whereis -m gcc",
+      "description": "仅查找gcc的手册页"
+    },
+    {
+      "command": "whereis -s kernel",
+      "description": "查找kernel的源代码文件"
+    }
+  ],
+  "related_commands": ["which", "locate", "find", "man"],
+  "tags": ["命令查找", "手册页", "源代码", "二进制"]
+}

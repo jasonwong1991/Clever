@@ -1,0 +1,80 @@
+{
+  "command": "gcc",
+  "description": "GNU编译器集合，用于编译C/C++程序",
+  "syntax": "gcc [选项] 源文件... [-o 输出文件]",
+  "category": "development",
+  "options": [
+    {
+      "option": "-o 文件名",
+      "description": "指定输出文件名"
+    },
+    {
+      "option": "-c",
+      "description": "只编译不链接，生成.o文件"
+    },
+    {
+      "option": "-g",
+      "description": "生成调试信息"
+    },
+    {
+      "option": "-O0/-O1/-O2/-O3",
+      "description": "优化级别，0无优化，3最高优化"
+    },
+    {
+      "option": "-Wall",
+      "description": "显示所有警告"
+    },
+    {
+      "option": "-Werror",
+      "description": "将警告视为错误"
+    },
+    {
+      "option": "-l库名",
+      "description": "链接指定库"
+    },
+    {
+      "option": "-I目录",
+      "description": "添加头文件搜索路径"
+    },
+    {
+      "option": "-L目录",
+      "description": "添加库文件搜索路径"
+    },
+    {
+      "option": "-std=标准",
+      "description": "指定C/C++标准版本"
+    }
+  ],
+  "examples": [
+    {
+      "command": "gcc hello.c -o hello",
+      "description": "编译C程序"
+    },
+    {
+      "command": "gcc -g -Wall main.c -o debug_version",
+      "description": "编译调试版本并显示警告"
+    },
+    {
+      "command": "gcc -c module.c",
+      "description": "只编译不链接，生成module.o"
+    },
+    {
+      "command": "gcc -O2 fast.c -o fast",
+      "description": "使用O2优化编译"
+    },
+    {
+      "command": "gcc main.c utils.c -o app",
+      "description": "编译多个源文件"
+    },
+    {
+      "command": "gcc -lm math_app.c -o math_app",
+      "description": "链接数学库编译"
+    },
+    {
+      "command": "gcc -std=c99 modern.c -o modern",
+      "description": "使用C99标准编译"
+    }
+  ],
+  "related_commands": ["g++", "make", "clang", "ld"],
+  "tags": ["编译器", "C语言", "C++", "编译", "链接", "GNU"]
+}

@@ -1,0 +1,68 @@
+{
+  "command": "zip",
+  "description": "创建ZIP格式的压缩文件",
+  "syntax": "zip [选项] 压缩文件名 [文件/目录...]",
+  "category": "compression",
+  "options": [
+    {
+      "option": "-r",
+      "description": "递归压缩目录及其子目录"
+    },
+    {
+      "option": "-v",
+      "description": "显示压缩过程的详细信息"
+    },
+    {
+      "option": "-q",
+      "description": "安静模式，不显示信息"
+    },
+    {
+      "option": "-0到-9",
+      "description": "压缩级别，0不压缩，9最大压缩"
+    },
+    {
+      "option": "-e",
+      "description": "加密压缩文件"
+    },
+    {
+      "option": "-x 模式",
+      "description": "排除匹配模式的文件"
+    },
+    {
+      "option": "-u",
+      "description": "更新压缩文件中的文件"
+    },
+    {
+      "option": "-j",
+      "description": "不包含路径信息"
+    }
+  ],
+  "examples": [
+    {
+      "command": "zip archive.zip file1.txt file2.txt",
+      "description": "压缩多个文件"
+    },
+    {
+      "command": "zip -r project.zip project/",
+      "description": "递归压缩整个目录"
+    },
+    {
+      "command": "zip -e secure.zip important.txt",
+      "description": "创建加密的压缩文件"
+    },
+    {
+      "command": "zip -9 compressed.zip large_file.txt",
+      "description": "使用最高压缩比"
+    },
+    {
+      "command": "zip -r backup.zip /home/user -x '*.log'",
+      "description": "压缩目录但排除log文件"
+    },
+    {
+      "command": "zip -j files.zip /path/to/*.txt",
+      "description": "压缩文件但不包含路径"
+    }
+  ],
+  "related_commands": ["unzip", "gzip", "tar", "7z"],
+  "tags": ["压缩", "zip", "打包", "归档"]
+}

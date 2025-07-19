@@ -1,0 +1,76 @@
+{
+  "command": "tar",
+  "description": "Archive and extract files with compression support",
+  "syntax": "tar [options] [filename] [files/directories...]",
+  "category": "compression",
+  "options": [
+    {
+      "option": "-c",
+      "description": "Create new archive"
+    },
+    {
+      "option": "-x",
+      "description": "Extract archive contents"
+    },
+    {
+      "option": "-t",
+      "description": "List archive contents"
+    },
+    {
+      "option": "-v",
+      "description": "Verbose output, show files being processed"
+    },
+    {
+      "option": "-f filename",
+      "description": "Specify archive filename"
+    },
+    {
+      "option": "-z",
+      "description": "Use gzip compression (.tar.gz)"
+    },
+    {
+      "option": "-j",
+      "description": "Use bzip2 compression (.tar.bz2)"
+    },
+    {
+      "option": "-J",
+      "description": "Use xz compression (.tar.xz)"
+    },
+    {
+      "option": "-C directory",
+      "description": "Change to specified directory"
+    },
+    {
+      "option": "--exclude=pattern",
+      "description": "Exclude files matching pattern"
+    }
+  ],
+  "examples": [
+    {
+      "command": "tar -czf backup.tar.gz /home/user",
+      "description": "Create gzip compressed archive"
+    },
+    {
+      "command": "tar -xzf backup.tar.gz",
+      "description": "Extract gzip archive"
+    },
+    {
+      "command": "tar -tjf backup.tar.bz2",
+      "description": "List bzip2 archive contents"
+    },
+    {
+      "command": "tar -xf archive.tar -C /tmp",
+      "description": "Extract to /tmp directory"
+    },
+    {
+      "command": "tar -czf project.tar.gz --exclude='*.log' project/",
+      "description": "Archive project excluding log files"
+    },
+    {
+      "command": "tar -cf - . | ssh user@host 'cd /backup && tar -xf -'",
+      "description": "Transfer and extract via SSH"
+    }
+  ],
+  "related_commands": ["gzip", "zip", "7z", "compress"],
+  "tags": ["compression", "archive", "backup", "gzip", "bzip2"]
+}

@@ -1,0 +1,44 @@
+{
+  "name": "kill",
+  "description": "终止进程",
+  "category": "进程管理",
+  "usage": "kill [选项] [信号] 进程ID...",
+  "options": [
+    {
+      "option": "-9",
+      "description": "强制终止进程（SIGKILL）"
+    },
+    {
+      "option": "-15",
+      "description": "正常终止进程（SIGTERM，默认）"
+    },
+    {
+      "option": "-l",
+      "description": "列出所有可用信号"
+    },
+    {
+      "option": "-s",
+      "description": "指定发送的信号"
+    }
+  ],
+  "examples": [
+    {
+      "command": "kill 1234",
+      "description": "正常终止进程1234"
+    },
+    {
+      "command": "kill -9 1234",
+      "description": "强制终止进程1234"
+    },
+    {
+      "command": "kill -l",
+      "description": "显示所有信号列表"
+    },
+    {
+      "command": "kill -s TERM 1234",
+      "description": "发送TERM信号终止进程"
+    }
+  ],
+  "related_commands": ["killall", "pkill", "ps", "top"],
+  "tags": ["进程", "终止", "信号", "强制终止"]
+}

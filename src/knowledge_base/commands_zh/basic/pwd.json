@@ -1,0 +1,28 @@
+{
+  "name": "pwd",
+  "description": "显示当前工作目录的完整路径",
+  "category": "文件管理",
+  "usage": "pwd",
+  "options": [
+    {
+      "option": "-L",
+      "description": "显示逻辑路径（默认）"
+    },
+    {
+      "option": "-P",
+      "description": "显示物理路径，解析符号链接"
+    }
+  ],
+  "examples": [
+    {
+      "command": "pwd",
+      "description": "显示当前目录路径"
+    },
+    {
+      "command": "pwd -P",
+      "description": "显示物理路径"
+    }
+  ],
+  "related_commands": ["cd", "ls", "dirname", "basename"],
+  "tags": ["目录", "路径", "当前位置"]
+}

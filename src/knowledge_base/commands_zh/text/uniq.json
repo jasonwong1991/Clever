@@ -1,0 +1,68 @@
+{
+  "command": "uniq",
+  "description": "报告或过滤重复的行",
+  "syntax": "uniq [选项] [输入文件] [输出文件]",
+  "category": "text_processing",
+  "options": [
+    {
+      "option": "-c",
+      "description": "在每行前显示重复次数"
+    },
+    {
+      "option": "-d",
+      "description": "只显示重复的行"
+    },
+    {
+      "option": "-u",
+      "description": "只显示唯一的行(不重复的行)"
+    },
+    {
+      "option": "-i",
+      "description": "忽略大小写差异"
+    },
+    {
+      "option": "-f N",
+      "description": "忽略前N个字段"
+    },
+    {
+      "option": "-s N",
+      "description": "忽略前N个字符"
+    },
+    {
+      "option": "-w N",
+      "description": "只比较每行的前N个字符"
+    }
+  ],
+  "examples": [
+    {
+      "command": "sort file.txt | uniq",
+      "description": "去除重复行(需要先排序)"
+    },
+    {
+      "command": "sort file.txt | uniq -c",
+      "description": "显示每行的重复次数"
+    },
+    {
+      "command": "sort file.txt | uniq -d",
+      "description": "只显示重复的行"
+    },
+    {
+      "command": "sort file.txt | uniq -u",
+      "description": "只显示唯一的行"
+    },
+    {
+      "command": "sort names.txt | uniq -i",
+      "description": "忽略大小写去除重复"
+    },
+    {
+      "command": "uniq -c data.txt | sort -nr",
+      "description": "按重复次数降序排列"
+    },
+    {
+      "command": "history | cut -c8- | sort | uniq -c | sort -nr | head",
+      "description": "统计最常用的命令"
+    }
+  ],
+  "related_commands": ["sort", "cut", "awk", "grep"],
+  "tags": ["文本", "重复", "唯一", "去重", "统计"]
+}

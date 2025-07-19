@@ -1,0 +1,44 @@
+{
+  "name": "chmod",
+  "description": "修改文件和目录权限",
+  "category": "权限管理",
+  "usage": "chmod [选项] 权限 文件...",
+  "options": [
+    {
+      "option": "-R",
+      "description": "递归修改目录及其内容的权限"
+    },
+    {
+      "option": "-v",
+      "description": "显示修改过程信息"
+    },
+    {
+      "option": "-c",
+      "description": "仅在权限发生变化时显示信息"
+    },
+    {
+      "option": "--reference",
+      "description": "参照另一个文件的权限"
+    }
+  ],
+  "examples": [
+    {
+      "command": "chmod 755 script.sh",
+      "description": "设置脚本为可执行权限"
+    },
+    {
+      "command": "chmod +x file",
+      "description": "添加执行权限"
+    },
+    {
+      "command": "chmod -R 644 directory/",
+      "description": "递归设置目录内文件权限"
+    },
+    {
+      "command": "chmod u+w,g-r,o-r file.txt",
+      "description": "细粒度权限设置"
+    }
+  ],
+  "related_commands": ["chown", "chgrp", "ls", "stat"],
+  "tags": ["权限", "修改", "文件权限", "可执行"]
+}

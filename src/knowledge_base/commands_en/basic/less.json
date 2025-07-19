@@ -1,0 +1,44 @@
+{
+  "name": "less",
+  "description": "View file contents page by page",
+  "category": "File Viewing",
+  "usage": "less [options] file...",
+  "options": [
+    {
+      "option": "-N",
+      "description": "Display line numbers"
+    },
+    {
+      "option": "-S",
+      "description": "Do not wrap long lines, scroll horizontally"
+    },
+    {
+      "option": "-i",
+      "description": "Ignore case in searches"
+    },
+    {
+      "option": "+F",
+      "description": "Monitor file changes in real-time (like tail -f)"
+    }
+  ],
+  "examples": [
+    {
+      "command": "less file.txt",
+      "description": "View file page by page"
+    },
+    {
+      "command": "less -N logfile.log",
+      "description": "View file with line numbers"
+    },
+    {
+      "command": "ps aux | less",
+      "description": "View command output page by page"
+    },
+    {
+      "command": "less +F /var/log/messages",
+      "description": "Monitor log file in real-time"
+    }
+  ],
+  "related_commands": ["more", "cat", "head", "tail"],
+  "tags": ["pager", "file viewing", "real-time monitoring"]
+}

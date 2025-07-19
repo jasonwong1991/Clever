@@ -1,0 +1,44 @@
+{
+  "name": "ping",
+  "description": "Test network connectivity",
+  "category": "Network Tools",
+  "usage": "ping [options] target_host",
+  "options": [
+    {
+      "option": "-c",
+      "description": "Specify number of packets to send"
+    },
+    {
+      "option": "-i",
+      "description": "Set sending interval (seconds)"
+    },
+    {
+      "option": "-s",
+      "description": "Set packet size (bytes)"
+    },
+    {
+      "option": "-W",
+      "description": "Set timeout (milliseconds)"
+    }
+  ],
+  "examples": [
+    {
+      "command": "ping google.com",
+      "description": "Test connection to Google"
+    },
+    {
+      "command": "ping -c 4 192.168.1.1",
+      "description": "Send 4 packets to test connection"
+    },
+    {
+      "command": "ping -i 2 -c 5 example.com",
+      "description": "Send every 2 seconds, 5 times total"
+    },
+    {
+      "command": "ping -s 1000 localhost",
+      "description": "Send 1000-byte large packets"
+    }
+  ],
+  "related_commands": ["traceroute", "nslookup", "dig", "netstat"],
+  "tags": ["network test", "connectivity", "latency", "ICMP"]
+}

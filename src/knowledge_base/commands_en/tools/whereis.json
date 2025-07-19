@@ -1,0 +1,44 @@
+{
+  "name": "whereis",
+  "description": "Locate the binary, source, and manual page files for a command",
+  "category": "System Query",
+  "usage": "whereis [options] command...",
+  "options": [
+    {
+      "option": "-b",
+      "description": "Search only for binary files"
+    },
+    {
+      "option": "-m",
+      "description": "Search only for manual pages"
+    },
+    {
+      "option": "-s",
+      "description": "Search only for source code files"
+    },
+    {
+      "option": "-u",
+      "description": "Search for unusual entries"
+    }
+  ],
+  "examples": [
+    {
+      "command": "whereis ls",
+      "description": "Find all related files for ls command"
+    },
+    {
+      "command": "whereis -b python",
+      "description": "Find only python binary files"
+    },
+    {
+      "command": "whereis -m gcc",
+      "description": "Find only gcc manual pages"
+    },
+    {
+      "command": "whereis -s kernel",
+      "description": "Find kernel source code files"
+    }
+  ],
+  "related_commands": ["which", "locate", "find", "man"],
+  "tags": ["command search", "manual pages", "source code", "binary"]
+}

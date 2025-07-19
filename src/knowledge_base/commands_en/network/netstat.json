@@ -1,0 +1,44 @@
+{
+  "name": "netstat",
+  "description": "Display network connections, routing tables, and network statistics",
+  "category": "Network Monitoring",
+  "usage": "netstat [options]",
+  "options": [
+    {
+      "option": "-a",
+      "description": "Show all connections and listening ports"
+    },
+    {
+      "option": "-n",
+      "description": "Show addresses and ports numerically"
+    },
+    {
+      "option": "-t",
+      "description": "Show only TCP connections"
+    },
+    {
+      "option": "-l",
+      "description": "Show only listening ports"
+    }
+  ],
+  "examples": [
+    {
+      "command": "netstat -an",
+      "description": "Show all network connections"
+    },
+    {
+      "command": "netstat -tlnp",
+      "description": "Show TCP listening ports and processes"
+    },
+    {
+      "command": "netstat -rn",
+      "description": "Show routing table"
+    },
+    {
+      "command": "netstat -i",
+      "description": "Show network interface statistics"
+    }
+  ],
+  "related_commands": ["ss", "lsof", "nmap", "iptables"],
+  "tags": ["network connections", "ports", "routing", "network monitoring"]
+}

@@ -1,0 +1,76 @@
+{
+  "command": "rsync",
+  "description": "高效的文件同步和传输工具",
+  "syntax": "rsync [选项] 源 目标",
+  "category": "network_tools",
+  "options": [
+    {
+      "option": "-a",
+      "description": "归档模式，保持文件属性(-rlptgoD)"
+    },
+    {
+      "option": "-v",
+      "description": "详细输出，显示传输的文件"
+    },
+    {
+      "option": "-z",
+      "description": "传输时压缩数据"
+    },
+    {
+      "option": "-r",
+      "description": "递归复制目录"
+    },
+    {
+      "option": "-u",
+      "description": "只更新较新的文件"
+    },
+    {
+      "option": "--delete",
+      "description": "删除目标中源没有的文件"
+    },
+    {
+      "option": "--exclude=模式",
+      "description": "排除匹配模式的文件"
+    },
+    {
+      "option": "--progress",
+      "description": "显示传输进度"
+    },
+    {
+      "option": "-n",
+      "description": "试运行，不实际传输"
+    },
+    {
+      "option": "-e ssh",
+      "description": "通过SSH传输"
+    }
+  ],
+  "examples": [
+    {
+      "command": "rsync -av source/ dest/",
+      "description": "同步目录，保持属性"
+    },
+    {
+      "command": "rsync -avz user@host:/path/ /local/",
+      "description": "从远程同步并压缩传输"
+    },
+    {
+      "command": "rsync -av --delete source/ dest/",
+      "description": "同步并删除多余文件"
+    },
+    {
+      "command": "rsync -av --exclude='*.log' project/ backup/",
+      "description": "同步项目但排除日志文件"
+    },
+    {
+      "command": "rsync -av --progress large_file remote:/path/",
+      "description": "传输大文件并显示进度"
+    },
+    {
+      "command": "rsync -avn source/ dest/",
+      "description": "试运行，查看将要同步的文件"
+    }
+  ],
+  "related_commands": ["scp", "cp", "ssh", "tar"],
+  "tags": ["文件同步", "远程传输", "备份", "增量同步", "网络工具"]
+}

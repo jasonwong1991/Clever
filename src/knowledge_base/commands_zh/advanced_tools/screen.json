@@ -1,0 +1,90 @@
+{
+  "command": "screen",
+  "description": "终端复用器，允许分离和重新连接终端会话",
+  "syntax": "screen [选项] [命令]",
+  "category": "advanced_tools",
+  "options": [
+    {
+      "option": "-S 会话名",
+      "description": "创建或连接到指定名称的会话"
+    },
+    {
+      "option": "-ls",
+      "description": "列出所有会话"
+    },
+    {
+      "option": "-r [会话]",
+      "description": "重新连接到会话"
+    },
+    {
+      "option": "-d [会话]",
+      "description": "分离指定会话"
+    },
+    {
+      "option": "-X 命令",
+      "description": "向会话发送命令"
+    },
+    {
+      "option": "-dm",
+      "description": "以分离模式启动"
+    },
+    {
+      "option": "-c 文件",
+      "description": "指定配置文件"
+    }
+  ],
+  "examples": [
+    {
+      "command": "screen",
+      "description": "启动新的screen会话"
+    },
+    {
+      "command": "screen -S work",
+      "description": "创建名为work的会话"
+    },
+    {
+      "command": "screen -ls",
+      "description": "列出所有screen会话"
+    },
+    {
+      "command": "screen -r work",
+      "description": "重新连接到work会话"
+    },
+    {
+      "command": "screen -d work",
+      "description": "分离work会话"
+    },
+    {
+      "command": "screen -dm -S backup backup_script.sh",
+      "description": "后台运行备份脚本"
+    }
+  ],
+  "key_bindings": [
+    {
+      "key": "Ctrl-a d",
+      "description": "分离当前会话"
+    },
+    {
+      "key": "Ctrl-a c",
+      "description": "创建新窗口"
+    },
+    {
+      "key": "Ctrl-a n/p",
+      "description": "切换到下一个/上一个窗口"
+    },
+    {
+      "key": "Ctrl-a 数字",
+      "description": "切换到指定编号的窗口"
+    },
+    {
+      "key": "Ctrl-a S",
+      "description": "水平分割屏幕"
+    },
+    {
+      "key": "Ctrl-a |",
+      "description": "垂直分割屏幕"
+    }
+  ],
+  "related_commands": ["tmux", "nohup", "byobu"],
+  "tags": ["终端复用", "会话管理", "后台运行", "远程工作", "分离会话"]
+}

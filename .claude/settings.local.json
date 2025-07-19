@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(find /Users/JasonWong/Documents/github/Clever -name \"__init__.py\" -exec sh -c 'echo \"\"=== $1 ===\"\"; cat \"\"$1\"\"; echo' _ {} ;)",
+      "Bash(python3:*)",
+      "Bash(grep:*)",
+      "mcp__sequential-thinking__sequentialthinking"
+    ],
+    "deny": []
+  },
+  "enabledMcpjsonServers": [
+    "context7",
+    "playwright",
+    "sequential thinking"
+  ]
+}

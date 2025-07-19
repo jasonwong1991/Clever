@@ -1,0 +1,72 @@
+{
+  "command": "pgrep",
+  "description": "Find process IDs by name or other criteria",
+  "syntax": "pgrep [options] pattern",
+  "category": "process_management",
+  "options": [
+    {
+      "option": "-f",
+      "description": "Match against full command line, not just process name"
+    },
+    {
+      "option": "-x",
+      "description": "Match process name exactly"
+    },
+    {
+      "option": "-u user",
+      "description": "Only show processes owned by specified user"
+    },
+    {
+      "option": "-g group",
+      "description": "Only show processes belonging to specified process group"
+    },
+    {
+      "option": "-P ppid",
+      "description": "Only show child processes of specified parent process"
+    },
+    {
+      "option": "-l",
+      "description": "Show process name along with process ID"
+    },
+    {
+      "option": "-a",
+      "description": "Show full command line"
+    },
+    {
+      "option": "-n",
+      "description": "Show newest matching process"
+    },
+    {
+      "option": "-o",
+      "description": "Show oldest matching process"
+    }
+  ],
+  "examples": [
+    {
+      "command": "pgrep firefox",
+      "description": "Find all process IDs for firefox"
+    },
+    {
+      "command": "pgrep -u john",
+      "description": "Find all processes owned by user john"
+    },
+    {
+      "command": "pgrep -f python.*test.py",
+      "description": "Find processes with command line containing python and test.py"
+    },
+    {
+      "command": "pgrep -l chrome",
+      "description": "Find chrome processes and show process names"
+    },
+    {
+      "command": "pgrep -x vim",
+      "description": "Find processes with exact name vim"
+    },
+    {
+      "command": "pgrep -n ssh",
+      "description": "Find the newest ssh process"
+    }
+  ],
+  "related_commands": ["pkill", "ps", "kill", "pidof"],
+  "tags": ["process", "find", "system", "PID"]
+}

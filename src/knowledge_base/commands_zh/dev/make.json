@@ -1,0 +1,72 @@
+{
+  "command": "make",
+  "description": "自动化构建工具，根据Makefile编译项目",
+  "syntax": "make [选项] [目标...]",
+  "category": "development",
+  "options": [
+    {
+      "option": "-f 文件",
+      "description": "指定Makefile文件"
+    },
+    {
+      "option": "-j [N]",
+      "description": "并行编译，N为并行任务数"
+    },
+    {
+      "option": "-C 目录",
+      "description": "切换到指定目录执行"
+    },
+    {
+      "option": "-n",
+      "description": "显示将要执行的命令但不执行"
+    },
+    {
+      "option": "-s",
+      "description": "静默模式，不显示命令"
+    },
+    {
+      "option": "-k",
+      "description": "即使有错误也继续执行"
+    },
+    {
+      "option": "-B",
+      "description": "强制重新构建所有目标"
+    },
+    {
+      "option": "--version",
+      "description": "显示make版本"
+    }
+  ],
+  "examples": [
+    {
+      "command": "make",
+      "description": "执行默认目标"
+    },
+    {
+      "command": "make clean",
+      "description": "执行clean目标"
+    },
+    {
+      "command": "make -j4",
+      "description": "使用4个并行任务编译"
+    },
+    {
+      "command": "make -f custom.mk",
+      "description": "使用指定的Makefile"
+    },
+    {
+      "command": "make -C src/",
+      "description": "在src目录执行make"
+    },
+    {
+      "command": "make -n install",
+      "description": "显示install目标的命令但不执行"
+    },
+    {
+      "command": "make -B all",
+      "description": "强制重新构建all目标"
+    }
+  ],
+  "related_commands": ["gcc", "cmake", "ninja", "autoconf"],
+  "tags": ["构建", "编译", "Makefile", "自动化", "项目管理"]
+}

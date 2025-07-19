@@ -1,0 +1,76 @@
+{
+  "command": "unzip",
+  "description": "解压ZIP格式的压缩文件",
+  "syntax": "unzip [选项] 压缩文件名 [文件...]",
+  "category": "compression",
+  "options": [
+    {
+      "option": "-l",
+      "description": "列出压缩文件内容，不解压"
+    },
+    {
+      "option": "-v",
+      "description": "显示详细的文件信息"
+    },
+    {
+      "option": "-q",
+      "description": "安静模式，不显示信息"
+    },
+    {
+      "option": "-d 目录",
+      "description": "解压到指定目录"
+    },
+    {
+      "option": "-o",
+      "description": "覆盖文件而不提示"
+    },
+    {
+      "option": "-n",
+      "description": "不覆盖任何文件"
+    },
+    {
+      "option": "-j",
+      "description": "不创建目录，所有文件解压到当前目录"
+    },
+    {
+      "option": "-t",
+      "description": "测试压缩文件完整性"
+    },
+    {
+      "option": "-x 文件",
+      "description": "排除指定文件"
+    }
+  ],
+  "examples": [
+    {
+      "command": "unzip archive.zip",
+      "description": "解压文件到当前目录"
+    },
+    {
+      "command": "unzip -l project.zip",
+      "description": "列出压缩文件内容"
+    },
+    {
+      "command": "unzip -d /tmp backup.zip",
+      "description": "解压到/tmp目录"
+    },
+    {
+      "command": "unzip -o files.zip",
+      "description": "解压并覆盖已存在的文件"
+    },
+    {
+      "command": "unzip archive.zip specific_file.txt",
+      "description": "只解压指定文件"
+    },
+    {
+      "command": "unzip -t backup.zip",
+      "description": "测试压缩文件是否完整"
+    },
+    {
+      "command": "unzip -j photos.zip",
+      "description": "解压所有文件到当前目录，忽略路径"
+    }
+  ],
+  "related_commands": ["zip", "gunzip", "tar", "7z"],
+  "tags": ["解压", "zip", "解压缩", "提取"]
+}

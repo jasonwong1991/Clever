@@ -1,0 +1,40 @@
+{
+  "name": "cd",
+  "description": "切换工作目录",
+  "category": "文件管理",
+  "usage": "cd [目录]",
+  "options": [
+    {
+      "option": "~",
+      "description": "切换到用户主目录"
+    },
+    {
+      "option": "..",
+      "description": "切换到上级目录"
+    },
+    {
+      "option": "-",
+      "description": "切换到上一个工作目录"
+    }
+  ],
+  "examples": [
+    {
+      "command": "cd",
+      "description": "切换到用户主目录"
+    },
+    {
+      "command": "cd /home/user",
+      "description": "切换到指定目录"
+    },
+    {
+      "command": "cd ..",
+      "description": "切换到上级目录"
+    },
+    {
+      "command": "cd -",
+      "description": "切换到上一个工作目录"
+    }
+  ],
+  "related_commands": ["pwd", "ls", "pushd", "popd"],
+  "tags": ["目录", "切换", "导航"]
+}

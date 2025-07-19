@@ -1,0 +1,68 @@
+{
+  "command": "df",
+  "description": "Display filesystem disk space usage",
+  "syntax": "df [options] [filesystem]",
+  "category": "system_info",
+  "options": [
+    {
+      "option": "-h",
+      "description": "Human-readable format (KB, MB, GB)"
+    },
+    {
+      "option": "-T",
+      "description": "Show filesystem type"
+    },
+    {
+      "option": "-i",
+      "description": "Show inode usage instead of block usage"
+    },
+    {
+      "option": "-a",
+      "description": "Show all filesystems, including virtual ones"
+    },
+    {
+      "option": "-t type",
+      "description": "Show only filesystems of specified type"
+    },
+    {
+      "option": "-x type",
+      "description": "Exclude filesystems of specified type"
+    },
+    {
+      "option": "-l",
+      "description": "Show only local filesystems"
+    },
+    {
+      "option": "--total",
+      "description": "Show grand total"
+    }
+  ],
+  "examples": [
+    {
+      "command": "df -h",
+      "description": "Show disk usage in human-readable format"
+    },
+    {
+      "command": "df -T",
+      "description": "Show filesystem types and usage"
+    },
+    {
+      "command": "df -i",
+      "description": "Show inode usage"
+    },
+    {
+      "command": "df /home",
+      "description": "Show usage for filesystem containing /home"
+    },
+    {
+      "command": "df -t ext4",
+      "description": "Show only ext4 filesystems"
+    },
+    {
+      "command": "df -h --total",
+      "description": "Show disk usage with grand total"
+    }
+  ],
+  "related_commands": ["du", "lsblk", "mount", "fdisk"],
+  "tags": ["disk", "storage", "filesystem", "space", "system"]
+}

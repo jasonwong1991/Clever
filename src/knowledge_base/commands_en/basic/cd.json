@@ -1,0 +1,40 @@
+{
+  "name": "cd",
+  "description": "Change the current working directory",
+  "category": "File Management",
+  "usage": "cd [directory]",
+  "options": [
+    {
+      "option": "~",
+      "description": "Change to user home directory"
+    },
+    {
+      "option": "..",
+      "description": "Change to parent directory"
+    },
+    {
+      "option": "-",
+      "description": "Change to previous working directory"
+    }
+  ],
+  "examples": [
+    {
+      "command": "cd",
+      "description": "Change to user home directory"
+    },
+    {
+      "command": "cd /home/user",
+      "description": "Change to specified directory"
+    },
+    {
+      "command": "cd ..",
+      "description": "Go up one directory level"
+    },
+    {
+      "command": "cd -",
+      "description": "Switch to previous directory"
+    }
+  ],
+  "related_commands": ["pwd", "ls", "pushd", "popd"],
+  "tags": ["directory", "navigation", "change"]
+}

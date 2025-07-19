@@ -1,0 +1,64 @@
+{
+  "command": "free",
+  "description": "Display system memory usage",
+  "syntax": "free [options]",
+  "category": "system_info",
+  "options": [
+    {
+      "option": "-h",
+      "description": "Human-readable format (KB, MB, GB)"
+    },
+    {
+      "option": "-b",
+      "description": "Display in bytes"
+    },
+    {
+      "option": "-k",
+      "description": "Display in kilobytes (default)"
+    },
+    {
+      "option": "-m",
+      "description": "Display in megabytes"
+    },
+    {
+      "option": "-g",
+      "description": "Display in gigabytes"
+    },
+    {
+      "option": "-t",
+      "description": "Show total for RAM and swap"
+    },
+    {
+      "option": "-s seconds",
+      "description": "Refresh display every specified seconds"
+    },
+    {
+      "option": "-c count",
+      "description": "Number of times to refresh"
+    }
+  ],
+  "examples": [
+    {
+      "command": "free -h",
+      "description": "Show memory usage in human-readable format"
+    },
+    {
+      "command": "free -m",
+      "description": "Show memory usage in megabytes"
+    },
+    {
+      "command": "free -t",
+      "description": "Show memory usage with total"
+    },
+    {
+      "command": "free -s 5",
+      "description": "Refresh memory display every 5 seconds"
+    },
+    {
+      "command": "free -h -s 2 -c 10",
+      "description": "Refresh every 2 seconds for 10 times"
+    }
+  ],
+  "related_commands": ["top", "htop", "ps", "vmstat"],
+  "tags": ["memory", "RAM", "swap", "system", "monitoring"]
+}

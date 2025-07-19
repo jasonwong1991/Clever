@@ -1,0 +1,72 @@
+{
+  "command": "gzip",
+  "description": "使用GNU zip算法压缩文件",
+  "syntax": "gzip [选项] [文件...]",
+  "category": "compression",
+  "options": [
+    {
+      "option": "-d",
+      "description": "解压缩文件(等同于gunzip)"
+    },
+    {
+      "option": "-r",
+      "description": "递归压缩目录中的所有文件"
+    },
+    {
+      "option": "-v",
+      "description": "显示压缩过程信息"
+    },
+    {
+      "option": "-1到-9",
+      "description": "压缩级别，1最快，9最小"
+    },
+    {
+      "option": "-k",
+      "description": "保留原文件"
+    },
+    {
+      "option": "-c",
+      "description": "输出到标准输出，保留原文件"
+    },
+    {
+      "option": "-t",
+      "description": "测试压缩文件完整性"
+    },
+    {
+      "option": "-l",
+      "description": "列出压缩文件信息"
+    }
+  ],
+  "examples": [
+    {
+      "command": "gzip file.txt",
+      "description": "压缩文件为file.txt.gz"
+    },
+    {
+      "command": "gzip -d file.txt.gz",
+      "description": "解压缩文件"
+    },
+    {
+      "command": "gzip -v *.txt",
+      "description": "压缩所有txt文件并显示信息"
+    },
+    {
+      "command": "gzip -9 large_file.txt",
+      "description": "最高压缩比压缩文件"
+    },
+    {
+      "command": "gzip -k important.txt",
+      "description": "压缩文件但保留原文件"
+    },
+    {
+      "command": "gzip -c file.txt > backup.gz",
+      "description": "压缩输出到指定文件"
+    },
+    {
+      "command": "gzip -l *.gz",
+      "description": "显示所有gz文件的压缩信息"
+    }
+  ],
+  "related_commands": ["gunzip", "tar", "zip", "bzip2"],
+  "tags": ["压缩", "gzip", "解压", "文件压缩"]
+}

@@ -1,0 +1,44 @@
+{
+  "name": "jobs",
+  "description": "Display job list for current terminal",
+  "category": "Process Management",
+  "usage": "jobs [options]",
+  "options": [
+    {
+      "option": "-l",
+      "description": "Display process ID and detailed information"
+    },
+    {
+      "option": "-p",
+      "description": "Display only process IDs"
+    },
+    {
+      "option": "-r",
+      "description": "Display only running jobs"
+    },
+    {
+      "option": "-s",
+      "description": "Display only stopped jobs"
+    }
+  ],
+  "examples": [
+    {
+      "command": "jobs",
+      "description": "Display all jobs"
+    },
+    {
+      "command": "jobs -l",
+      "description": "Display jobs with their process IDs"
+    },
+    {
+      "command": "jobs -r",
+      "description": "Display running jobs"
+    },
+    {
+      "command": "jobs %1",
+      "description": "Display specific job information"
+    }
+  ],
+  "related_commands": ["bg", "fg", "nohup", "ps"],
+  "tags": ["jobs", "background processes", "process management"]
+}

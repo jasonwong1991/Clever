@@ -1,0 +1,36 @@
+{
+  "name": "which",
+  "description": "Locate a command",
+  "category": "System Query",
+  "usage": "which [options] command...",
+  "options": [
+    {
+      "option": "-a",
+      "description": "Display all matching commands in PATH"
+    },
+    {
+      "option": "-s",
+      "description": "Silent mode, no output"
+    },
+    {
+      "option": "-v",
+      "description": "Display version information"
+    }
+  ],
+  "examples": [
+    {
+      "command": "which python",
+      "description": "Find location of python command"
+    },
+    {
+      "command": "which -a python",
+      "description": "Find all python command locations"
+    },
+    {
+      "command": "which ls cd pwd",
+      "description": "Find locations of multiple commands"
+    }
+  ],
+  "related_commands": ["whereis", "type", "locate", "find"],
+  "tags": ["command search", "PATH", "location"]
+}

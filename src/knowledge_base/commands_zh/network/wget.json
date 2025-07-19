@@ -1,0 +1,44 @@
+{
+  "name": "wget",
+  "description": "下载文件和网页",
+  "category": "网络工具",
+  "usage": "wget [选项] URL",
+  "options": [
+    {
+      "option": "-O",
+      "description": "指定输出文件名"
+    },
+    {
+      "option": "-c",
+      "description": "继续未完成的下载"
+    },
+    {
+      "option": "-r",
+      "description": "递归下载整个网站"
+    },
+    {
+      "option": "-q",
+      "description": "静默模式，不显示进度"
+    }
+  ],
+  "examples": [
+    {
+      "command": "wget https://example.com/file.zip",
+      "description": "下载文件"
+    },
+    {
+      "command": "wget -O myfile.pdf https://example.com/document.pdf",
+      "description": "下载并重命名文件"
+    },
+    {
+      "command": "wget -c https://example.com/largefile.zip",
+      "description": "继续中断的下载"
+    },
+    {
+      "command": "wget -r -np https://example.com/directory/",
+      "description": "递归下载目录"
+    }
+  ],
+  "related_commands": ["curl", "scp", "rsync", "ftp"],
+  "tags": ["下载", "HTTP", "FTP", "网络传输"]
+}

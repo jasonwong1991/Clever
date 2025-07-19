@@ -1,0 +1,72 @@
+{
+  "command": "killall",
+  "description": "Kill all processes by name",
+  "syntax": "killall [options] process_name",
+  "category": "process_management",
+  "options": [
+    {
+      "option": "-9",
+      "description": "Send SIGKILL signal for forceful termination"
+    },
+    {
+      "option": "-15",
+      "description": "Send SIGTERM signal for graceful termination (default)"
+    },
+    {
+      "option": "-u user",
+      "description": "Only kill processes owned by specified user"
+    },
+    {
+      "option": "-i",
+      "description": "Interactive mode, ask for confirmation before killing"
+    },
+    {
+      "option": "-v",
+      "description": "Verbose mode, show operation details"
+    },
+    {
+      "option": "-w",
+      "description": "Wait for processes to completely terminate"
+    },
+    {
+      "option": "-q",
+      "description": "Quiet mode, don't show error messages"
+    },
+    {
+      "option": "-r",
+      "description": "Use regular expressions for process name matching"
+    },
+    {
+      "option": "-o time",
+      "description": "Kill processes older than specified time"
+    }
+  ],
+  "examples": [
+    {
+      "command": "killall firefox",
+      "description": "Kill all firefox processes"
+    },
+    {
+      "command": "killall -9 chrome",
+      "description": "Forcefully kill all chrome processes"
+    },
+    {
+      "command": "killall -u john vim",
+      "description": "Kill all vim processes owned by user john"
+    },
+    {
+      "command": "killall -i python",
+      "description": "Interactively kill python processes"
+    },
+    {
+      "command": "killall -v ssh",
+      "description": "Kill ssh processes with verbose output"
+    },
+    {
+      "command": "killall -w httpd",
+      "description": "Kill httpd and wait for termination"
+    }
+  ],
+  "related_commands": ["pkill", "kill", "pgrep", "ps"],
+  "tags": ["process", "kill", "system", "batch"]
+}

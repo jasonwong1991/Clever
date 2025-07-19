@@ -1,0 +1,44 @@
+{
+  "name": "touch",
+  "description": "Create empty files or update file timestamps",
+  "category": "File Management",
+  "usage": "touch [options] file...",
+  "options": [
+    {
+      "option": "-a",
+      "description": "Update only access time"
+    },
+    {
+      "option": "-m",
+      "description": "Update only modification time"
+    },
+    {
+      "option": "-c",
+      "description": "Do not create new files"
+    },
+    {
+      "option": "-t",
+      "description": "Specify timestamp"
+    }
+  ],
+  "examples": [
+    {
+      "command": "touch newfile.txt",
+      "description": "Create a new empty file"
+    },
+    {
+      "command": "touch file1 file2 file3",
+      "description": "Create multiple files at once"
+    },
+    {
+      "command": "touch -a existingfile",
+      "description": "Update file access time"
+    },
+    {
+      "command": "touch -t 202301011200 file.txt",
+      "description": "Set file time to specified timestamp"
+    }
+  ],
+  "related_commands": ["ls", "stat", "date"],
+  "tags": ["create file", "timestamp", "empty file"]
+}

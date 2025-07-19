@@ -1,0 +1,44 @@
+{
+  "name": "kill",
+  "description": "Terminate processes",
+  "category": "Process Management",
+  "usage": "kill [options] [signal] process_id...",
+  "options": [
+    {
+      "option": "-9",
+      "description": "Force terminate process (SIGKILL)"
+    },
+    {
+      "option": "-15",
+      "description": "Normal terminate process (SIGTERM, default)"
+    },
+    {
+      "option": "-l",
+      "description": "List all available signals"
+    },
+    {
+      "option": "-s",
+      "description": "Specify signal to send"
+    }
+  ],
+  "examples": [
+    {
+      "command": "kill 1234",
+      "description": "Normally terminate process 1234"
+    },
+    {
+      "command": "kill -9 1234",
+      "description": "Force terminate process 1234"
+    },
+    {
+      "command": "kill -l",
+      "description": "Display all signal list"
+    },
+    {
+      "command": "kill -s TERM 1234",
+      "description": "Send TERM signal to terminate process"
+    }
+  ],
+  "related_commands": ["killall", "pkill", "ps", "top"],
+  "tags": ["process", "terminate", "signal", "force kill"]
+}

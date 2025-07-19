@@ -1,0 +1,44 @@
+{
+  "name": "find",
+  "description": "Search for files and directories in directory tree",
+  "category": "File Search",
+  "usage": "find [path] [expression]",
+  "options": [
+    {
+      "option": "-name",
+      "description": "Search by filename"
+    },
+    {
+      "option": "-type",
+      "description": "Search by file type (f=file, d=directory)"
+    },
+    {
+      "option": "-size",
+      "description": "Search by file size"
+    },
+    {
+      "option": "-exec",
+      "description": "Execute command on found files"
+    }
+  ],
+  "examples": [
+    {
+      "command": "find . -name '*.txt'",
+      "description": "Find all txt files in current directory"
+    },
+    {
+      "command": "find /home -type d -name 'backup'",
+      "description": "Find directories named backup"
+    },
+    {
+      "command": "find . -size +10M",
+      "description": "Find files larger than 10MB"
+    },
+    {
+      "command": "find . -name '*.log' -exec rm {} \\;",
+      "description": "Find and delete all log files"
+    }
+  ],
+  "related_commands": ["locate", "which", "whereis", "grep"],
+  "tags": ["search", "file", "locate", "directory"]
+}

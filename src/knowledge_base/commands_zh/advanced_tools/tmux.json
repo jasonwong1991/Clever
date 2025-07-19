@@ -1,0 +1,86 @@
+{
+  "command": "tmux",
+  "description": "终端复用器，允许在单个终端中运行多个会话",
+  "syntax": "tmux [命令] [选项]",
+  "category": "advanced_tools",
+  "options": [
+    {
+      "option": "new-session -s 名称",
+      "description": "创建新会话"
+    },
+    {
+      "option": "list-sessions",
+      "description": "列出所有会话"
+    },
+    {
+      "option": "attach -t 会话",
+      "description": "连接到指定会话"
+    },
+    {
+      "option": "detach",
+      "description": "从当前会话分离"
+    },
+    {
+      "option": "kill-session -t 会话",
+      "description": "终止指定会话"
+    },
+    {
+      "option": "split-window",
+      "description": "分割窗口"
+    },
+    {
+      "option": "new-window",
+      "description": "创建新窗口"
+    }
+  ],
+  "examples": [
+    {
+      "command": "tmux",
+      "description": "启动新的tmux会话"
+    },
+    {
+      "command": "tmux new-session -s work",
+      "description": "创建名为work的会话"
+    },
+    {
+      "command": "tmux list-sessions",
+      "description": "列出所有会话"
+    },
+    {
+      "command": "tmux attach -t work",
+      "description": "连接到work会话"
+    },
+    {
+      "command": "tmux kill-session -t work",
+      "description": "终止work会话"
+    }
+  ],
+  "key_bindings": [
+    {
+      "key": "Ctrl-b d",
+      "description": "分离会话"
+    },
+    {
+      "key": "Ctrl-b c",
+      "description": "创建新窗口"
+    },
+    {
+      "key": "Ctrl-b %",
+      "description": "垂直分割窗口"
+    },
+    {
+      "key": "Ctrl-b \"",
+      "description": "水平分割窗口"
+    },
+    {
+      "key": "Ctrl-b 方向键",
+      "description": "切换面板"
+    },
+    {
+      "key": "Ctrl-b n/p",
+      "description": "切换到下一个/上一个窗口"
+    }
+  ],
+  "related_commands": ["screen", "byobu", "zellij"],
+  "tags": ["终端复用", "会话管理", "远程工作", "多窗口", "分屏"]
+}

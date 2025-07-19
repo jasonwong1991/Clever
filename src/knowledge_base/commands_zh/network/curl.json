@@ -1,0 +1,44 @@
+{
+  "name": "curl",
+  "description": "传输数据到或从服务器",
+  "category": "网络工具",
+  "usage": "curl [选项] URL",
+  "options": [
+    {
+      "option": "-o",
+      "description": "将输出写入文件"
+    },
+    {
+      "option": "-X",
+      "description": "指定HTTP请求方法"
+    },
+    {
+      "option": "-H",
+      "description": "添加HTTP头部"
+    },
+    {
+      "option": "-d",
+      "description": "发送POST数据"
+    }
+  ],
+  "examples": [
+    {
+      "command": "curl https://api.example.com",
+      "description": "获取API数据"
+    },
+    {
+      "command": "curl -o file.html https://example.com",
+      "description": "下载网页到文件"
+    },
+    {
+      "command": "curl -X POST -d 'data=value' https://api.example.com",
+      "description": "发送POST请求"
+    },
+    {
+      "command": "curl -H 'Content-Type: application/json' https://api.example.com",
+      "description": "带自定义头部的请求"
+    }
+  ],
+  "related_commands": ["wget", "http", "httpie", "lynx"],
+  "tags": ["HTTP", "API", "数据传输", "REST"]
+}

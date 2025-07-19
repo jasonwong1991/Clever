@@ -1,0 +1,48 @@
+{
+  "name": "ps",
+  "description": "显示进程状态信息",
+  "category": "进程管理",
+  "usage": "ps [选项]",
+  "options": [
+    {
+      "option": "aux",
+      "description": "显示所有用户的所有进程"
+    },
+    {
+      "option": "-ef",
+      "description": "显示所有进程的完整信息"
+    },
+    {
+      "option": "-u",
+      "description": "显示指定用户的进程"
+    },
+    {
+      "option": "-p",
+      "description": "显示指定PID的进程"
+    },
+    {
+      "option": "-C",
+      "description": "显示指定命令名的进程"
+    }
+  ],
+  "examples": [
+    {
+      "command": "ps aux",
+      "description": "显示所有进程的详细信息"
+    },
+    {
+      "command": "ps -ef | grep python",
+      "description": "查找包含python的进程"
+    },
+    {
+      "command": "ps -u root",
+      "description": "显示root用户的进程"
+    },
+    {
+      "command": "ps -p 1234",
+      "description": "显示PID为1234的进程信息"
+    }
+  ],
+  "related_commands": ["top", "htop", "kill", "jobs"],
+  "tags": ["进程", "系统", "监控", "管理"]
+}

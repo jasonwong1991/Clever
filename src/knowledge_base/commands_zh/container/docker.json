@@ -1,0 +1,60 @@
+{
+  "name": "docker",
+  "description": "容器平台管理工具",
+  "category": "容器化",
+  "usage": "docker [子命令] [选项]",
+  "options": [
+    {
+      "option": "run",
+      "description": "运行新容器"
+    },
+    {
+      "option": "build",
+      "description": "构建镜像"
+    },
+    {
+      "option": "ps",
+      "description": "列出运行中的容器"
+    },
+    {
+      "option": "images",
+      "description": "列出本地镜像"
+    },
+    {
+      "option": "pull",
+      "description": "拉取镜像"
+    },
+    {
+      "option": "push",
+      "description": "推送镜像"
+    },
+    {
+      "option": "stop",
+      "description": "停止容器"
+    },
+    {
+      "option": "rm",
+      "description": "删除容器"
+    }
+  ],
+  "examples": [
+    {
+      "command": "docker run -it ubuntu bash",
+      "description": "交互式运行Ubuntu容器"
+    },
+    {
+      "command": "docker build -t myapp .",
+      "description": "构建名为myapp的镜像"
+    },
+    {
+      "command": "docker ps -a",
+      "description": "列出所有容器（包括停止的）"
+    },
+    {
+      "command": "docker images",
+      "description": "查看本地镜像列表"
+    }
+  ],
+  "related_commands": ["docker-compose", "kubectl"],
+  "tags": ["容器", "镜像", "部署", "微服务"]
+}

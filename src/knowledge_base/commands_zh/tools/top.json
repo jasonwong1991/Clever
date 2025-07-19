@@ -1,0 +1,44 @@
+{
+  "name": "top",
+  "description": "显示实时运行的进程信息",
+  "category": "系统监控",
+  "usage": "top [选项]",
+  "options": [
+    {
+      "option": "-d",
+      "description": "设置刷新间隔（秒）"
+    },
+    {
+      "option": "-p",
+      "description": "仅显示指定进程ID"
+    },
+    {
+      "option": "-u",
+      "description": "仅显示指定用户的进程"
+    },
+    {
+      "option": "-n",
+      "description": "设置更新次数后退出"
+    }
+  ],
+  "examples": [
+    {
+      "command": "top",
+      "description": "实时查看系统进程"
+    },
+    {
+      "command": "top -d 1",
+      "description": "每秒刷新一次"
+    },
+    {
+      "command": "top -u username",
+      "description": "仅显示指定用户的进程"
+    },
+    {
+      "command": "top -n 5",
+      "description": "更新5次后退出"
+    }
+  ],
+  "related_commands": ["ps", "htop", "kill", "jobs"],
+  "tags": ["进程", "实时监控", "系统资源", "CPU"]
+}

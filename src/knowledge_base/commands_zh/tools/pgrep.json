@@ -1,0 +1,72 @@
+{
+  "command": "pgrep",
+  "description": "根据进程名称或其他条件查找进程ID",
+  "syntax": "pgrep [选项] 模式",
+  "category": "process_management",
+  "options": [
+    {
+      "option": "-f",
+      "description": "匹配完整的命令行，而不仅仅是进程名"
+    },
+    {
+      "option": "-x",
+      "description": "精确匹配进程名"
+    },
+    {
+      "option": "-u 用户",
+      "description": "只显示指定用户的进程"
+    },
+    {
+      "option": "-g 组",
+      "description": "只显示指定进程组的进程"
+    },
+    {
+      "option": "-P 父进程ID",
+      "description": "只显示指定父进程的子进程"
+    },
+    {
+      "option": "-l",
+      "description": "显示进程名和进程ID"
+    },
+    {
+      "option": "-a",
+      "description": "显示完整的命令行"
+    },
+    {
+      "option": "-n",
+      "description": "显示最新的匹配进程"
+    },
+    {
+      "option": "-o",
+      "description": "显示最旧的匹配进程"
+    }
+  ],
+  "examples": [
+    {
+      "command": "pgrep firefox",
+      "description": "查找所有名为firefox的进程ID"
+    },
+    {
+      "command": "pgrep -u john",
+      "description": "查找用户john的所有进程"
+    },
+    {
+      "command": "pgrep -f python.*test.py",
+      "description": "查找命令行包含python和test.py的进程"
+    },
+    {
+      "command": "pgrep -l chrome",
+      "description": "查找chrome进程并显示进程名"
+    },
+    {
+      "command": "pgrep -x vim",
+      "description": "精确匹配名为vim的进程"
+    },
+    {
+      "command": "pgrep -n ssh",
+      "description": "查找最新的ssh进程"
+    }
+  ],
+  "related_commands": ["pkill", "ps", "kill", "pidof"],
+  "tags": ["进程", "查找", "系统管理", "进程ID"]
+}

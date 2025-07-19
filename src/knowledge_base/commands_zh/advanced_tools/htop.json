@@ -1,0 +1,78 @@
+{
+  "command": "htop",
+  "description": "交互式系统进程监控工具，top的增强版本",
+  "syntax": "htop [选项]",
+  "category": "advanced_tools",
+  "options": [
+    {
+      "option": "-d 延迟",
+      "description": "设置刷新延迟时间(秒)"
+    },
+    {
+      "option": "-u 用户",
+      "description": "只显示指定用户的进程"
+    },
+    {
+      "option": "-p PID",
+      "description": "只显示指定PID的进程"
+    },
+    {
+      "option": "-s 列",
+      "description": "按指定列排序"
+    },
+    {
+      "option": "-C",
+      "description": "使用单色显示"
+    },
+    {
+      "option": "-h",
+      "description": "显示帮助信息"
+    }
+  ],
+  "examples": [
+    {
+      "command": "htop",
+      "description": "启动htop进程监控"
+    },
+    {
+      "command": "htop -u root",
+      "description": "只显示root用户的进程"
+    },
+    {
+      "command": "htop -d 5",
+      "description": "每5秒刷新一次"
+    },
+    {
+      "command": "htop -p 1234",
+      "description": "监控PID为1234的进程"
+    }
+  ],
+  "interactive_keys": [
+    {
+      "key": "F9或k",
+      "description": "终止进程"
+    },
+    {
+      "key": "F6或</>",
+      "description": "选择排序列"
+    },
+    {
+      "key": "F4或\\",
+      "description": "过滤进程"
+    },
+    {
+      "key": "F5或t",
+      "description": "树形显示"
+    },
+    {
+      "key": "Space",
+      "description": "标记进程"
+    },
+    {
+      "key": "u",
+      "description": "显示用户进程"
+    }
+  ],
+  "related_commands": ["top", "ps", "pgrep", "iotop"],
+  "tags": ["进程监控", "系统监控", "交互式", "性能", "CPU", "内存"]
+}

@@ -1,0 +1,44 @@
+{
+  "name": "ssh",
+  "description": "Secure remote login and command execution",
+  "category": "Remote Access",
+  "usage": "ssh [options] username@hostname",
+  "options": [
+    {
+      "option": "-p",
+      "description": "Specify connection port"
+    },
+    {
+      "option": "-i",
+      "description": "Specify private key file"
+    },
+    {
+      "option": "-X",
+      "description": "Enable X11 forwarding"
+    },
+    {
+      "option": "-v",
+      "description": "Display verbose connection information"
+    }
+  ],
+  "examples": [
+    {
+      "command": "ssh user@server.com",
+      "description": "Remote login to server"
+    },
+    {
+      "command": "ssh -p 2222 user@server.com",
+      "description": "Connect on specific port"
+    },
+    {
+      "command": "ssh -i ~/.ssh/mykey user@server.com",
+      "description": "Connect using specified private key"
+    },
+    {
+      "command": "ssh user@server.com 'ls -la'",
+      "description": "Execute remote command"
+    }
+  ],
+  "related_commands": ["scp", "sftp", "rsync", "telnet"],
+  "tags": ["remote access", "secure connection", "command execution"]
+}

@@ -1,0 +1,68 @@
+{
+  "command": "pkill",
+  "description": "Kill processes by name or other criteria",
+  "syntax": "pkill [options] pattern",
+  "category": "process_management",
+  "options": [
+    {
+      "option": "-f",
+      "description": "Match against full command line, not just process name"
+    },
+    {
+      "option": "-x",
+      "description": "Match process name exactly"
+    },
+    {
+      "option": "-u user",
+      "description": "Only kill processes owned by specified user"
+    },
+    {
+      "option": "-g group",
+      "description": "Only kill processes belonging to specified process group"
+    },
+    {
+      "option": "-P ppid",
+      "description": "Only kill child processes of specified parent process"
+    },
+    {
+      "option": "-9",
+      "description": "Send SIGKILL signal for forceful termination"
+    },
+    {
+      "option": "-15",
+      "description": "Send SIGTERM signal for graceful termination (default)"
+    },
+    {
+      "option": "-n",
+      "description": "Kill the newest matching process"
+    },
+    {
+      "option": "-o",
+      "description": "Kill the oldest matching process"
+    }
+  ],
+  "examples": [
+    {
+      "command": "pkill firefox",
+      "description": "Kill all processes named firefox"
+    },
+    {
+      "command": "pkill -u john",
+      "description": "Kill all processes owned by user john"
+    },
+    {
+      "command": "pkill -f python.*test.py",
+      "description": "Kill processes with command line containing python and test.py"
+    },
+    {
+      "command": "pkill -9 chrome",
+      "description": "Forcefully kill all chrome processes"
+    },
+    {
+      "command": "pkill -x vim",
+      "description": "Kill processes with exact name vim"
+    }
+  ],
+  "related_commands": ["pgrep", "kill", "killall", "ps"],
+  "tags": ["process", "kill", "system", "management"]
+}

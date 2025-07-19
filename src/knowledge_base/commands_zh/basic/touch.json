@@ -1,0 +1,44 @@
+{
+  "name": "touch",
+  "description": "创建空文件或更新文件时间戳",
+  "category": "文件管理",
+  "usage": "touch [选项] 文件...",
+  "options": [
+    {
+      "option": "-a",
+      "description": "只更新访问时间"
+    },
+    {
+      "option": "-m",
+      "description": "只更新修改时间"
+    },
+    {
+      "option": "-c",
+      "description": "不创建新文件"
+    },
+    {
+      "option": "-t",
+      "description": "指定时间戳"
+    }
+  ],
+  "examples": [
+    {
+      "command": "touch newfile.txt",
+      "description": "创建新的空文件"
+    },
+    {
+      "command": "touch file1 file2 file3",
+      "description": "同时创建多个文件"
+    },
+    {
+      "command": "touch -a existingfile",
+      "description": "更新文件访问时间"
+    },
+    {
+      "command": "touch -t 202301011200 file.txt",
+      "description": "设置文件时间为指定时间"
+    }
+  ],
+  "related_commands": ["ls", "stat", "date"],
+  "tags": ["创建文件", "时间戳", "空文件"]
+}

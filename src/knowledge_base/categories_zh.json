@@ -1,0 +1,74 @@
+{
+  "file_management": {
+    "name": "文件管理",
+    "description": "文件和目录操作命令",
+    "commands": ["ls", "cd", "pwd", "mkdir", "rmdir", "rm", "cp", "mv", "find", "locate", "touch", "ln"],
+    "color": "blue"
+  },
+  "file_viewing": {
+    "name": "文件查看",
+    "description": "文件内容查看和编辑命令",
+    "commands": ["cat", "less", "more", "head", "tail", "nano", "vim", "emacs"],
+    "color": "green"
+  },
+  "permissions": {
+    "name": "权限管理",
+    "description": "文件权限和所有权管理",
+    "commands": ["chmod", "chown", "chgrp", "umask"],
+    "color": "yellow"
+  },
+  "process_management": {
+    "name": "进程管理",
+    "description": "进程查看和管理命令",
+    "commands": ["ps", "top", "htop", "kill", "killall", "jobs", "nohup", "bg", "fg"],
+    "color": "red"
+  },
+  "network_tools": {
+    "name": "网络工具",
+    "description": "网络连接和传输工具",
+    "commands": ["ping", "wget", "curl", "ssh", "scp", "rsync", "netstat", "ss", "telnet"],
+    "color": "cyan"
+  },
+  "system_info": {
+    "name": "系统信息",
+    "description": "系统状态和信息查询",
+    "commands": ["df", "du", "free", "uname", "whoami", "which", "whereis", "uptime", "lscpu", "lsblk"],
+    "color": "magenta"
+  },
+  "text_processing": {
+    "name": "文本处理",
+    "description": "文本搜索、处理和分析",
+    "commands": ["grep", "sed", "awk", "sort", "uniq", "wc", "tr", "cut", "paste"],
+    "color": "white"
+  },
+  "compression": {
+    "name": "压缩工具",
+    "description": "文件压缩和解压缩",
+    "commands": ["tar", "gzip", "gunzip", "zip", "unzip", "7z", "bzip2", "xz"],
+    "color": "lightblue"
+  },
+  "development": {
+    "name": "开发工具",
+    "description": "编程和开发相关工具",
+    "commands": ["npm", "pip", "yarn", "composer", "make", "gcc", "node", "python", "go", "rustc"],
+    "color": "lightgreen"
+  },
+  "version_control": {
+    "name": "版本控制",
+    "description": "版本控制系统命令",
+    "commands": ["git", "svn", "hg"],
+    "color": "lightyellow"
+  },
+  "containerization": {
+    "name": "容器化",
+    "description": "容器管理和编排工具",
+    "commands": ["docker", "docker-compose", "kubectl", "podman"],
+    "color": "lightred"
+  },
+  "advanced_tools": {
+    "name": "高级工具",
+    "description": "高级系统工具和命令",
+    "commands": ["awk", "xargs", "crontab", "systemctl", "service", "mount", "umount"],
+    "color": "lightcyan"
+  }
+}

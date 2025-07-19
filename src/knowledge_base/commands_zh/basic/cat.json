@@ -1,0 +1,44 @@
+{
+  "name": "cat",
+  "description": "显示文件内容",
+  "category": "文件查看",
+  "usage": "cat [选项] 文件...",
+  "options": [
+    {
+      "option": "-n",
+      "description": "显示行号"
+    },
+    {
+      "option": "-b",
+      "description": "仅对非空行显示行号"
+    },
+    {
+      "option": "-A",
+      "description": "显示所有不可见字符"
+    },
+    {
+      "option": "-s",
+      "description": "压缩多个空行为一行"
+    }
+  ],
+  "examples": [
+    {
+      "command": "cat file.txt",
+      "description": "显示文件内容"
+    },
+    {
+      "command": "cat -n file.txt",
+      "description": "显示文件内容并显示行号"
+    },
+    {
+      "command": "cat file1.txt file2.txt",
+      "description": "连接显示多个文件内容"
+    },
+    {
+      "command": "cat > newfile.txt",
+      "description": "创建新文件并输入内容"
+    }
+  ],
+  "related_commands": ["less", "more", "head", "tail"],
+  "tags": ["文件查看", "显示内容", "连接文件"]
+}

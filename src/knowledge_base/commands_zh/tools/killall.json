@@ -1,0 +1,72 @@
+{
+  "command": "killall",
+  "description": "根据进程名称终止所有匹配的进程",
+  "syntax": "killall [选项] 进程名",
+  "category": "process_management",
+  "options": [
+    {
+      "option": "-9",
+      "description": "发送SIGKILL信号强制终止"
+    },
+    {
+      "option": "-15",
+      "description": "发送SIGTERM信号正常终止(默认)"
+    },
+    {
+      "option": "-u 用户",
+      "description": "只终止指定用户的进程"
+    },
+    {
+      "option": "-i",
+      "description": "交互模式，终止前询问确认"
+    },
+    {
+      "option": "-v",
+      "description": "详细模式，显示操作信息"
+    },
+    {
+      "option": "-w",
+      "description": "等待进程完全终止"
+    },
+    {
+      "option": "-q",
+      "description": "安静模式，不显示错误信息"
+    },
+    {
+      "option": "-r",
+      "description": "使用正则表达式匹配进程名"
+    },
+    {
+      "option": "-o 时间",
+      "description": "终止运行超过指定时间的进程"
+    }
+  ],
+  "examples": [
+    {
+      "command": "killall firefox",
+      "description": "终止所有firefox进程"
+    },
+    {
+      "command": "killall -9 chrome",
+      "description": "强制终止所有chrome进程"
+    },
+    {
+      "command": "killall -u john vim",
+      "description": "终止用户john的所有vim进程"
+    },
+    {
+      "command": "killall -i python",
+      "description": "交互式终止python进程"
+    },
+    {
+      "command": "killall -v ssh",
+      "description": "详细显示ssh进程终止信息"
+    },
+    {
+      "command": "killall -w httpd",
+      "description": "终止httpd并等待完成"
+    }
+  ],
+  "related_commands": ["pkill", "kill", "pgrep", "ps"],
+  "tags": ["进程", "终止", "系统管理", "批量操作"]
+}

@@ -1,0 +1,44 @@
+{
+  "name": "tail",
+  "description": "Display the end of files",
+  "category": "File Viewing",
+  "usage": "tail [options] file...",
+  "options": [
+    {
+      "option": "-n",
+      "description": "Specify number of lines to display (default 10)"
+    },
+    {
+      "option": "-f",
+      "description": "Monitor file changes in real-time"
+    },
+    {
+      "option": "-c",
+      "description": "Display by number of bytes"
+    },
+    {
+      "option": "-F",
+      "description": "Similar to -f, but will reopen file"
+    }
+  ],
+  "examples": [
+    {
+      "command": "tail file.txt",
+      "description": "Display last 10 lines of file"
+    },
+    {
+      "command": "tail -n 20 file.txt",
+      "description": "Display last 20 lines of file"
+    },
+    {
+      "command": "tail -f /var/log/messages",
+      "description": "Monitor log file in real-time"
+    },
+    {
+      "command": "tail -c 100 file.txt",
+      "description": "Display last 100 bytes of file"
+    }
+  ],
+  "related_commands": ["head", "cat", "less", "more"],
+  "tags": ["file end", "real-time monitoring", "log viewing"]
+}

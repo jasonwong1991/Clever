@@ -1,0 +1,64 @@
+{
+  "command": "free",
+  "description": "显示系统内存使用情况",
+  "syntax": "free [选项]",
+  "category": "system_info",
+  "options": [
+    {
+      "option": "-h",
+      "description": "以人类可读的格式显示(KB, MB, GB)"
+    },
+    {
+      "option": "-b",
+      "description": "以字节为单位显示"
+    },
+    {
+      "option": "-k",
+      "description": "以KB为单位显示(默认)"
+    },
+    {
+      "option": "-m",
+      "description": "以MB为单位显示"
+    },
+    {
+      "option": "-g",
+      "description": "以GB为单位显示"
+    },
+    {
+      "option": "-t",
+      "description": "显示物理内存和交换分区的总计"
+    },
+    {
+      "option": "-s 秒数",
+      "description": "每隔指定秒数刷新显示"
+    },
+    {
+      "option": "-c 次数",
+      "description": "指定刷新次数"
+    }
+  ],
+  "examples": [
+    {
+      "command": "free -h",
+      "description": "以易读格式显示内存使用情况"
+    },
+    {
+      "command": "free -m",
+      "description": "以MB为单位显示内存使用情况"
+    },
+    {
+      "command": "free -t",
+      "description": "显示内存使用情况和总计"
+    },
+    {
+      "command": "free -s 5",
+      "description": "每5秒刷新一次内存显示"
+    },
+    {
+      "command": "free -h -s 2 -c 10",
+      "description": "每2秒刷新，共显示10次"
+    }
+  ],
+  "related_commands": ["top", "htop", "ps", "vmstat"],
+  "tags": ["内存", "RAM", "交换分区", "系统资源", "性能监控"]
+}

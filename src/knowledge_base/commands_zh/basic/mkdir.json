@@ -1,0 +1,40 @@
+{
+  "name": "mkdir",
+  "description": "创建目录",
+  "category": "文件管理",
+  "usage": "mkdir [选项] 目录名...",
+  "options": [
+    {
+      "option": "-p",
+      "description": "递归创建目录，包括父目录"
+    },
+    {
+      "option": "-m",
+      "description": "设置目录权限"
+    },
+    {
+      "option": "-v",
+      "description": "显示创建过程信息"
+    }
+  ],
+  "examples": [
+    {
+      "command": "mkdir mydir",
+      "description": "创建名为 mydir 的目录"
+    },
+    {
+      "command": "mkdir -p parent/child",
+      "description": "递归创建多层目录"
+    },
+    {
+      "command": "mkdir -m 755 newdir",
+      "description": "创建目录并设置权限为755"
+    },
+    {
+      "command": "mkdir dir1 dir2 dir3",
+      "description": "同时创建多个目录"
+    }
+  ],
+  "related_commands": ["rmdir", "rm", "ls", "cd"],
+  "tags": ["目录", "创建", "文件系统"]
+}

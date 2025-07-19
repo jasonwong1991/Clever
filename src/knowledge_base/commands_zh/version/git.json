@@ -1,0 +1,64 @@
+{
+  "name": "git",
+  "description": "分布式版本控制系统",
+  "category": "版本控制",
+  "usage": "git [子命令] [选项]",
+  "options": [
+    {
+      "option": "init",
+      "description": "初始化新的Git仓库"
+    },
+    {
+      "option": "clone",
+      "description": "克隆远程仓库"
+    },
+    {
+      "option": "add",
+      "description": "将文件添加到暂存区"
+    },
+    {
+      "option": "commit",
+      "description": "提交更改"
+    },
+    {
+      "option": "push",
+      "description": "推送到远程仓库"
+    },
+    {
+      "option": "pull",
+      "description": "从远程仓库拉取更改"
+    },
+    {
+      "option": "status",
+      "description": "查看工作区状态"
+    },
+    {
+      "option": "log",
+      "description": "查看提交历史"
+    }
+  ],
+  "examples": [
+    {
+      "command": "git init",
+      "description": "在当前目录初始化Git仓库"
+    },
+    {
+      "command": "git clone https://github.com/user/repo.git",
+      "description": "克隆远程仓库到本地"
+    },
+    {
+      "command": "git add .",
+      "description": "将所有更改添加到暂存区"
+    },
+    {
+      "command": "git commit -m \"提交信息\"",
+      "description": "提交暂存区的更改"
+    },
+    {
+      "command": "git push origin main",
+      "description": "推送到远程仓库的main分支"
+    }
+  ],
+  "related_commands": ["github", "gitlab", "diff"],
+  "tags": ["版本控制", "代码管理", "协作", "开发"]
+}

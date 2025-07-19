@@ -1,0 +1,76 @@
+{
+  "command": "sort",
+  "description": "对文本文件的行进行排序",
+  "syntax": "sort [选项] [文件...]",
+  "category": "text_processing",
+  "options": [
+    {
+      "option": "-r",
+      "description": "逆序排序(降序)"
+    },
+    {
+      "option": "-n",
+      "description": "按数值排序"
+    },
+    {
+      "option": "-h",
+      "description": "按人类可读的数值排序(1K, 2M, 3G等)"
+    },
+    {
+      "option": "-k 字段",
+      "description": "按指定字段排序，如-k2,2"
+    },
+    {
+      "option": "-t 分隔符",
+      "description": "指定字段分隔符"
+    },
+    {
+      "option": "-u",
+      "description": "去除重复行(相当于sort | uniq)"
+    },
+    {
+      "option": "-f",
+      "description": "忽略大小写"
+    },
+    {
+      "option": "-o 文件",
+      "description": "将结果输出到指定文件"
+    },
+    {
+      "option": "-c",
+      "description": "检查文件是否已排序"
+    }
+  ],
+  "examples": [
+    {
+      "command": "sort file.txt",
+      "description": "按字母顺序排序文件内容"
+    },
+    {
+      "command": "sort -r file.txt",
+      "description": "逆序排序"
+    },
+    {
+      "command": "sort -n numbers.txt",
+      "description": "按数值大小排序"
+    },
+    {
+      "command": "sort -k2,2 -t',' data.csv",
+      "description": "按CSV文件第2列排序"
+    },
+    {
+      "command": "du -h * | sort -h",
+      "description": "按文件大小排序"
+    },
+    {
+      "command": "sort -u file.txt",
+      "description": "排序并去除重复行"
+    },
+    {
+      "command": "ps aux | sort -k3,3n",
+      "description": "按CPU使用率排序进程"
+    }
+  ],
+  "related_commands": ["uniq", "cut", "awk", "grep"],
+  "tags": ["文本", "排序", "字母", "数值", "去重"]
+}

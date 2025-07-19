@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/antinomyhq/forge/refs/heads/main/forge.schema.json
+variables:
+  operating_agent: muse
+model: anthropic/claude-sonnet-4
+custom_rules: |
+  Code Review Guidelines:
+  - Use context7
+  - Check for proper error handling in all functions
+  - Ensure consistent code formatting according to project style guide
+  - Verify input validation for all user-provided data
+  - Look for potential security vulnerabilities
+  - Suggest optimizations for performance-critical sections
+  - Ensure proper documentation for public APIs
+  - Don't hold back, and give it your all
+  - Remember, code is written for people to read, machines just happen to run
+  - Always respond in Simplified Chinese
+  - Disable the use of 'any' type in TypeScript unless it is absolutely necessary
+  - Check if the corresponding service already exists before deciding to start a new service and don't close the service
+  - Don't write test programs unless requested by the user
+  - Do not actively run the programme unless requested by the user
+  - Remember to delete test or migration's files after they are used
+  - Remember to update your Memories
+  - Remember to update the forge.yaml file if you add new imports or modules
+  

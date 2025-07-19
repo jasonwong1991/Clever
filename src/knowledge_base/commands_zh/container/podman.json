@@ -1,0 +1,76 @@
+{
+  "command": "podman",
+  "description": "无守护进程的容器引擎，Docker的替代方案",
+  "syntax": "podman [选项] 命令 [参数]",
+  "category": "containerization",
+  "options": [
+    {
+      "option": "run",
+      "description": "运行新容器"
+    },
+    {
+      "option": "ps",
+      "description": "列出容器"
+    },
+    {
+      "option": "images",
+      "description": "列出镜像"
+    },
+    {
+      "option": "pull",
+      "description": "拉取镜像"
+    },
+    {
+      "option": "build",
+      "description": "构建镜像"
+    },
+    {
+      "option": "stop",
+      "description": "停止容器"
+    },
+    {
+      "option": "rm",
+      "description": "删除容器"
+    },
+    {
+      "option": "rmi",
+      "description": "删除镜像"
+    },
+    {
+      "option": "--rootless",
+      "description": "以非root用户运行"
+    }
+  ],
+  "examples": [
+    {
+      "command": "podman run -it ubuntu bash",
+      "description": "交互式运行Ubuntu容器"
+    },
+    {
+      "command": "podman ps -a",
+      "description": "列出所有容器(包括停止的)"
+    },
+    {
+      "command": "podman images",
+      "description": "列出所有镜像"
+    },
+    {
+      "command": "podman pull nginx",
+      "description": "拉取nginx镜像"
+    },
+    {
+      "command": "podman build -t myapp .",
+      "description": "构建镜像并标记为myapp"
+    },
+    {
+      "command": "podman stop mycontainer",
+      "description": "停止指定容器"
+    },
+    {
+      "command": "podman rm $(podman ps -aq)",
+      "description": "删除所有容器"
+    }
+  ],
+  "related_commands": ["docker", "buildah", "skopeo", "cri-o"],
+  "tags": ["容器", "无守护进程", "安全", "rootless", "OCI"]
+}

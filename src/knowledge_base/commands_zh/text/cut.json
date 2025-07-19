@@ -1,0 +1,60 @@
+{
+  "command": "cut",
+  "description": "从文件或标准输入中提取指定列或字段",
+  "syntax": "cut [选项] [文件...]",
+  "category": "text_processing",
+  "options": [
+    {
+      "option": "-c 列号",
+      "description": "按字符位置提取，如-c1-10"
+    },
+    {
+      "option": "-f 字段号",
+      "description": "按字段提取，如-f1,3,5"
+    },
+    {
+      "option": "-d 分隔符",
+      "description": "指定字段分隔符，默认为制表符"
+    },
+    {
+      "option": "-s",
+      "description": "不显示不包含分隔符的行"
+    },
+    {
+      "option": "--output-delimiter=字符",
+      "description": "指定输出分隔符"
+    },
+    {
+      "option": "--complement",
+      "description": "输出除指定字段外的所有字段"
+    }
+  ],
+  "examples": [
+    {
+      "command": "cut -c1-5 file.txt",
+      "description": "提取每行的第1到5个字符"
+    },
+    {
+      "command": "cut -f1,3 -d',' data.csv",
+      "description": "提取CSV文件的第1和第3列"
+    },
+    {
+      "command": "echo 'a:b:c:d' | cut -f2-3 -d':'",
+      "description": "提取用冒号分隔的第2到3个字段"
+    },
+    {
+      "command": "cut -f2- -d' ' file.txt",
+      "description": "提取从第2个字段到末尾的所有字段"
+    },
+    {
+      "command": "cut -f1 -d':' /etc/passwd",
+      "description": "提取系统用户名"
+    },
+    {
+      "command": "ps aux | cut -c1-20",
+      "description": "显示进程列表的前20个字符"
+    }
+  ],
+  "related_commands": ["awk", "sed", "tr", "sort", "grep"],
+  "tags": ["文本", "提取", "列", "字段", "CSV", "分隔符"]
+}
