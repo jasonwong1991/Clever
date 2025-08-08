@@ -275,12 +275,6 @@ $ clever ls
 - **索引词数**: 966个搜索关键词
 - **标签数**: 191个命令标签
 
-## 演示 (GIF)
-
-可以将一段演示动图放在 docs/demo.gif，并在此处显示。如果你已经有录屏，只需将文件命名为 docs/demo.gif 即可：
-
-![Clever 演示](docs/demo.gif)
-
 ## 贡献
 
 欢迎提交Issue和Pull Request来帮助改进这个项目！
