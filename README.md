@@ -274,9 +274,19 @@ Related Commands:
 - **Index Terms**: 966 search keywords
 - **Tags**: 191 command tags
 
+## Demo (GIF)
+
+A short demo GIF can be placed at docs/demo.gif and embedded here. If you have a recording, add it to docs/demo.gif and it will appear below:
+
+![Clever demo](docs/demo.gif)
+
 ## Contributing
 
 Issues and Pull Requests are welcome to help improve this project!
+
+## Packaging guides
+
+See PACKAGING.md for Homebrew formula template and Debian/apt packaging notes.
 
 ## License
 
