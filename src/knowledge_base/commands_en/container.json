@@ -1,0 +1,100 @@
+{
+  "category": "container",
+  "category_name": "File Management",
+  "description": "container commands",
+  "commands": {
+    "kubectl": {
+      "command": "kubectl",
+      "description": "Kubernetes cluster management tool",
+      "syntax": "kubectl [command] [type] [name] [options]",
+      "category": "containerization",
+      "options": [
+        {
+          "option": "get",
+          "description": "Display resource list"
+        },
+        {
+          "option": "describe",
+          "description": "Show detailed resource information"
+        },
+        {
+          "option": "create",
+          "description": "Create resources"
+        },
+        {
+          "option": "delete",
+          "description": "Delete resources"
+        },
+        {
+          "option": "apply",
+          "description": "Apply configuration files"
+        },
+        {
+          "option": "logs",
+          "description": "View Pod logs"
+        },
+        {
+          "option": "exec",
+          "description": "Execute commands in Pod"
+        },
+        {
+          "option": "-n namespace",
+          "description": "Specify namespace"
+        },
+        {
+          "option": "-o format",
+          "description": "Specify output format (yaml, json, etc.)"
+        }
+      ],
+      "examples": [
+        {
+          "command": "kubectl get pods",
+          "description": "List all pods"
+        },
+        {
+          "command": "kubectl get services -n kube-system",
+          "description": "List services in kube-system namespace"
+        },
+        {
+          "command": "kubectl describe pod my-pod",
+          "description": "Show detailed pod information"
+        },
+        {
+          "command": "kubectl logs my-pod",
+          "description": "View pod logs"
+        },
+        {
+          "command": "kubectl exec -it my-pod -- /bin/bash",
+          "description": "Execute commands in pod"
+        },
+        {
+          "command": "kubectl apply -f deployment.yaml",
+          "description": "Apply configuration file"
+        },
+        {
+          "command": "kubectl delete pod my-pod",
+          "description": "Delete pod"
+        }
+      ],
+      "related_commands": [
+        "docker",
+        "helm",
+        "minikube",
+        "kubeadm"
+      ],
+      "tags": [
+        "Kubernetes",
+        "orchestration",
+        "cluster",
+        "Pod",
+        "microservices"
+      ]
+    }
+  },
+  "metadata": {
+    "total_commands": 1,
+    "last_updated": "2025-08-01T12:27:19.445837",
+    "version": "2.0",
+    "migrated_from": "individual_files"
+  }
+}

@@ -1,0 +1,1 @@
+{"title":"命令行工具发布平台指南","features":["PyPI发布","GitHub发布","包管理器发布","文档编写","社区推广"],"tech":{"主要发布平台":"PyPI, GitHub","辅助平台":"Homebrew, Linux包管理器, Read the Docs"},"design":"详细的发布平台指南文档，包含各平台的优缺点、发布步骤和最佳实践","plan":{"准备PyPI发布":"holding","准备GitHub发布":"holding","准备Homebrew发布":"holding","准备Linux包管理器发布":"holding","编写完整的项目文档":"done","创建项目网站或博客宣传":"holding"}}

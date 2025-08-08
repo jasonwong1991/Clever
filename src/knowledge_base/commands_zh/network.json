@@ -1,0 +1,335 @@
+{
+  "category": "network",
+  "category_name": "文件管理",
+  "description": "network commands",
+  "commands": {
+    "ssh": {
+      "name": "ssh",
+      "description": "安全远程登录和命令执行",
+      "category": "远程访问",
+      "usage": "ssh [选项] 用户名@主机名",
+      "options": [
+        {
+          "option": "-p",
+          "description": "指定连接端口"
+        },
+        {
+          "option": "-i",
+          "description": "指定私钥文件"
+        },
+        {
+          "option": "-X",
+          "description": "启用X11转发"
+        },
+        {
+          "option": "-v",
+          "description": "显示详细的连接信息"
+        }
+      ],
+      "examples": [
+        {
+          "command": "ssh user@server.com",
+          "description": "远程登录服务器"
+        },
+        {
+          "command": "ssh -p 2222 user@server.com",
+          "description": "指定端口连接"
+        },
+        {
+          "command": "ssh -i ~/.ssh/mykey user@server.com",
+          "description": "使用指定私钥连接"
+        },
+        {
+          "command": "ssh user@server.com 'ls -la'",
+          "description": "远程执行命令"
+        }
+      ],
+      "related_commands": [
+        "scp",
+        "sftp",
+        "rsync",
+        "telnet"
+      ],
+      "tags": [
+        "远程访问",
+        "安全连接",
+        "命令执行"
+      ]
+    },
+    "curl": {
+      "name": "curl",
+      "description": "传输数据到或从服务器",
+      "category": "网络工具",
+      "usage": "curl [选项] URL",
+      "options": [
+        {
+          "option": "-o",
+          "description": "将输出写入文件"
+        },
+        {
+          "option": "-X",
+          "description": "指定HTTP请求方法"
+        },
+        {
+          "option": "-H",
+          "description": "添加HTTP头部"
+        },
+        {
+          "option": "-d",
+          "description": "发送POST数据"
+        }
+      ],
+      "examples": [
+        {
+          "command": "curl https://api.example.com",
+          "description": "获取API数据"
+        },
+        {
+          "command": "curl -o file.html https://example.com",
+          "description": "下载网页到文件"
+        },
+        {
+          "command": "curl -X POST -d 'data=value' https://api.example.com",
+          "description": "发送POST请求"
+        },
+        {
+          "command": "curl -H 'Content-Type: application/json' https://api.example.com",
+          "description": "带自定义头部的请求"
+        }
+      ],
+      "related_commands": [
+        "wget",
+        "http",
+        "httpie",
+        "lynx"
+      ],
+      "tags": [
+        "HTTP",
+        "API",
+        "数据传输",
+        "REST"
+      ]
+    },
+    "netstat": {
+      "name": "netstat",
+      "description": "显示网络连接、路由表和网络统计",
+      "category": "网络监控",
+      "usage": "netstat [选项]",
+      "options": [
+        {
+          "option": "-a",
+          "description": "显示所有连接和监听端口"
+        },
+        {
+          "option": "-n",
+          "description": "以数字形式显示地址和端口"
+        },
+        {
+          "option": "-t",
+          "description": "仅显示TCP连接"
+        },
+        {
+          "option": "-l",
+          "description": "仅显示监听端口"
+        }
+      ],
+      "examples": [
+        {
+          "command": "netstat -an",
+          "description": "显示所有网络连接"
+        },
+        {
+          "command": "netstat -tlnp",
+          "description": "显示TCP监听端口和进程"
+        },
+        {
+          "command": "netstat -rn",
+          "description": "显示路由表"
+        },
+        {
+          "command": "netstat -i",
+          "description": "显示网络接口统计"
+        }
+      ],
+      "related_commands": [
+        "ss",
+        "lsof",
+        "nmap",
+        "iptables"
+      ],
+      "tags": [
+        "网络连接",
+        "端口",
+        "路由",
+        "网络监控"
+      ]
+    },
+    "scp": {
+      "name": "scp",
+      "description": "安全地复制文件到远程主机",
+      "category": "远程访问",
+      "usage": "scp [选项] 源文件 目标文件",
+      "options": [
+        {
+          "option": "-r",
+          "description": "递归复制目录"
+        },
+        {
+          "option": "-p",
+          "description": "保持文件属性和时间戳"
+        },
+        {
+          "option": "-P",
+          "description": "指定SSH端口"
+        },
+        {
+          "option": "-v",
+          "description": "显示详细的传输信息"
+        }
+      ],
+      "examples": [
+        {
+          "command": "scp file.txt user@server.com:/home/user/",
+          "description": "上传文件到远程服务器"
+        },
+        {
+          "command": "scp user@server.com:/path/to/file.txt .",
+          "description": "从远程服务器下载文件"
+        },
+        {
+          "command": "scp -r localdir/ user@server.com:/remote/path/",
+          "description": "递归上传目录"
+        },
+        {
+          "command": "scp -P 2222 file.txt user@server.com:/home/",
+          "description": "指定端口传输文件"
+        }
+      ],
+      "related_commands": [
+        "ssh",
+        "rsync",
+        "sftp",
+        "wget"
+      ],
+      "tags": [
+        "文件传输",
+        "远程复制",
+        "安全传输"
+      ]
+    },
+    "wget": {
+      "name": "wget",
+      "description": "下载文件和网页",
+      "category": "网络工具",
+      "usage": "wget [选项] URL",
+      "options": [
+        {
+          "option": "-O",
+          "description": "指定输出文件名"
+        },
+        {
+          "option": "-c",
+          "description": "继续未完成的下载"
+        },
+        {
+          "option": "-r",
+          "description": "递归下载整个网站"
+        },
+        {
+          "option": "-q",
+          "description": "静默模式，不显示进度"
+        }
+      ],
+      "examples": [
+        {
+          "command": "wget https://example.com/file.zip",
+          "description": "下载文件"
+        },
+        {
+          "command": "wget -O myfile.pdf https://example.com/document.pdf",
+          "description": "下载并重命名文件"
+        },
+        {
+          "command": "wget -c https://example.com/largefile.zip",
+          "description": "继续中断的下载"
+        },
+        {
+          "command": "wget -r -np https://example.com/directory/",
+          "description": "递归下载目录"
+        }
+      ],
+      "related_commands": [
+        "curl",
+        "scp",
+        "rsync",
+        "ftp"
+      ],
+      "tags": [
+        "下载",
+        "HTTP",
+        "FTP",
+        "网络传输"
+      ]
+    },
+    "ping": {
+      "name": "ping",
+      "description": "测试网络连接性",
+      "category": "网络工具",
+      "usage": "ping [选项] 目标主机",
+      "options": [
+        {
+          "option": "-c",
+          "description": "指定发送的数据包数量"
+        },
+        {
+          "option": "-i",
+          "description": "设置发送间隔（秒）"
+        },
+        {
+          "option": "-s",
+          "description": "设置数据包大小（字节）"
+        },
+        {
+          "option": "-W",
+          "description": "设置超时时间（毫秒）"
+        }
+      ],
+      "examples": [
+        {
+          "command": "ping google.com",
+          "description": "测试到Google的连接"
+        },
+        {
+          "command": "ping -c 4 192.168.1.1",
+          "description": "发送4个数据包测试连接"
+        },
+        {
+          "command": "ping -i 2 -c 5 example.com",
+          "description": "每2秒发送一次，发送5次"
+        },
+        {
+          "command": "ping -s 1000 localhost",
+          "description": "发送1000字节的大数据包"
+        }
+      ],
+      "related_commands": [
+        "traceroute",
+        "nslookup",
+        "dig",
+        "netstat"
+      ],
+      "tags": [
+        "网络测试",
+        "连接性",
+        "延迟",
+        "ICMP"
+      ]
+    }
+  },
+  "metadata": {
+    "total_commands": 6,
+    "last_updated": "2025-08-01T12:27:19.435398",
+    "version": "2.0",
+    "migrated_from": "individual_files"
+  }
+}

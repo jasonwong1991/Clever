@@ -1,0 +1,341 @@
+{
+  "category": "container",
+  "category_name": "文件管理",
+  "description": "container commands",
+  "commands": {
+    "kubectl": {
+      "command": "kubectl",
+      "description": "Kubernetes集群管理工具",
+      "syntax": "kubectl [命令] [类型] [名称] [选项]",
+      "category": "containerization",
+      "options": [
+        {
+          "option": "get",
+          "description": "显示资源列表"
+        },
+        {
+          "option": "describe",
+          "description": "显示资源详细信息"
+        },
+        {
+          "option": "create",
+          "description": "创建资源"
+        },
+        {
+          "option": "delete",
+          "description": "删除资源"
+        },
+        {
+          "option": "apply",
+          "description": "应用配置文件"
+        },
+        {
+          "option": "logs",
+          "description": "查看Pod日志"
+        },
+        {
+          "option": "exec",
+          "description": "在Pod中执行命令"
+        },
+        {
+          "option": "-n 命名空间",
+          "description": "指定命名空间"
+        },
+        {
+          "option": "-o 格式",
+          "description": "指定输出格式(yaml, json等)"
+        }
+      ],
+      "examples": [
+        {
+          "command": "kubectl get pods",
+          "description": "列出所有Pod"
+        },
+        {
+          "command": "kubectl get services -n kube-system",
+          "description": "列出kube-system命名空间的服务"
+        },
+        {
+          "command": "kubectl describe pod my-pod",
+          "description": "查看Pod详细信息"
+        },
+        {
+          "command": "kubectl logs my-pod",
+          "description": "查看Pod日志"
+        },
+        {
+          "command": "kubectl exec -it my-pod -- /bin/bash",
+          "description": "进入Pod执行命令"
+        },
+        {
+          "command": "kubectl apply -f deployment.yaml",
+          "description": "应用配置文件"
+        },
+        {
+          "command": "kubectl delete pod my-pod",
+          "description": "删除Pod"
+        }
+      ],
+      "related_commands": [
+        "docker",
+        "helm",
+        "minikube",
+        "kubeadm"
+      ],
+      "tags": [
+        "Kubernetes",
+        "容器编排",
+        "集群管理",
+        "Pod",
+        "微服务"
+      ]
+    },
+    "docker-compose": {
+      "command": "docker-compose",
+      "description": "Docker多容器应用编排工具",
+      "syntax": "docker-compose [选项] [命令] [参数]",
+      "category": "containerization",
+      "options": [
+        {
+          "option": "up",
+          "description": "创建并启动容器"
+        },
+        {
+          "option": "down",
+          "description": "停止并删除容器、网络"
+        },
+        {
+          "option": "build",
+          "description": "构建服务镜像"
+        },
+        {
+          "option": "ps",
+          "description": "列出容器"
+        },
+        {
+          "option": "logs",
+          "description": "查看服务日志"
+        },
+        {
+          "option": "exec",
+          "description": "在运行的容器中执行命令"
+        },
+        {
+          "option": "-f 文件",
+          "description": "指定compose文件"
+        },
+        {
+          "option": "-d",
+          "description": "后台运行"
+        },
+        {
+          "option": "--scale 服务=数量",
+          "description": "扩展服务实例数"
+        }
+      ],
+      "examples": [
+        {
+          "command": "docker-compose up",
+          "description": "启动所有服务"
+        },
+        {
+          "command": "docker-compose up -d",
+          "description": "后台启动所有服务"
+        },
+        {
+          "command": "docker-compose down",
+          "description": "停止并删除所有容器"
+        },
+        {
+          "command": "docker-compose build",
+          "description": "构建所有服务镜像"
+        },
+        {
+          "command": "docker-compose logs web",
+          "description": "查看web服务日志"
+        },
+        {
+          "command": "docker-compose exec web bash",
+          "description": "进入web容器执行bash"
+        },
+        {
+          "command": "docker-compose up --scale web=3",
+          "description": "启动3个web服务实例"
+        }
+      ],
+      "related_commands": [
+        "docker",
+        "kubectl",
+        "docker-swarm"
+      ],
+      "tags": [
+        "Docker",
+        "容器编排",
+        "微服务",
+        "开发环境",
+        "YAML"
+      ]
+    },
+    "docker": {
+      "name": "docker",
+      "description": "容器平台管理工具",
+      "category": "容器化",
+      "usage": "docker [子命令] [选项]",
+      "options": [
+        {
+          "option": "run",
+          "description": "运行新容器"
+        },
+        {
+          "option": "build",
+          "description": "构建镜像"
+        },
+        {
+          "option": "ps",
+          "description": "列出运行中的容器"
+        },
+        {
+          "option": "images",
+          "description": "列出本地镜像"
+        },
+        {
+          "option": "pull",
+          "description": "拉取镜像"
+        },
+        {
+          "option": "push",
+          "description": "推送镜像"
+        },
+        {
+          "option": "stop",
+          "description": "停止容器"
+        },
+        {
+          "option": "rm",
+          "description": "删除容器"
+        }
+      ],
+      "examples": [
+        {
+          "command": "docker run -it ubuntu bash",
+          "description": "交互式运行Ubuntu容器"
+        },
+        {
+          "command": "docker build -t myapp .",
+          "description": "构建名为myapp的镜像"
+        },
+        {
+          "command": "docker ps -a",
+          "description": "列出所有容器（包括停止的）"
+        },
+        {
+          "command": "docker images",
+          "description": "查看本地镜像列表"
+        }
+      ],
+      "related_commands": [
+        "docker-compose",
+        "kubectl"
+      ],
+      "tags": [
+        "容器",
+        "镜像",
+        "部署",
+        "微服务"
+      ]
+    },
+    "podman": {
+      "command": "podman",
+      "description": "无守护进程的容器引擎，Docker的替代方案",
+      "syntax": "podman [选项] 命令 [参数]",
+      "category": "containerization",
+      "options": [
+        {
+          "option": "run",
+          "description": "运行新容器"
+        },
+        {
+          "option": "ps",
+          "description": "列出容器"
+        },
+        {
+          "option": "images",
+          "description": "列出镜像"
+        },
+        {
+          "option": "pull",
+          "description": "拉取镜像"
+        },
+        {
+          "option": "build",
+          "description": "构建镜像"
+        },
+        {
+          "option": "stop",
+          "description": "停止容器"
+        },
+        {
+          "option": "rm",
+          "description": "删除容器"
+        },
+        {
+          "option": "rmi",
+          "description": "删除镜像"
+        },
+        {
+          "option": "--rootless",
+          "description": "以非root用户运行"
+        }
+      ],
+      "examples": [
+        {
+          "command": "podman run -it ubuntu bash",
+          "description": "交互式运行Ubuntu容器"
+        },
+        {
+          "command": "podman ps -a",
+          "description": "列出所有容器(包括停止的)"
+        },
+        {
+          "command": "podman images",
+          "description": "列出所有镜像"
+        },
+        {
+          "command": "podman pull nginx",
+          "description": "拉取nginx镜像"
+        },
+        {
+          "command": "podman build -t myapp .",
+          "description": "构建镜像并标记为myapp"
+        },
+        {
+          "command": "podman stop mycontainer",
+          "description": "停止指定容器"
+        },
+        {
+          "command": "podman rm $(podman ps -aq)",
+          "description": "删除所有容器"
+        }
+      ],
+      "related_commands": [
+        "docker",
+        "buildah",
+        "skopeo",
+        "cri-o"
+      ],
+      "tags": [
+        "容器",
+        "无守护进程",
+        "安全",
+        "rootless",
+        "OCI"
+      ]
+    }
+  },
+  "metadata": {
+    "total_commands": 4,
+    "last_updated": "2025-08-01T12:27:19.435895",
+    "version": "2.0",
+    "migrated_from": "individual_files"
+  }
+}

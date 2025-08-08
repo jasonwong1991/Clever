@@ -1,0 +1,246 @@
+{
+  "category": "system",
+  "category_name": "文件管理",
+  "description": "system commands",
+  "commands": {
+    "free": {
+      "command": "free",
+      "description": "显示系统内存使用情况",
+      "syntax": "free [选项]",
+      "category": "system_info",
+      "options": [
+        {
+          "option": "-h",
+          "description": "以人类可读的格式显示(KB, MB, GB)"
+        },
+        {
+          "option": "-b",
+          "description": "以字节为单位显示"
+        },
+        {
+          "option": "-k",
+          "description": "以KB为单位显示(默认)"
+        },
+        {
+          "option": "-m",
+          "description": "以MB为单位显示"
+        },
+        {
+          "option": "-g",
+          "description": "以GB为单位显示"
+        },
+        {
+          "option": "-t",
+          "description": "显示物理内存和交换分区的总计"
+        },
+        {
+          "option": "-s 秒数",
+          "description": "每隔指定秒数刷新显示"
+        },
+        {
+          "option": "-c 次数",
+          "description": "指定刷新次数"
+        }
+      ],
+      "examples": [
+        {
+          "command": "free -h",
+          "description": "以易读格式显示内存使用情况"
+        },
+        {
+          "command": "free -m",
+          "description": "以MB为单位显示内存使用情况"
+        },
+        {
+          "command": "free -t",
+          "description": "显示内存使用情况和总计"
+        },
+        {
+          "command": "free -s 5",
+          "description": "每5秒刷新一次内存显示"
+        },
+        {
+          "command": "free -h -s 2 -c 10",
+          "description": "每2秒刷新，共显示10次"
+        }
+      ],
+      "related_commands": [
+        "top",
+        "htop",
+        "ps",
+        "vmstat"
+      ],
+      "tags": [
+        "内存",
+        "RAM",
+        "交换分区",
+        "系统资源",
+        "性能监控"
+      ]
+    },
+    "df": {
+      "command": "df",
+      "description": "显示文件系统磁盘空间使用情况",
+      "syntax": "df [选项] [文件系统]",
+      "category": "system_info",
+      "options": [
+        {
+          "option": "-h",
+          "description": "以人类可读的格式显示(KB, MB, GB)"
+        },
+        {
+          "option": "-T",
+          "description": "显示文件系统类型"
+        },
+        {
+          "option": "-i",
+          "description": "显示inode使用情况"
+        },
+        {
+          "option": "-a",
+          "description": "显示所有文件系统，包括虚拟文件系统"
+        },
+        {
+          "option": "-t 类型",
+          "description": "只显示指定类型的文件系统"
+        },
+        {
+          "option": "-x 类型",
+          "description": "排除指定类型的文件系统"
+        },
+        {
+          "option": "-l",
+          "description": "只显示本地文件系统"
+        },
+        {
+          "option": "--total",
+          "description": "显示总计行"
+        }
+      ],
+      "examples": [
+        {
+          "command": "df -h",
+          "description": "以易读格式显示磁盘使用情况"
+        },
+        {
+          "command": "df -T",
+          "description": "显示文件系统类型和使用情况"
+        },
+        {
+          "command": "df -i",
+          "description": "显示inode使用情况"
+        },
+        {
+          "command": "df /home",
+          "description": "显示/home目录所在文件系统的使用情况"
+        },
+        {
+          "command": "df -t ext4",
+          "description": "只显示ext4文件系统"
+        },
+        {
+          "command": "df -h --total",
+          "description": "显示磁盘使用情况和总计"
+        }
+      ],
+      "related_commands": [
+        "du",
+        "lsblk",
+        "mount",
+        "fdisk"
+      ],
+      "tags": [
+        "磁盘",
+        "存储",
+        "文件系统",
+        "空间",
+        "系统信息"
+      ]
+    },
+    "du": {
+      "command": "du",
+      "description": "显示目录和文件的磁盘使用量",
+      "syntax": "du [选项] [文件或目录]",
+      "category": "system_info",
+      "options": [
+        {
+          "option": "-h",
+          "description": "以人类可读的格式显示(KB, MB, GB)"
+        },
+        {
+          "option": "-s",
+          "description": "只显示总计，不显示子目录"
+        },
+        {
+          "option": "-a",
+          "description": "显示所有文件和目录的大小"
+        },
+        {
+          "option": "-c",
+          "description": "显示总计"
+        },
+        {
+          "option": "-d 深度",
+          "description": "限制显示的目录深度"
+        },
+        {
+          "option": "-x",
+          "description": "不跨越文件系统边界"
+        },
+        {
+          "option": "--max-depth=N",
+          "description": "最大显示N层目录深度"
+        },
+        {
+          "option": "--exclude=模式",
+          "description": "排除匹配模式的文件"
+        }
+      ],
+      "examples": [
+        {
+          "command": "du -h /home",
+          "description": "显示/home目录的磁盘使用量"
+        },
+        {
+          "command": "du -sh *",
+          "description": "显示当前目录下所有项目的总大小"
+        },
+        {
+          "command": "du -h --max-depth=1",
+          "description": "只显示一级子目录的大小"
+        },
+        {
+          "command": "du -ah /var/log",
+          "description": "显示/var/log下所有文件的大小"
+        },
+        {
+          "command": "du -ch *.txt",
+          "description": "显示所有txt文件大小和总计"
+        },
+        {
+          "command": "du -h --exclude='*.tmp' /tmp",
+          "description": "显示/tmp大小，排除tmp文件"
+        }
+      ],
+      "related_commands": [
+        "df",
+        "ls",
+        "find",
+        "ncdu"
+      ],
+      "tags": [
+        "磁盘",
+        "大小",
+        "目录",
+        "文件",
+        "存储分析"
+      ]
+    }
+  },
+  "metadata": {
+    "total_commands": 3,
+    "last_updated": "2025-08-01T12:27:19.436004",
+    "version": "2.0",
+    "migrated_from": "individual_files"
+  }
+}

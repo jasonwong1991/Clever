@@ -1,0 +1,335 @@
+{
+  "category": "network",
+  "category_name": "File Management",
+  "description": "network commands",
+  "commands": {
+    "ssh": {
+      "name": "ssh",
+      "description": "Secure remote login and command execution",
+      "category": "Remote Access",
+      "usage": "ssh [options] username@hostname",
+      "options": [
+        {
+          "option": "-p",
+          "description": "Specify connection port"
+        },
+        {
+          "option": "-i",
+          "description": "Specify private key file"
+        },
+        {
+          "option": "-X",
+          "description": "Enable X11 forwarding"
+        },
+        {
+          "option": "-v",
+          "description": "Display verbose connection information"
+        }
+      ],
+      "examples": [
+        {
+          "command": "ssh user@server.com",
+          "description": "Remote login to server"
+        },
+        {
+          "command": "ssh -p 2222 user@server.com",
+          "description": "Connect on specific port"
+        },
+        {
+          "command": "ssh -i ~/.ssh/mykey user@server.com",
+          "description": "Connect using specified private key"
+        },
+        {
+          "command": "ssh user@server.com 'ls -la'",
+          "description": "Execute remote command"
+        }
+      ],
+      "related_commands": [
+        "scp",
+        "sftp",
+        "rsync",
+        "telnet"
+      ],
+      "tags": [
+        "remote access",
+        "secure connection",
+        "command execution"
+      ]
+    },
+    "curl": {
+      "name": "curl",
+      "description": "Transfer data to or from servers",
+      "category": "Network Tools",
+      "usage": "curl [options] URL",
+      "options": [
+        {
+          "option": "-o",
+          "description": "Write output to file"
+        },
+        {
+          "option": "-X",
+          "description": "Specify HTTP request method"
+        },
+        {
+          "option": "-H",
+          "description": "Add HTTP header"
+        },
+        {
+          "option": "-d",
+          "description": "Send POST data"
+        }
+      ],
+      "examples": [
+        {
+          "command": "curl https://api.example.com",
+          "description": "Get API data"
+        },
+        {
+          "command": "curl -o file.html https://example.com",
+          "description": "Download webpage to file"
+        },
+        {
+          "command": "curl -X POST -d 'data=value' https://api.example.com",
+          "description": "Send POST request"
+        },
+        {
+          "command": "curl -H 'Content-Type: application/json' https://api.example.com",
+          "description": "Request with custom headers"
+        }
+      ],
+      "related_commands": [
+        "wget",
+        "http",
+        "httpie",
+        "lynx"
+      ],
+      "tags": [
+        "HTTP",
+        "API",
+        "data transfer",
+        "REST"
+      ]
+    },
+    "netstat": {
+      "name": "netstat",
+      "description": "Display network connections, routing tables, and network statistics",
+      "category": "Network Monitoring",
+      "usage": "netstat [options]",
+      "options": [
+        {
+          "option": "-a",
+          "description": "Show all connections and listening ports"
+        },
+        {
+          "option": "-n",
+          "description": "Show addresses and ports numerically"
+        },
+        {
+          "option": "-t",
+          "description": "Show only TCP connections"
+        },
+        {
+          "option": "-l",
+          "description": "Show only listening ports"
+        }
+      ],
+      "examples": [
+        {
+          "command": "netstat -an",
+          "description": "Show all network connections"
+        },
+        {
+          "command": "netstat -tlnp",
+          "description": "Show TCP listening ports and processes"
+        },
+        {
+          "command": "netstat -rn",
+          "description": "Show routing table"
+        },
+        {
+          "command": "netstat -i",
+          "description": "Show network interface statistics"
+        }
+      ],
+      "related_commands": [
+        "ss",
+        "lsof",
+        "nmap",
+        "iptables"
+      ],
+      "tags": [
+        "network connections",
+        "ports",
+        "routing",
+        "network monitoring"
+      ]
+    },
+    "scp": {
+      "name": "scp",
+      "description": "Securely copy files to remote hosts",
+      "category": "Remote Access",
+      "usage": "scp [options] source_file target_file",
+      "options": [
+        {
+          "option": "-r",
+          "description": "Recursively copy directories"
+        },
+        {
+          "option": "-p",
+          "description": "Preserve file attributes and timestamps"
+        },
+        {
+          "option": "-P",
+          "description": "Specify SSH port"
+        },
+        {
+          "option": "-v",
+          "description": "Display verbose transfer information"
+        }
+      ],
+      "examples": [
+        {
+          "command": "scp file.txt user@server.com:/home/user/",
+          "description": "Upload file to remote server"
+        },
+        {
+          "command": "scp user@server.com:/path/to/file.txt .",
+          "description": "Download file from remote server"
+        },
+        {
+          "command": "scp -r localdir/ user@server.com:/remote/path/",
+          "description": "Recursively upload directory"
+        },
+        {
+          "command": "scp -P 2222 file.txt user@server.com:/home/",
+          "description": "Transfer file on specific port"
+        }
+      ],
+      "related_commands": [
+        "ssh",
+        "rsync",
+        "sftp",
+        "wget"
+      ],
+      "tags": [
+        "file transfer",
+        "remote copy",
+        "secure transfer"
+      ]
+    },
+    "wget": {
+      "name": "wget",
+      "description": "Download files and web pages",
+      "category": "Network Tools",
+      "usage": "wget [options] URL",
+      "options": [
+        {
+          "option": "-O",
+          "description": "Specify output filename"
+        },
+        {
+          "option": "-c",
+          "description": "Continue partial downloads"
+        },
+        {
+          "option": "-r",
+          "description": "Recursively download entire website"
+        },
+        {
+          "option": "-q",
+          "description": "Quiet mode, no progress display"
+        }
+      ],
+      "examples": [
+        {
+          "command": "wget https://example.com/file.zip",
+          "description": "Download a file"
+        },
+        {
+          "command": "wget -O myfile.pdf https://example.com/document.pdf",
+          "description": "Download and rename file"
+        },
+        {
+          "command": "wget -c https://example.com/largefile.zip",
+          "description": "Continue interrupted download"
+        },
+        {
+          "command": "wget -r -np https://example.com/directory/",
+          "description": "Recursively download directory"
+        }
+      ],
+      "related_commands": [
+        "curl",
+        "scp",
+        "rsync",
+        "ftp"
+      ],
+      "tags": [
+        "download",
+        "HTTP",
+        "FTP",
+        "network transfer"
+      ]
+    },
+    "ping": {
+      "name": "ping",
+      "description": "Test network connectivity",
+      "category": "Network Tools",
+      "usage": "ping [options] target_host",
+      "options": [
+        {
+          "option": "-c",
+          "description": "Specify number of packets to send"
+        },
+        {
+          "option": "-i",
+          "description": "Set sending interval (seconds)"
+        },
+        {
+          "option": "-s",
+          "description": "Set packet size (bytes)"
+        },
+        {
+          "option": "-W",
+          "description": "Set timeout (milliseconds)"
+        }
+      ],
+      "examples": [
+        {
+          "command": "ping google.com",
+          "description": "Test connection to Google"
+        },
+        {
+          "command": "ping -c 4 192.168.1.1",
+          "description": "Send 4 packets to test connection"
+        },
+        {
+          "command": "ping -i 2 -c 5 example.com",
+          "description": "Send every 2 seconds, 5 times total"
+        },
+        {
+          "command": "ping -s 1000 localhost",
+          "description": "Send 1000-byte large packets"
+        }
+      ],
+      "related_commands": [
+        "traceroute",
+        "nslookup",
+        "dig",
+        "netstat"
+      ],
+      "tags": [
+        "network test",
+        "connectivity",
+        "latency",
+        "ICMP"
+      ]
+    }
+  },
+  "metadata": {
+    "total_commands": 6,
+    "last_updated": "2025-08-01T12:27:19.445354",
+    "version": "2.0",
+    "migrated_from": "individual_files"
+  }
+}

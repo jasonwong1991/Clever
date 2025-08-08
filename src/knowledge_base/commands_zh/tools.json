@@ -1,0 +1,768 @@
+{
+  "category": "tools",
+  "category_name": "文件管理",
+  "description": "tools commands",
+  "commands": {
+    "ps": {
+      "name": "ps",
+      "description": "显示进程状态信息",
+      "category": "进程管理",
+      "usage": "ps [选项]",
+      "options": [
+        {
+          "option": "aux",
+          "description": "显示所有用户的所有进程"
+        },
+        {
+          "option": "-ef",
+          "description": "显示所有进程的完整信息"
+        },
+        {
+          "option": "-u",
+          "description": "显示指定用户的进程"
+        },
+        {
+          "option": "-p",
+          "description": "显示指定PID的进程"
+        },
+        {
+          "option": "-C",
+          "description": "显示指定命令名的进程"
+        }
+      ],
+      "examples": [
+        {
+          "command": "ps aux",
+          "description": "显示所有进程的详细信息"
+        },
+        {
+          "command": "ps -ef | grep python",
+          "description": "查找包含python的进程"
+        },
+        {
+          "command": "ps -u root",
+          "description": "显示root用户的进程"
+        },
+        {
+          "command": "ps -p 1234",
+          "description": "显示PID为1234的进程信息"
+        }
+      ],
+      "related_commands": [
+        "top",
+        "htop",
+        "kill",
+        "jobs"
+      ],
+      "tags": [
+        "进程",
+        "系统",
+        "监控",
+        "管理"
+      ]
+    },
+    "pgrep": {
+      "command": "pgrep",
+      "description": "根据进程名称或其他条件查找进程ID",
+      "syntax": "pgrep [选项] 模式",
+      "category": "process_management",
+      "options": [
+        {
+          "option": "-f",
+          "description": "匹配完整的命令行，而不仅仅是进程名"
+        },
+        {
+          "option": "-x",
+          "description": "精确匹配进程名"
+        },
+        {
+          "option": "-u 用户",
+          "description": "只显示指定用户的进程"
+        },
+        {
+          "option": "-g 组",
+          "description": "只显示指定进程组的进程"
+        },
+        {
+          "option": "-P 父进程ID",
+          "description": "只显示指定父进程的子进程"
+        },
+        {
+          "option": "-l",
+          "description": "显示进程名和进程ID"
+        },
+        {
+          "option": "-a",
+          "description": "显示完整的命令行"
+        },
+        {
+          "option": "-n",
+          "description": "显示最新的匹配进程"
+        },
+        {
+          "option": "-o",
+          "description": "显示最旧的匹配进程"
+        }
+      ],
+      "examples": [
+        {
+          "command": "pgrep firefox",
+          "description": "查找所有名为firefox的进程ID"
+        },
+        {
+          "command": "pgrep -u john",
+          "description": "查找用户john的所有进程"
+        },
+        {
+          "command": "pgrep -f python.*test.py",
+          "description": "查找命令行包含python和test.py的进程"
+        },
+        {
+          "command": "pgrep -l chrome",
+          "description": "查找chrome进程并显示进程名"
+        },
+        {
+          "command": "pgrep -x vim",
+          "description": "精确匹配名为vim的进程"
+        },
+        {
+          "command": "pgrep -n ssh",
+          "description": "查找最新的ssh进程"
+        }
+      ],
+      "related_commands": [
+        "pkill",
+        "ps",
+        "kill",
+        "pidof"
+      ],
+      "tags": [
+        "进程",
+        "查找",
+        "系统管理",
+        "进程ID"
+      ]
+    },
+    "kill": {
+      "name": "kill",
+      "description": "终止进程",
+      "category": "进程管理",
+      "usage": "kill [选项] [信号] 进程ID...",
+      "options": [
+        {
+          "option": "-9",
+          "description": "强制终止进程（SIGKILL）"
+        },
+        {
+          "option": "-15",
+          "description": "正常终止进程（SIGTERM，默认）"
+        },
+        {
+          "option": "-l",
+          "description": "列出所有可用信号"
+        },
+        {
+          "option": "-s",
+          "description": "指定发送的信号"
+        }
+      ],
+      "examples": [
+        {
+          "command": "kill 1234",
+          "description": "正常终止进程1234"
+        },
+        {
+          "command": "kill -9 1234",
+          "description": "强制终止进程1234"
+        },
+        {
+          "command": "kill -l",
+          "description": "显示所有信号列表"
+        },
+        {
+          "command": "kill -s TERM 1234",
+          "description": "发送TERM信号终止进程"
+        }
+      ],
+      "related_commands": [
+        "killall",
+        "pkill",
+        "ps",
+        "top"
+      ],
+      "tags": [
+        "进程",
+        "终止",
+        "信号",
+        "强制终止"
+      ]
+    },
+    "killall": {
+      "command": "killall",
+      "description": "根据进程名称终止所有匹配的进程",
+      "syntax": "killall [选项] 进程名",
+      "category": "process_management",
+      "options": [
+        {
+          "option": "-9",
+          "description": "发送SIGKILL信号强制终止"
+        },
+        {
+          "option": "-15",
+          "description": "发送SIGTERM信号正常终止(默认)"
+        },
+        {
+          "option": "-u 用户",
+          "description": "只终止指定用户的进程"
+        },
+        {
+          "option": "-i",
+          "description": "交互模式，终止前询问确认"
+        },
+        {
+          "option": "-v",
+          "description": "详细模式，显示操作信息"
+        },
+        {
+          "option": "-w",
+          "description": "等待进程完全终止"
+        },
+        {
+          "option": "-q",
+          "description": "安静模式，不显示错误信息"
+        },
+        {
+          "option": "-r",
+          "description": "使用正则表达式匹配进程名"
+        },
+        {
+          "option": "-o 时间",
+          "description": "终止运行超过指定时间的进程"
+        }
+      ],
+      "examples": [
+        {
+          "command": "killall firefox",
+          "description": "终止所有firefox进程"
+        },
+        {
+          "command": "killall -9 chrome",
+          "description": "强制终止所有chrome进程"
+        },
+        {
+          "command": "killall -u john vim",
+          "description": "终止用户john的所有vim进程"
+        },
+        {
+          "command": "killall -i python",
+          "description": "交互式终止python进程"
+        },
+        {
+          "command": "killall -v ssh",
+          "description": "详细显示ssh进程终止信息"
+        },
+        {
+          "command": "killall -w httpd",
+          "description": "终止httpd并等待完成"
+        }
+      ],
+      "related_commands": [
+        "pkill",
+        "kill",
+        "pgrep",
+        "ps"
+      ],
+      "tags": [
+        "进程",
+        "终止",
+        "系统管理",
+        "批量操作"
+      ]
+    },
+    "pkill": {
+      "command": "pkill",
+      "description": "根据进程名称或其他条件终止进程",
+      "syntax": "pkill [选项] 模式",
+      "category": "process_management",
+      "options": [
+        {
+          "option": "-f",
+          "description": "匹配完整的命令行，而不仅仅是进程名"
+        },
+        {
+          "option": "-x",
+          "description": "精确匹配进程名"
+        },
+        {
+          "option": "-u 用户",
+          "description": "只终止指定用户的进程"
+        },
+        {
+          "option": "-g 组",
+          "description": "只终止指定进程组的进程"
+        },
+        {
+          "option": "-P 父进程ID",
+          "description": "只终止指定父进程的子进程"
+        },
+        {
+          "option": "-9",
+          "description": "发送SIGKILL信号强制终止"
+        },
+        {
+          "option": "-15",
+          "description": "发送SIGTERM信号正常终止(默认)"
+        },
+        {
+          "option": "-n",
+          "description": "终止最新的匹配进程"
+        },
+        {
+          "option": "-o",
+          "description": "终止最旧的匹配进程"
+        }
+      ],
+      "examples": [
+        {
+          "command": "pkill firefox",
+          "description": "终止所有名为firefox的进程"
+        },
+        {
+          "command": "pkill -u john",
+          "description": "终止用户john的所有进程"
+        },
+        {
+          "command": "pkill -f python.*test.py",
+          "description": "终止命令行包含python和test.py的进程"
+        },
+        {
+          "command": "pkill -9 chrome",
+          "description": "强制终止所有chrome进程"
+        },
+        {
+          "command": "pkill -x vim",
+          "description": "精确匹配并终止名为vim的进程"
+        }
+      ],
+      "related_commands": [
+        "pgrep",
+        "kill",
+        "killall",
+        "ps"
+      ],
+      "tags": [
+        "进程",
+        "终止",
+        "系统管理",
+        "进程管理"
+      ]
+    },
+    "which": {
+      "name": "which",
+      "description": "查找命令的位置",
+      "category": "系统查询",
+      "usage": "which [选项] 命令...",
+      "options": [
+        {
+          "option": "-a",
+          "description": "显示PATH中所有匹配的命令"
+        },
+        {
+          "option": "-s",
+          "description": "静默模式，不输出任何信息"
+        },
+        {
+          "option": "-v",
+          "description": "显示版本信息"
+        }
+      ],
+      "examples": [
+        {
+          "command": "which python",
+          "description": "查找python命令的位置"
+        },
+        {
+          "command": "which -a python",
+          "description": "查找所有python命令的位置"
+        },
+        {
+          "command": "which ls cd pwd",
+          "description": "查找多个命令的位置"
+        }
+      ],
+      "related_commands": [
+        "whereis",
+        "type",
+        "locate",
+        "find"
+      ],
+      "tags": [
+        "命令查找",
+        "PATH",
+        "位置"
+      ]
+    },
+    "lsof": {
+      "command": "lsof",
+      "description": "显示系统中被进程打开的文件列表",
+      "syntax": "lsof [选项] [文件名|进程]",
+      "category": "system_info",
+      "options": [
+        {
+          "option": "-p PID",
+          "description": "显示指定进程ID打开的文件"
+        },
+        {
+          "option": "-u 用户",
+          "description": "显示指定用户打开的文件"
+        },
+        {
+          "option": "-c 进程名",
+          "description": "显示指定进程名打开的文件"
+        },
+        {
+          "option": "-i [协议][:端口]",
+          "description": "显示网络连接相关的文件"
+        },
+        {
+          "option": "-t",
+          "description": "仅显示进程ID"
+        },
+        {
+          "option": "-n",
+          "description": "显示IP地址而不是主机名"
+        },
+        {
+          "option": "-P",
+          "description": "显示端口号而不是服务名"
+        },
+        {
+          "option": "+D 目录",
+          "description": "显示指定目录及其子目录中被打开的文件"
+        },
+        {
+          "option": "-a",
+          "description": "AND逻辑，所有条件必须满足"
+        }
+      ],
+      "examples": [
+        {
+          "command": "lsof /var/log/messages",
+          "description": "查看哪个进程在使用该文件"
+        },
+        {
+          "command": "lsof -u root",
+          "description": "显示root用户打开的所有文件"
+        },
+        {
+          "command": "lsof -c ssh",
+          "description": "显示ssh进程打开的文件"
+        },
+        {
+          "command": "lsof -i :22",
+          "description": "显示使用22端口的进程"
+        },
+        {
+          "command": "lsof -i tcp:80",
+          "description": "显示使用TCP 80端口的进程"
+        },
+        {
+          "command": "lsof -p 1234",
+          "description": "显示进程ID为1234的进程打开的文件"
+        },
+        {
+          "command": "lsof +D /tmp",
+          "description": "显示/tmp目录下被打开的文件"
+        }
+      ],
+      "related_commands": [
+        "ps",
+        "netstat",
+        "ss",
+        "fuser"
+      ],
+      "tags": [
+        "文件",
+        "进程",
+        "网络连接",
+        "系统监控",
+        "调试"
+      ]
+    },
+    "top": {
+      "name": "top",
+      "description": "显示实时运行的进程信息",
+      "category": "系统监控",
+      "usage": "top [选项]",
+      "options": [
+        {
+          "option": "-d",
+          "description": "设置刷新间隔（秒）"
+        },
+        {
+          "option": "-p",
+          "description": "仅显示指定进程ID"
+        },
+        {
+          "option": "-u",
+          "description": "仅显示指定用户的进程"
+        },
+        {
+          "option": "-n",
+          "description": "设置更新次数后退出"
+        }
+      ],
+      "examples": [
+        {
+          "command": "top",
+          "description": "实时查看系统进程"
+        },
+        {
+          "command": "top -d 1",
+          "description": "每秒刷新一次"
+        },
+        {
+          "command": "top -u username",
+          "description": "仅显示指定用户的进程"
+        },
+        {
+          "command": "top -n 5",
+          "description": "更新5次后退出"
+        }
+      ],
+      "related_commands": [
+        "ps",
+        "htop",
+        "kill",
+        "jobs"
+      ],
+      "tags": [
+        "进程",
+        "实时监控",
+        "系统资源",
+        "CPU"
+      ]
+    },
+    "whereis": {
+      "name": "whereis",
+      "description": "查找命令、源代码和手册页的位置",
+      "category": "系统查询",
+      "usage": "whereis [选项] 命令...",
+      "options": [
+        {
+          "option": "-b",
+          "description": "仅查找二进制文件"
+        },
+        {
+          "option": "-m",
+          "description": "仅查找手册页"
+        },
+        {
+          "option": "-s",
+          "description": "仅查找源代码文件"
+        },
+        {
+          "option": "-u",
+          "description": "查找不寻常的条目"
+        }
+      ],
+      "examples": [
+        {
+          "command": "whereis ls",
+          "description": "查找ls命令的所有相关文件"
+        },
+        {
+          "command": "whereis -b python",
+          "description": "仅查找python的二进制文件"
+        },
+        {
+          "command": "whereis -m gcc",
+          "description": "仅查找gcc的手册页"
+        },
+        {
+          "command": "whereis -s kernel",
+          "description": "查找kernel的源代码文件"
+        }
+      ],
+      "related_commands": [
+        "which",
+        "locate",
+        "find",
+        "man"
+      ],
+      "tags": [
+        "命令查找",
+        "手册页",
+        "源代码",
+        "二进制"
+      ]
+    },
+    "chown": {
+      "name": "chown",
+      "description": "修改文件和目录的所有者和组",
+      "category": "权限管理",
+      "usage": "chown [选项] 所有者[:Group] 文件...",
+      "options": [
+        {
+          "option": "-R",
+          "description": "递归修改目录及其内容的所有者"
+        },
+        {
+          "option": "-v",
+          "description": "显示修改过程信息"
+        },
+        {
+          "option": "-c",
+          "description": "仅在所有者发生变化时显示信息"
+        },
+        {
+          "option": "--reference",
+          "description": "参照另一个文件的所有者"
+        }
+      ],
+      "examples": [
+        {
+          "command": "chown user file.txt",
+          "description": "修改文件所有者"
+        },
+        {
+          "command": "chown user:group file.txt",
+          "description": "同时修改所有者和组"
+        },
+        {
+          "command": "chown -R www-data:www-data /var/www/",
+          "description": "递归修改目录所有者"
+        },
+        {
+          "command": "chown :admin file.txt",
+          "description": "仅修改组所有者"
+        }
+      ],
+      "related_commands": [
+        "chmod",
+        "chgrp",
+        "ls",
+        "stat"
+      ],
+      "tags": [
+        "所有者",
+        "组",
+        "权限",
+        "修改"
+      ]
+    },
+    "jobs": {
+      "name": "jobs",
+      "description": "显示当前终端的作业列表",
+      "category": "进程管理",
+      "usage": "jobs [选项]",
+      "options": [
+        {
+          "option": "-l",
+          "description": "显示进程ID和详细信息"
+        },
+        {
+          "option": "-p",
+          "description": "仅显示进程ID"
+        },
+        {
+          "option": "-r",
+          "description": "仅显示运行中的作业"
+        },
+        {
+          "option": "-s",
+          "description": "仅显示停止的作业"
+        }
+      ],
+      "examples": [
+        {
+          "command": "jobs",
+          "description": "显示所有作业"
+        },
+        {
+          "command": "jobs -l",
+          "description": "显示作业及其进程ID"
+        },
+        {
+          "command": "jobs -r",
+          "description": "显示运行中的作业"
+        },
+        {
+          "command": "jobs %1",
+          "description": "显示指定作业信息"
+        }
+      ],
+      "related_commands": [
+        "bg",
+        "fg",
+        "nohup",
+        "ps"
+      ],
+      "tags": [
+        "作业",
+        "后台进程",
+        "进程管理"
+      ]
+    },
+    "chmod": {
+      "name": "chmod",
+      "description": "修改文件和目录权限",
+      "category": "权限管理",
+      "usage": "chmod [选项] 权限 文件...",
+      "options": [
+        {
+          "option": "-R",
+          "description": "递归修改目录及其内容的权限"
+        },
+        {
+          "option": "-v",
+          "description": "显示修改过程信息"
+        },
+        {
+          "option": "-c",
+          "description": "仅在权限发生变化时显示信息"
+        },
+        {
+          "option": "--reference",
+          "description": "参照另一个文件的权限"
+        }
+      ],
+      "examples": [
+        {
+          "command": "chmod 755 script.sh",
+          "description": "设置脚本为可执行权限"
+        },
+        {
+          "command": "chmod +x file",
+          "description": "添加执行权限"
+        },
+        {
+          "command": "chmod -R 644 directory/",
+          "description": "递归设置目录内文件权限"
+        },
+        {
+          "command": "chmod u+w,g-r,o-r file.txt",
+          "description": "细粒度权限设置"
+        }
+      ],
+      "related_commands": [
+        "chown",
+        "chgrp",
+        "ls",
+        "stat"
+      ],
+      "tags": [
+        "权限",
+        "修改",
+        "文件权限",
+        "可执行"
+      ]
+    }
+  },
+  "metadata": {
+    "total_commands": 12,
+    "last_updated": "2025-08-01T12:27:19.434986",
+    "version": "2.0",
+    "migrated_from": "individual_files"
+  }
+}

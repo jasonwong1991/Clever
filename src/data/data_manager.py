@@ -47,13 +47,14 @@ class DataManager:
         current_lang = self.i18n.get_language()
         commands_dir = os.path.join(self.data_dir, f'commands_{current_lang}')
         
-        # 在各个子目录中搜索命令文件
-        subdirs = ['basic', 'advanced', 'tools', 'network', 'system', 'text', 'dev', 'version', 'container', 'compression', 'advanced_tools']
-        for subdir in subdirs:
-            command_file = os.path.join(commands_dir, subdir, f'{command_name}.json')
-            if os.path.exists(command_file):
-                command_data = load_json_file(command_file)
-                if command_data:
+        # 搜索所有分类文件
+        category_files = glob.glob(os.path.join(commands_dir, '*.json'))
+        for category_file in category_files:
+            category_data = load_json_file(category_file)
+            if category_data and 'commands' in category_data:
+                commands = category_data['commands']
+                if command_name in commands:
+                    command_data = commands[command_name]
                     self.commands_cache[command_name] = command_data
                     return command_data
         
@@ -68,19 +69,13 @@ class DataManager:
         current_lang = self.i18n.get_language()
         commands_dir = os.path.join(self.data_dir, f'commands_{current_lang}')
         
-        # 遍历所有子目录
-        subdirs = ['basic', 'advanced', 'tools', 'network', 'system', 'text', 'dev', 'version', 'container', 'compression', 'advanced_tools']
-        for subdir in subdirs:
-            subdir_path = os.path.join(commands_dir, subdir)
-            if not os.path.exists(subdir_path):
-                continue
-            
-            # 加载该子目录下的所有JSON文件
-            json_files = list_json_files(subdir_path)
-            for json_file in json_files:
-                command_name = os.path.splitext(os.path.basename(json_file))[0]
-                command_data = load_json_file(json_file)
-                if command_data:
+        # 加载所有分类文件
+        category_files = glob.glob(os.path.join(commands_dir, '*.json'))
+        for category_file in category_files:
+            category_data = load_json_file(category_file)
+            if category_data and 'commands' in category_data:
+                commands = category_data['commands']
+                for command_name, command_data in commands.items():
                     self.commands_cache[command_name] = command_data
         
         return self.commands_cache
@@ -128,11 +123,14 @@ class DataManager:
         current_lang = self.i18n.get_language()
         commands_dir = os.path.join(self.data_dir, f'commands_{current_lang}')
         
-        subdirs = ['basic', 'advanced', 'tools', 'network', 'system', 'text', 'dev', 'version', 'container']
-        for subdir in subdirs:
-            command_file = os.path.join(commands_dir, subdir, f'{command_name}.json')
-            if os.path.exists(command_file):
-                return command_file
+        # 搜索所有分类文件
+        category_files = glob.glob(os.path.join(commands_dir, '*.json'))
+        for category_file in category_files:
+            category_data = load_json_file(category_file)
+            if category_data and 'commands' in category_data:
+                commands = category_data['commands']
+                if command_name in commands:
+                    return category_file
         return None
     
     def get_i18n_manager(self) -> I18nManager:

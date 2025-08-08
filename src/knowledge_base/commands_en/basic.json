@@ -1,0 +1,838 @@
+{
+  "category": "basic",
+  "category_name": "File Management",
+  "description": "basic commands",
+  "commands": {
+    "cd": {
+      "name": "cd",
+      "description": "Change the current working directory",
+      "category": "File Management",
+      "usage": "cd [directory]",
+      "options": [
+        {
+          "option": "~",
+          "description": "Change to user home directory"
+        },
+        {
+          "option": "..",
+          "description": "Change to parent directory"
+        },
+        {
+          "option": "-",
+          "description": "Change to previous working directory"
+        }
+      ],
+      "examples": [
+        {
+          "command": "cd",
+          "description": "Change to user home directory"
+        },
+        {
+          "command": "cd /home/user",
+          "description": "Change to specified directory"
+        },
+        {
+          "command": "cd ..",
+          "description": "Go up one directory level"
+        },
+        {
+          "command": "cd -",
+          "description": "Switch to previous directory"
+        }
+      ],
+      "related_commands": [
+        "pwd",
+        "ls",
+        "pushd",
+        "popd"
+      ],
+      "tags": [
+        "directory",
+        "navigation",
+        "change"
+      ]
+    },
+    "touch": {
+      "name": "touch",
+      "description": "Create empty files or update file timestamps",
+      "category": "File Management",
+      "usage": "touch [options] file...",
+      "options": [
+        {
+          "option": "-a",
+          "description": "Update only access time"
+        },
+        {
+          "option": "-m",
+          "description": "Update only modification time"
+        },
+        {
+          "option": "-c",
+          "description": "Do not create new files"
+        },
+        {
+          "option": "-t",
+          "description": "Specify timestamp"
+        }
+      ],
+      "examples": [
+        {
+          "command": "touch newfile.txt",
+          "description": "Create a new empty file"
+        },
+        {
+          "command": "touch file1 file2 file3",
+          "description": "Create multiple files at once"
+        },
+        {
+          "command": "touch -a existingfile",
+          "description": "Update file access time"
+        },
+        {
+          "command": "touch -t 202301011200 file.txt",
+          "description": "Set file time to specified timestamp"
+        }
+      ],
+      "related_commands": [
+        "ls",
+        "stat",
+        "date"
+      ],
+      "tags": [
+        "create file",
+        "timestamp",
+        "empty file"
+      ]
+    },
+    "more": {
+      "name": "more",
+      "description": "Display file contents page by page (simple version)",
+      "category": "File Viewing",
+      "usage": "more [options] file...",
+      "options": [
+        {
+          "option": "-d",
+          "description": "Display user-friendly prompt messages"
+        },
+        {
+          "option": "-f",
+          "description": "Do not wrap long lines"
+        },
+        {
+          "option": "-p",
+          "description": "Do not scroll, clear screen for display"
+        },
+        {
+          "option": "-s",
+          "description": "Squeeze multiple blank lines into one"
+        }
+      ],
+      "examples": [
+        {
+          "command": "more file.txt",
+          "description": "Display file contents page by page"
+        },
+        {
+          "command": "more -d longfile.txt",
+          "description": "Display file with prompt messages"
+        },
+        {
+          "command": "ls -la | more",
+          "description": "Display command output page by page"
+        }
+      ],
+      "related_commands": [
+        "less",
+        "cat",
+        "head",
+        "tail"
+      ],
+      "tags": [
+        "pager",
+        "file viewing",
+        "simple pager"
+      ]
+    },
+    "cp": {
+      "name": "cp",
+      "description": "Copy files and directories",
+      "category": "File Management",
+      "usage": "cp [options] source_file target_file",
+      "options": [
+        {
+          "option": "-r",
+          "description": "Copy directories and their contents recursively"
+        },
+        {
+          "option": "-i",
+          "description": "Prompt before overwriting"
+        },
+        {
+          "option": "-v",
+          "description": "Display verbose information about copy process"
+        },
+        {
+          "option": "-p",
+          "description": "Preserve file attributes (permissions, timestamps)"
+        }
+      ],
+      "examples": [
+        {
+          "command": "cp file1.txt file2.txt",
+          "description": "Copy a file"
+        },
+        {
+          "command": "cp -r dir1 dir2",
+          "description": "Copy directory recursively"
+        },
+        {
+          "command": "cp -i *.txt backup/",
+          "description": "Copy all txt files to backup directory"
+        },
+        {
+          "command": "cp -p original.txt copy.txt",
+          "description": "Copy file preserving attributes"
+        }
+      ],
+      "related_commands": [
+        "mv",
+        "ln",
+        "rsync",
+        "scp"
+      ],
+      "tags": [
+        "copy",
+        "file",
+        "directory",
+        "backup"
+      ]
+    },
+    "head": {
+      "name": "head",
+      "description": "Display the beginning of files",
+      "category": "File Viewing",
+      "usage": "head [options] file...",
+      "options": [
+        {
+          "option": "-n",
+          "description": "Specify number of lines to display (default 10)"
+        },
+        {
+          "option": "-c",
+          "description": "Display by number of bytes"
+        },
+        {
+          "option": "-q",
+          "description": "Do not display file name headers"
+        },
+        {
+          "option": "-v",
+          "description": "Always display file name headers"
+        }
+      ],
+      "examples": [
+        {
+          "command": "head file.txt",
+          "description": "Display first 10 lines of file"
+        },
+        {
+          "command": "head -n 20 file.txt",
+          "description": "Display first 20 lines of file"
+        },
+        {
+          "command": "head -c 100 file.txt",
+          "description": "Display first 100 bytes of file"
+        },
+        {
+          "command": "head -n 5 *.txt",
+          "description": "Display first 5 lines of all txt files"
+        }
+      ],
+      "related_commands": [
+        "tail",
+        "cat",
+        "less",
+        "more"
+      ],
+      "tags": [
+        "file beginning",
+        "partial display",
+        "first lines"
+      ]
+    },
+    "cat": {
+      "name": "cat",
+      "description": "Display file contents",
+      "category": "File Viewing",
+      "usage": "cat [options] file...",
+      "options": [
+        {
+          "option": "-n",
+          "description": "Display line numbers"
+        },
+        {
+          "option": "-b",
+          "description": "Number only non-empty lines"
+        },
+        {
+          "option": "-A",
+          "description": "Show all non-printing characters"
+        },
+        {
+          "option": "-s",
+          "description": "Squeeze multiple blank lines into one"
+        }
+      ],
+      "examples": [
+        {
+          "command": "cat file.txt",
+          "description": "Display file contents"
+        },
+        {
+          "command": "cat -n file.txt",
+          "description": "Display file contents with line numbers"
+        },
+        {
+          "command": "cat file1.txt file2.txt",
+          "description": "Concatenate and display multiple files"
+        },
+        {
+          "command": "cat > newfile.txt",
+          "description": "Create new file and input content"
+        }
+      ],
+      "related_commands": [
+        "less",
+        "more",
+        "head",
+        "tail"
+      ],
+      "tags": [
+        "file viewing",
+        "display content",
+        "concatenate"
+      ]
+    },
+    "mkdir": {
+      "name": "mkdir",
+      "description": "Create directories",
+      "category": "File Management",
+      "usage": "mkdir [options] directory_name...",
+      "options": [
+        {
+          "option": "-p",
+          "description": "Create parent directories recursively"
+        },
+        {
+          "option": "-m",
+          "description": "Set directory permissions"
+        },
+        {
+          "option": "-v",
+          "description": "Display verbose information about creation process"
+        }
+      ],
+      "examples": [
+        {
+          "command": "mkdir mydir",
+          "description": "Create a directory named mydir"
+        },
+        {
+          "command": "mkdir -p parent/child",
+          "description": "Create nested directories recursively"
+        },
+        {
+          "command": "mkdir -m 755 newdir",
+          "description": "Create directory with 755 permissions"
+        },
+        {
+          "command": "mkdir dir1 dir2 dir3",
+          "description": "Create multiple directories at once"
+        }
+      ],
+      "related_commands": [
+        "rmdir",
+        "rm",
+        "ls",
+        "cd"
+      ],
+      "tags": [
+        "directory",
+        "create",
+        "filesystem"
+      ]
+    },
+    "rm": {
+      "name": "rm",
+      "description": "Remove files and directories",
+      "category": "File Management",
+      "usage": "rm [options] file...",
+      "options": [
+        {
+          "option": "-r",
+          "description": "Remove directories and their contents recursively"
+        },
+        {
+          "option": "-f",
+          "description": "Force removal without prompting"
+        },
+        {
+          "option": "-i",
+          "description": "Prompt before each removal"
+        },
+        {
+          "option": "-v",
+          "description": "Display verbose information about removal process"
+        }
+      ],
+      "examples": [
+        {
+          "command": "rm file.txt",
+          "description": "Remove a file"
+        },
+        {
+          "command": "rm -rf directory",
+          "description": "Force recursive removal of directory"
+        },
+        {
+          "command": "rm -i *.txt",
+          "description": "Interactively remove all txt files"
+        },
+        {
+          "command": "rm -v file1 file2",
+          "description": "Remove multiple files with verbose output"
+        }
+      ],
+      "related_commands": [
+        "rmdir",
+        "mv",
+        "cp",
+        "ls"
+      ],
+      "tags": [
+        "remove",
+        "delete",
+        "file",
+        "directory",
+        "force"
+      ]
+    },
+    "tail": {
+      "name": "tail",
+      "description": "Display the end of files",
+      "category": "File Viewing",
+      "usage": "tail [options] file...",
+      "options": [
+        {
+          "option": "-n",
+          "description": "Specify number of lines to display (default 10)"
+        },
+        {
+          "option": "-f",
+          "description": "Monitor file changes in real-time"
+        },
+        {
+          "option": "-c",
+          "description": "Display by number of bytes"
+        },
+        {
+          "option": "-F",
+          "description": "Similar to -f, but will reopen file"
+        }
+      ],
+      "examples": [
+        {
+          "command": "tail file.txt",
+          "description": "Display last 10 lines of file"
+        },
+        {
+          "command": "tail -n 20 file.txt",
+          "description": "Display last 20 lines of file"
+        },
+        {
+          "command": "tail -f /var/log/messages",
+          "description": "Monitor log file in real-time"
+        },
+        {
+          "command": "tail -c 100 file.txt",
+          "description": "Display last 100 bytes of file"
+        }
+      ],
+      "related_commands": [
+        "head",
+        "cat",
+        "less",
+        "more"
+      ],
+      "tags": [
+        "file end",
+        "real-time monitoring",
+        "log viewing"
+      ]
+    },
+    "find": {
+      "name": "find",
+      "description": "Search for files and directories in directory tree",
+      "category": "File Search",
+      "usage": "find [path] [expression]",
+      "options": [
+        {
+          "option": "-name",
+          "description": "Search by filename"
+        },
+        {
+          "option": "-type",
+          "description": "Search by file type (f=file, d=directory)"
+        },
+        {
+          "option": "-size",
+          "description": "Search by file size"
+        },
+        {
+          "option": "-exec",
+          "description": "Execute command on found files"
+        }
+      ],
+      "examples": [
+        {
+          "command": "find . -name '*.txt'",
+          "description": "Find all txt files in current directory"
+        },
+        {
+          "command": "find /home -type d -name 'backup'",
+          "description": "Find directories named backup"
+        },
+        {
+          "command": "find . -size +10M",
+          "description": "Find files larger than 10MB"
+        },
+        {
+          "command": "find . -name '*.log' -exec rm {} \\;",
+          "description": "Find and delete all log files"
+        }
+      ],
+      "related_commands": [
+        "locate",
+        "which",
+        "whereis",
+        "grep"
+      ],
+      "tags": [
+        "search",
+        "file",
+        "locate",
+        "directory"
+      ]
+    },
+    "ls": {
+      "name": "ls",
+      "description": "List directory contents",
+      "category": "file_management",
+      "usage": "ls [options] [directory]",
+      "options": [
+        {
+          "option": "-l",
+          "description": "Use long listing format"
+        },
+        {
+          "option": "-a",
+          "description": "Show all files including hidden ones"
+        },
+        {
+          "option": "-h",
+          "description": "Show file sizes in human readable format"
+        },
+        {
+          "option": "-t",
+          "description": "Sort by modification time"
+        },
+        {
+          "option": "-r",
+          "description": "Reverse order while sorting"
+        },
+        {
+          "option": "-R",
+          "description": "List subdirectories recursively"
+        }
+      ],
+      "examples": [
+        {
+          "command": "ls",
+          "description": "List files and directories in current directory"
+        },
+        {
+          "command": "ls -la",
+          "description": "List all files in long format including hidden files"
+        },
+        {
+          "command": "ls -lh",
+          "description": "List files with human readable file sizes"
+        },
+        {
+          "command": "ls -lt",
+          "description": "List files sorted by modification time"
+        }
+      ],
+      "related_commands": [
+        "cd",
+        "pwd",
+        "find",
+        "tree"
+      ],
+      "tags": [
+        "file",
+        "directory",
+        "list",
+        "view"
+      ]
+    },
+    "pwd": {
+      "name": "pwd",
+      "description": "Print the current working directory path",
+      "category": "File Management",
+      "usage": "pwd",
+      "options": [
+        {
+          "option": "-L",
+          "description": "Print logical path (default)"
+        },
+        {
+          "option": "-P",
+          "description": "Print physical path, resolving symbolic links"
+        }
+      ],
+      "examples": [
+        {
+          "command": "pwd",
+          "description": "Display current directory path"
+        },
+        {
+          "command": "pwd -P",
+          "description": "Display physical path"
+        }
+      ],
+      "related_commands": [
+        "cd",
+        "ls",
+        "dirname",
+        "basename"
+      ],
+      "tags": [
+        "directory",
+        "path",
+        "current location"
+      ]
+    },
+    "mv": {
+      "name": "mv",
+      "description": "Move or rename files and directories",
+      "category": "File Management",
+      "usage": "mv [options] source_file target_file",
+      "options": [
+        {
+          "option": "-i",
+          "description": "Prompt before overwriting"
+        },
+        {
+          "option": "-f",
+          "description": "Force overwrite without prompting"
+        },
+        {
+          "option": "-v",
+          "description": "Display verbose information about move process"
+        },
+        {
+          "option": "-n",
+          "description": "Do not overwrite existing files"
+        }
+      ],
+      "examples": [
+        {
+          "command": "mv oldname.txt newname.txt",
+          "description": "Rename a file"
+        },
+        {
+          "command": "mv file.txt /path/to/destination/",
+          "description": "Move file to specified directory"
+        },
+        {
+          "command": "mv -i *.txt backup/",
+          "description": "Move all txt files with confirmation"
+        },
+        {
+          "command": "mv directory1 directory2",
+          "description": "Rename a directory"
+        }
+      ],
+      "related_commands": [
+        "cp",
+        "rm",
+        "rename",
+        "ln"
+      ],
+      "tags": [
+        "move",
+        "rename",
+        "file",
+        "directory"
+      ]
+    },
+    "less": {
+      "name": "less",
+      "description": "View file contents page by page",
+      "category": "File Viewing",
+      "usage": "less [options] file...",
+      "options": [
+        {
+          "option": "-N",
+          "description": "Display line numbers"
+        },
+        {
+          "option": "-S",
+          "description": "Do not wrap long lines, scroll horizontally"
+        },
+        {
+          "option": "-i",
+          "description": "Ignore case in searches"
+        },
+        {
+          "option": "+F",
+          "description": "Monitor file changes in real-time (like tail -f)"
+        }
+      ],
+      "examples": [
+        {
+          "command": "less file.txt",
+          "description": "View file page by page"
+        },
+        {
+          "command": "less -N logfile.log",
+          "description": "View file with line numbers"
+        },
+        {
+          "command": "ps aux | less",
+          "description": "View command output page by page"
+        },
+        {
+          "command": "less +F /var/log/messages",
+          "description": "Monitor log file in real-time"
+        }
+      ],
+      "related_commands": [
+        "more",
+        "cat",
+        "head",
+        "tail"
+      ],
+      "tags": [
+        "pager",
+        "file viewing",
+        "real-time monitoring"
+      ]
+    },
+    "rmdir": {
+      "name": "rmdir",
+      "description": "Remove empty directories",
+      "category": "File Management",
+      "usage": "rmdir [options] directory_name...",
+      "options": [
+        {
+          "option": "-p",
+          "description": "Remove empty parent directories recursively"
+        },
+        {
+          "option": "-v",
+          "description": "Display verbose information about removal process"
+        },
+        {
+          "option": "--ignore-fail-on-non-empty",
+          "description": "Ignore failures on non-empty directories"
+        }
+      ],
+      "examples": [
+        {
+          "command": "rmdir emptydir",
+          "description": "Remove an empty directory"
+        },
+        {
+          "command": "rmdir -p parent/child",
+          "description": "Remove empty directories recursively"
+        },
+        {
+          "command": "rmdir -v dir1 dir2",
+          "description": "Remove multiple empty directories with verbose output"
+        }
+      ],
+      "related_commands": [
+        "mkdir",
+        "rm",
+        "ls"
+      ],
+      "tags": [
+        "directory",
+        "remove",
+        "empty directory"
+      ]
+    },
+    "ln": {
+      "name": "ln",
+      "description": "Create links between files or directories",
+      "category": "File Management",
+      "usage": "ln [options] target link_name",
+      "options": [
+        {
+          "option": "-s",
+          "description": "Create symbolic link (soft link)"
+        },
+        {
+          "option": "-f",
+          "description": "Force overwrite existing target file"
+        },
+        {
+          "option": "-i",
+          "description": "Prompt before overwriting"
+        },
+        {
+          "option": "-v",
+          "description": "Display verbose information about creation process"
+        }
+      ],
+      "examples": [
+        {
+          "command": "ln -s /path/to/file symlink",
+          "description": "Create a symbolic link"
+        },
+        {
+          "command": "ln file.txt hardlink.txt",
+          "description": "Create a hard link"
+        },
+        {
+          "command": "ln -sf new_target existing_link",
+          "description": "Force update symbolic link"
+        },
+        {
+          "command": "ln -s /usr/bin/python3 python",
+          "description": "Create python alias for python3"
+        }
+      ],
+      "related_commands": [
+        "ls",
+        "readlink",
+        "unlink",
+        "stat"
+      ],
+      "tags": [
+        "link",
+        "symbolic link",
+        "hard link",
+        "alias"
+      ]
+    }
+  },
+  "metadata": {
+    "total_commands": 16,
+    "last_updated": "2025-08-01T12:27:19.445762",
+    "version": "2.0",
+    "migrated_from": "individual_files"
+  }
+}

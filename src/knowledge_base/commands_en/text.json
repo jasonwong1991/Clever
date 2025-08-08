@@ -1,0 +1,86 @@
+{
+  "category": "text",
+  "category_name": "File Management",
+  "description": "text commands",
+  "commands": {
+    "cut": {
+      "command": "cut",
+      "description": "Extract columns or fields from files or standard input",
+      "syntax": "cut [options] [files...]",
+      "category": "text_processing",
+      "options": [
+        {
+          "option": "-c columns",
+          "description": "Extract by character positions, e.g. -c1-10"
+        },
+        {
+          "option": "-f fields",
+          "description": "Extract by fields, e.g. -f1,3,5"
+        },
+        {
+          "option": "-d delimiter",
+          "description": "Specify field delimiter, default is tab"
+        },
+        {
+          "option": "-s",
+          "description": "Don't print lines without delimiter"
+        },
+        {
+          "option": "--output-delimiter=char",
+          "description": "Specify output delimiter"
+        },
+        {
+          "option": "--complement",
+          "description": "Output all fields except specified ones"
+        }
+      ],
+      "examples": [
+        {
+          "command": "cut -c1-5 file.txt",
+          "description": "Extract characters 1-5 from each line"
+        },
+        {
+          "command": "cut -f1,3 -d',' data.csv",
+          "description": "Extract columns 1 and 3 from CSV file"
+        },
+        {
+          "command": "echo 'a:b:c:d' | cut -f2-3 -d':'",
+          "description": "Extract fields 2-3 using colon delimiter"
+        },
+        {
+          "command": "cut -f2- -d' ' file.txt",
+          "description": "Extract from field 2 to end"
+        },
+        {
+          "command": "cut -f1 -d':' /etc/passwd",
+          "description": "Extract usernames from passwd file"
+        },
+        {
+          "command": "ps aux | cut -c1-20",
+          "description": "Show first 20 characters of process list"
+        }
+      ],
+      "related_commands": [
+        "awk",
+        "sed",
+        "tr",
+        "sort",
+        "grep"
+      ],
+      "tags": [
+        "text",
+        "extract",
+        "column",
+        "field",
+        "CSV",
+        "delimiter"
+      ]
+    }
+  },
+  "metadata": {
+    "total_commands": 1,
+    "last_updated": "2025-08-01T12:27:19.446097",
+    "version": "2.0",
+    "migrated_from": "individual_files"
+  }
+}

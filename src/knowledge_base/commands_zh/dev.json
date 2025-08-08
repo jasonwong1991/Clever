@@ -1,0 +1,510 @@
+{
+  "category": "dev",
+  "category_name": "文件管理",
+  "description": "dev commands",
+  "commands": {
+    "npm": {
+      "name": "npm",
+      "description": "Node.js包管理器",
+      "category": "开发工具",
+      "usage": "npm [命令] [选项]",
+      "options": [
+        {
+          "option": "install",
+          "description": "安装依赖包"
+        },
+        {
+          "option": "start",
+          "description": "运行start脚本"
+        },
+        {
+          "option": "test",
+          "description": "运行测试脚本"
+        },
+        {
+          "option": "build",
+          "description": "运行构建脚本"
+        },
+        {
+          "option": "init",
+          "description": "初始化package.json"
+        },
+        {
+          "option": "publish",
+          "description": "发布包到npm仓库"
+        },
+        {
+          "option": "update",
+          "description": "更新依赖包"
+        },
+        {
+          "option": "list",
+          "description": "列出已安装的包"
+        }
+      ],
+      "examples": [
+        {
+          "command": "npm install",
+          "description": "安装package.json中的所有依赖"
+        },
+        {
+          "command": "npm install express",
+          "description": "安装express包"
+        },
+        {
+          "command": "npm start",
+          "description": "运行项目"
+        },
+        {
+          "command": "npm run build",
+          "description": "构建项目"
+        }
+      ],
+      "related_commands": [
+        "yarn",
+        "node",
+        "npx"
+      ],
+      "tags": [
+        "Node.js",
+        "包管理",
+        "JavaScript",
+        "开发"
+      ]
+    },
+    "make": {
+      "command": "make",
+      "description": "自动化构建工具，根据Makefile编译项目",
+      "syntax": "make [选项] [目标...]",
+      "category": "development",
+      "options": [
+        {
+          "option": "-f 文件",
+          "description": "指定Makefile文件"
+        },
+        {
+          "option": "-j [N]",
+          "description": "并行编译，N为并行任务数"
+        },
+        {
+          "option": "-C 目录",
+          "description": "切换到指定目录执行"
+        },
+        {
+          "option": "-n",
+          "description": "显示将要执行的命令但不执行"
+        },
+        {
+          "option": "-s",
+          "description": "静默模式，不显示命令"
+        },
+        {
+          "option": "-k",
+          "description": "即使有错误也继续执行"
+        },
+        {
+          "option": "-B",
+          "description": "强制重新构建所有目标"
+        },
+        {
+          "option": "--version",
+          "description": "显示make版本"
+        }
+      ],
+      "examples": [
+        {
+          "command": "make",
+          "description": "执行默认目标"
+        },
+        {
+          "command": "make clean",
+          "description": "执行clean目标"
+        },
+        {
+          "command": "make -j4",
+          "description": "使用4个并行任务编译"
+        },
+        {
+          "command": "make -f custom.mk",
+          "description": "使用指定的Makefile"
+        },
+        {
+          "command": "make -C src/",
+          "description": "在src目录执行make"
+        },
+        {
+          "command": "make -n install",
+          "description": "显示install目标的命令但不执行"
+        },
+        {
+          "command": "make -B all",
+          "description": "强制重新构建all目标"
+        }
+      ],
+      "related_commands": [
+        "gcc",
+        "cmake",
+        "ninja",
+        "autoconf"
+      ],
+      "tags": [
+        "构建",
+        "编译",
+        "Makefile",
+        "自动化",
+        "项目管理"
+      ]
+    },
+    "pip": {
+      "command": "pip",
+      "description": "Python包管理工具",
+      "syntax": "pip [命令] [选项] [包名]",
+      "category": "development",
+      "options": [
+        {
+          "option": "install 包名",
+          "description": "安装Python包"
+        },
+        {
+          "option": "uninstall 包名",
+          "description": "卸载Python包"
+        },
+        {
+          "option": "list",
+          "description": "列出已安装的包"
+        },
+        {
+          "option": "show 包名",
+          "description": "显示包的详细信息"
+        },
+        {
+          "option": "freeze",
+          "description": "输出已安装包的版本列表"
+        },
+        {
+          "option": "search 关键词",
+          "description": "搜索包(已弃用)"
+        },
+        {
+          "option": "upgrade 包名",
+          "description": "升级包到最新版本"
+        },
+        {
+          "option": "--user",
+          "description": "安装到用户目录"
+        },
+        {
+          "option": "-r requirements.txt",
+          "description": "从文件安装依赖"
+        }
+      ],
+      "examples": [
+        {
+          "command": "pip install requests",
+          "description": "安装requests包"
+        },
+        {
+          "command": "pip install requests==2.25.1",
+          "description": "安装指定版本的包"
+        },
+        {
+          "command": "pip install --user numpy",
+          "description": "安装到用户目录"
+        },
+        {
+          "command": "pip list",
+          "description": "列出所有已安装的包"
+        },
+        {
+          "command": "pip show django",
+          "description": "显示Django包的详细信息"
+        },
+        {
+          "command": "pip freeze > requirements.txt",
+          "description": "导出依赖列表到文件"
+        },
+        {
+          "command": "pip install -r requirements.txt",
+          "description": "从文件安装所有依赖"
+        },
+        {
+          "command": "pip install --upgrade pip",
+          "description": "升级pip本身"
+        }
+      ],
+      "related_commands": [
+        "python",
+        "conda",
+        "virtualenv",
+        "pipenv"
+      ],
+      "tags": [
+        "Python",
+        "包管理",
+        "安装",
+        "依赖",
+        "PyPI"
+      ]
+    },
+    "node": {
+      "command": "node",
+      "description": "Node.js JavaScript运行时环境",
+      "syntax": "node [选项] [脚本文件] [参数...]",
+      "category": "development",
+      "options": [
+        {
+          "option": "-v, --version",
+          "description": "显示Node.js版本"
+        },
+        {
+          "option": "-e, --eval",
+          "description": "执行JavaScript代码字符串"
+        },
+        {
+          "option": "-i, --interactive",
+          "description": "启动交互式REPL模式"
+        },
+        {
+          "option": "-r, --require",
+          "description": "预加载模块"
+        },
+        {
+          "option": "--inspect",
+          "description": "启用调试器"
+        },
+        {
+          "option": "--max-old-space-size",
+          "description": "设置最大内存使用量"
+        },
+        {
+          "option": "-c, --check",
+          "description": "检查语法但不执行"
+        }
+      ],
+      "examples": [
+        {
+          "command": "node app.js",
+          "description": "运行JavaScript文件"
+        },
+        {
+          "command": "node -v",
+          "description": "查看Node.js版本"
+        },
+        {
+          "command": "node -e \"console.log('Hello World')\"",
+          "description": "执行单行JavaScript代码"
+        },
+        {
+          "command": "node -i",
+          "description": "启动交互式Node.js环境"
+        },
+        {
+          "command": "node --inspect app.js",
+          "description": "以调试模式运行应用"
+        },
+        {
+          "command": "node -r dotenv/config app.js",
+          "description": "预加载dotenv模块运行应用"
+        },
+        {
+          "command": "node --max-old-space-size=4096 app.js",
+          "description": "设置最大内存为4GB运行应用"
+        }
+      ],
+      "related_commands": [
+        "npm",
+        "yarn",
+        "nodemon",
+        "pm2"
+      ],
+      "tags": [
+        "JavaScript",
+        "Node.js",
+        "运行时",
+        "开发",
+        "JS"
+      ]
+    },
+    "python": {
+      "command": "python",
+      "description": "Python解释器，执行Python程序",
+      "syntax": "python [选项] [脚本文件] [参数...]",
+      "category": "development",
+      "options": [
+        {
+          "option": "-V, --version",
+          "description": "显示Python版本"
+        },
+        {
+          "option": "-c 命令",
+          "description": "执行Python代码字符串"
+        },
+        {
+          "option": "-i",
+          "description": "执行脚本后进入交互模式"
+        },
+        {
+          "option": "-m 模块",
+          "description": "以模块方式运行"
+        },
+        {
+          "option": "-O",
+          "description": "优化模式，生成.pyo文件"
+        },
+        {
+          "option": "-u",
+          "description": "强制stdout和stderr不缓冲"
+        },
+        {
+          "option": "-W 警告",
+          "description": "警告控制"
+        },
+        {
+          "option": "--help",
+          "description": "显示帮助信息"
+        }
+      ],
+      "examples": [
+        {
+          "command": "python script.py",
+          "description": "运行Python脚本"
+        },
+        {
+          "command": "python -V",
+          "description": "查看Python版本"
+        },
+        {
+          "command": "python -c \"print('Hello World')\"",
+          "description": "执行单行Python代码"
+        },
+        {
+          "command": "python -m http.server 8000",
+          "description": "启动HTTP服务器"
+        },
+        {
+          "command": "python -m pip install requests",
+          "description": "使用模块方式安装包"
+        },
+        {
+          "command": "python -i script.py",
+          "description": "运行脚本后进入交互模式"
+        },
+        {
+          "command": "python -m venv myenv",
+          "description": "创建虚拟环境"
+        }
+      ],
+      "related_commands": [
+        "pip",
+        "python3",
+        "virtualenv",
+        "conda"
+      ],
+      "tags": [
+        "Python",
+        "解释器",
+        "编程",
+        "脚本",
+        "开发"
+      ]
+    },
+    "gcc": {
+      "command": "gcc",
+      "description": "GNU编译器集合，用于编译C/C++程序",
+      "syntax": "gcc [选项] 源文件... [-o 输出文件]",
+      "category": "development",
+      "options": [
+        {
+          "option": "-o 文件名",
+          "description": "指定输出文件名"
+        },
+        {
+          "option": "-c",
+          "description": "只编译不链接，生成.o文件"
+        },
+        {
+          "option": "-g",
+          "description": "生成调试信息"
+        },
+        {
+          "option": "-O0/-O1/-O2/-O3",
+          "description": "优化级别，0无优化，3最高优化"
+        },
+        {
+          "option": "-Wall",
+          "description": "显示所有警告"
+        },
+        {
+          "option": "-Werror",
+          "description": "将警告视为错误"
+        },
+        {
+          "option": "-l库名",
+          "description": "链接指定库"
+        },
+        {
+          "option": "-I目录",
+          "description": "添加头文件搜索路径"
+        },
+        {
+          "option": "-L目录",
+          "description": "添加库文件搜索路径"
+        },
+        {
+          "option": "-std=标准",
+          "description": "指定C/C++标准版本"
+        }
+      ],
+      "examples": [
+        {
+          "command": "gcc hello.c -o hello",
+          "description": "编译C程序"
+        },
+        {
+          "command": "gcc -g -Wall main.c -o debug_version",
+          "description": "编译调试版本并显示警告"
+        },
+        {
+          "command": "gcc -c module.c",
+          "description": "只编译不链接，生成module.o"
+        },
+        {
+          "command": "gcc -O2 fast.c -o fast",
+          "description": "使用O2优化编译"
+        },
+        {
+          "command": "gcc main.c utils.c -o app",
+          "description": "编译多个源文件"
+        },
+        {
+          "command": "gcc -lm math_app.c -o math_app",
+          "description": "链接数学库编译"
+        },
+        {
+          "command": "gcc -std=c99 modern.c -o modern",
+          "description": "使用C99标准编译"
+        }
+      ],
+      "related_commands": [
+        "g++",
+        "make",
+        "clang",
+        "ld"
+      ],
+      "tags": [
+        "编译器",
+        "C语言",
+        "C++",
+        "编译",
+        "链接",
+        "GNU"
+      ]
+    }
+  },
+  "metadata": {
+    "total_commands": 6,
+    "last_updated": "2025-08-01T12:27:19.436441",
+    "version": "2.0",
+    "migrated_from": "individual_files"
+  }
+}

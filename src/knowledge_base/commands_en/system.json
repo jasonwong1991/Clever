@@ -1,0 +1,246 @@
+{
+  "category": "system",
+  "category_name": "File Management",
+  "description": "system commands",
+  "commands": {
+    "free": {
+      "command": "free",
+      "description": "Display system memory usage",
+      "syntax": "free [options]",
+      "category": "system_info",
+      "options": [
+        {
+          "option": "-h",
+          "description": "Human-readable format (KB, MB, GB)"
+        },
+        {
+          "option": "-b",
+          "description": "Display in bytes"
+        },
+        {
+          "option": "-k",
+          "description": "Display in kilobytes (default)"
+        },
+        {
+          "option": "-m",
+          "description": "Display in megabytes"
+        },
+        {
+          "option": "-g",
+          "description": "Display in gigabytes"
+        },
+        {
+          "option": "-t",
+          "description": "Show total for RAM and swap"
+        },
+        {
+          "option": "-s seconds",
+          "description": "Refresh display every specified seconds"
+        },
+        {
+          "option": "-c count",
+          "description": "Number of times to refresh"
+        }
+      ],
+      "examples": [
+        {
+          "command": "free -h",
+          "description": "Show memory usage in human-readable format"
+        },
+        {
+          "command": "free -m",
+          "description": "Show memory usage in megabytes"
+        },
+        {
+          "command": "free -t",
+          "description": "Show memory usage with total"
+        },
+        {
+          "command": "free -s 5",
+          "description": "Refresh memory display every 5 seconds"
+        },
+        {
+          "command": "free -h -s 2 -c 10",
+          "description": "Refresh every 2 seconds for 10 times"
+        }
+      ],
+      "related_commands": [
+        "top",
+        "htop",
+        "ps",
+        "vmstat"
+      ],
+      "tags": [
+        "memory",
+        "RAM",
+        "swap",
+        "system",
+        "monitoring"
+      ]
+    },
+    "df": {
+      "command": "df",
+      "description": "Display filesystem disk space usage",
+      "syntax": "df [options] [filesystem]",
+      "category": "system_info",
+      "options": [
+        {
+          "option": "-h",
+          "description": "Human-readable format (KB, MB, GB)"
+        },
+        {
+          "option": "-T",
+          "description": "Show filesystem type"
+        },
+        {
+          "option": "-i",
+          "description": "Show inode usage instead of block usage"
+        },
+        {
+          "option": "-a",
+          "description": "Show all filesystems, including virtual ones"
+        },
+        {
+          "option": "-t type",
+          "description": "Show only filesystems of specified type"
+        },
+        {
+          "option": "-x type",
+          "description": "Exclude filesystems of specified type"
+        },
+        {
+          "option": "-l",
+          "description": "Show only local filesystems"
+        },
+        {
+          "option": "--total",
+          "description": "Show grand total"
+        }
+      ],
+      "examples": [
+        {
+          "command": "df -h",
+          "description": "Show disk usage in human-readable format"
+        },
+        {
+          "command": "df -T",
+          "description": "Show filesystem types and usage"
+        },
+        {
+          "command": "df -i",
+          "description": "Show inode usage"
+        },
+        {
+          "command": "df /home",
+          "description": "Show usage for filesystem containing /home"
+        },
+        {
+          "command": "df -t ext4",
+          "description": "Show only ext4 filesystems"
+        },
+        {
+          "command": "df -h --total",
+          "description": "Show disk usage with grand total"
+        }
+      ],
+      "related_commands": [
+        "du",
+        "lsblk",
+        "mount",
+        "fdisk"
+      ],
+      "tags": [
+        "disk",
+        "storage",
+        "filesystem",
+        "space",
+        "system"
+      ]
+    },
+    "du": {
+      "command": "du",
+      "description": "Display directory and file disk usage",
+      "syntax": "du [options] [files or directories]",
+      "category": "system_info",
+      "options": [
+        {
+          "option": "-h",
+          "description": "Human-readable format (KB, MB, GB)"
+        },
+        {
+          "option": "-s",
+          "description": "Show only total size, not subdirectories"
+        },
+        {
+          "option": "-a",
+          "description": "Show size of all files and directories"
+        },
+        {
+          "option": "-c",
+          "description": "Show grand total"
+        },
+        {
+          "option": "-d depth",
+          "description": "Limit directory depth displayed"
+        },
+        {
+          "option": "-x",
+          "description": "Don't cross filesystem boundaries"
+        },
+        {
+          "option": "--max-depth=N",
+          "description": "Maximum directory depth to show"
+        },
+        {
+          "option": "--exclude=pattern",
+          "description": "Exclude files matching pattern"
+        }
+      ],
+      "examples": [
+        {
+          "command": "du -h /home",
+          "description": "Show disk usage of /home directory"
+        },
+        {
+          "command": "du -sh *",
+          "description": "Show total size of all items in current directory"
+        },
+        {
+          "command": "du -h --max-depth=1",
+          "description": "Show only first-level subdirectory sizes"
+        },
+        {
+          "command": "du -ah /var/log",
+          "description": "Show size of all files in /var/log"
+        },
+        {
+          "command": "du -ch *.txt",
+          "description": "Show size of all txt files with total"
+        },
+        {
+          "command": "du -h --exclude='*.tmp' /tmp",
+          "description": "Show /tmp size excluding tmp files"
+        }
+      ],
+      "related_commands": [
+        "df",
+        "ls",
+        "find",
+        "ncdu"
+      ],
+      "tags": [
+        "disk",
+        "size",
+        "directory",
+        "file",
+        "storage"
+      ]
+    }
+  },
+  "metadata": {
+    "total_commands": 3,
+    "last_updated": "2025-08-01T12:27:19.445951",
+    "version": "2.0",
+    "migrated_from": "individual_files"
+  }
+}

@@ -1,0 +1,421 @@
+{
+  "category": "compression",
+  "category_name": "文件管理",
+  "description": "compression commands",
+  "commands": {
+    "unzip": {
+      "command": "unzip",
+      "description": "解压ZIP格式的压缩文件",
+      "syntax": "unzip [选项] 压缩文件名 [文件...]",
+      "category": "compression",
+      "options": [
+        {
+          "option": "-l",
+          "description": "列出压缩文件内容，不解压"
+        },
+        {
+          "option": "-v",
+          "description": "显示详细的文件信息"
+        },
+        {
+          "option": "-q",
+          "description": "安静模式，不显示信息"
+        },
+        {
+          "option": "-d 目录",
+          "description": "解压到指定目录"
+        },
+        {
+          "option": "-o",
+          "description": "覆盖文件而不提示"
+        },
+        {
+          "option": "-n",
+          "description": "不覆盖任何文件"
+        },
+        {
+          "option": "-j",
+          "description": "不创建目录，所有文件解压到当前目录"
+        },
+        {
+          "option": "-t",
+          "description": "测试压缩文件完整性"
+        },
+        {
+          "option": "-x 文件",
+          "description": "排除指定文件"
+        }
+      ],
+      "examples": [
+        {
+          "command": "unzip archive.zip",
+          "description": "解压文件到当前目录"
+        },
+        {
+          "command": "unzip -l project.zip",
+          "description": "列出压缩文件内容"
+        },
+        {
+          "command": "unzip -d /tmp backup.zip",
+          "description": "解压到/tmp目录"
+        },
+        {
+          "command": "unzip -o files.zip",
+          "description": "解压并覆盖已存在的文件"
+        },
+        {
+          "command": "unzip archive.zip specific_file.txt",
+          "description": "只解压指定文件"
+        },
+        {
+          "command": "unzip -t backup.zip",
+          "description": "测试压缩文件是否完整"
+        },
+        {
+          "command": "unzip -j photos.zip",
+          "description": "解压所有文件到当前目录，忽略路径"
+        }
+      ],
+      "related_commands": [
+        "zip",
+        "gunzip",
+        "tar",
+        "7z"
+      ],
+      "tags": [
+        "解压",
+        "zip",
+        "解压缩",
+        "提取"
+      ]
+    },
+    "zip": {
+      "command": "zip",
+      "description": "创建ZIP格式的压缩文件",
+      "syntax": "zip [选项] 压缩文件名 [文件/目录...]",
+      "category": "compression",
+      "options": [
+        {
+          "option": "-r",
+          "description": "递归压缩目录及其子目录"
+        },
+        {
+          "option": "-v",
+          "description": "显示压缩过程的详细信息"
+        },
+        {
+          "option": "-q",
+          "description": "安静模式，不显示信息"
+        },
+        {
+          "option": "-0到-9",
+          "description": "压缩级别，0不压缩，9最大压缩"
+        },
+        {
+          "option": "-e",
+          "description": "加密压缩文件"
+        },
+        {
+          "option": "-x 模式",
+          "description": "排除匹配模式的文件"
+        },
+        {
+          "option": "-u",
+          "description": "更新压缩文件中的文件"
+        },
+        {
+          "option": "-j",
+          "description": "不包含路径信息"
+        }
+      ],
+      "examples": [
+        {
+          "command": "zip archive.zip file1.txt file2.txt",
+          "description": "压缩多个文件"
+        },
+        {
+          "command": "zip -r project.zip project/",
+          "description": "递归压缩整个目录"
+        },
+        {
+          "command": "zip -e secure.zip important.txt",
+          "description": "创建加密的压缩文件"
+        },
+        {
+          "command": "zip -9 compressed.zip large_file.txt",
+          "description": "使用最高压缩比"
+        },
+        {
+          "command": "zip -r backup.zip /home/user -x '*.log'",
+          "description": "压缩目录但排除log文件"
+        },
+        {
+          "command": "zip -j files.zip /path/to/*.txt",
+          "description": "压缩文件但不包含路径"
+        }
+      ],
+      "related_commands": [
+        "unzip",
+        "gzip",
+        "tar",
+        "7z"
+      ],
+      "tags": [
+        "压缩",
+        "zip",
+        "打包",
+        "归档"
+      ]
+    },
+    "gunzip": {
+      "command": "gunzip",
+      "description": "解压gzip压缩的文件",
+      "syntax": "gunzip [选项] [文件...]",
+      "category": "compression",
+      "options": [
+        {
+          "option": "-v",
+          "description": "显示解压过程信息"
+        },
+        {
+          "option": "-k",
+          "description": "保留原压缩文件"
+        },
+        {
+          "option": "-c",
+          "description": "输出到标准输出，保留原文件"
+        },
+        {
+          "option": "-t",
+          "description": "测试压缩文件完整性"
+        },
+        {
+          "option": "-r",
+          "description": "递归解压目录中的所有.gz文件"
+        },
+        {
+          "option": "-f",
+          "description": "强制覆盖已存在的文件"
+        },
+        {
+          "option": "-l",
+          "description": "列出压缩文件信息"
+        }
+      ],
+      "examples": [
+        {
+          "command": "gunzip file.txt.gz",
+          "description": "解压文件为file.txt"
+        },
+        {
+          "command": "gunzip -v *.gz",
+          "description": "解压所有gz文件并显示信息"
+        },
+        {
+          "command": "gunzip -k backup.gz",
+          "description": "解压文件但保留原压缩文件"
+        },
+        {
+          "command": "gunzip -c data.gz > output.txt",
+          "description": "解压输出到指定文件"
+        },
+        {
+          "command": "gunzip -t archive.gz",
+          "description": "测试压缩文件是否完整"
+        },
+        {
+          "command": "gunzip -r /backup/",
+          "description": "递归解压目录中所有gz文件"
+        }
+      ],
+      "related_commands": [
+        "gzip",
+        "tar",
+        "zcat",
+        "zless"
+      ],
+      "tags": [
+        "解压",
+        "gzip",
+        "压缩文件",
+        "解压缩"
+      ]
+    },
+    "tar": {
+      "command": "tar",
+      "description": "打包和解包文件，支持多种压缩格式",
+      "syntax": "tar [选项] [文件名] [文件/目录...]",
+      "category": "compression",
+      "options": [
+        {
+          "option": "-c",
+          "description": "创建新的归档文件"
+        },
+        {
+          "option": "-x",
+          "description": "提取归档文件内容"
+        },
+        {
+          "option": "-t",
+          "description": "列出归档文件内容"
+        },
+        {
+          "option": "-v",
+          "description": "详细显示处理的文件"
+        },
+        {
+          "option": "-f 文件名",
+          "description": "指定归档文件名"
+        },
+        {
+          "option": "-z",
+          "description": "使用gzip压缩(.tar.gz)"
+        },
+        {
+          "option": "-j",
+          "description": "使用bzip2压缩(.tar.bz2)"
+        },
+        {
+          "option": "-J",
+          "description": "使用xz压缩(.tar.xz)"
+        },
+        {
+          "option": "-C 目录",
+          "description": "切换到指定目录"
+        },
+        {
+          "option": "--exclude=模式",
+          "description": "排除匹配模式的文件"
+        }
+      ],
+      "examples": [
+        {
+          "command": "tar -czf backup.tar.gz /home/user",
+          "description": "创建gzip压缩的归档文件"
+        },
+        {
+          "command": "tar -xzf backup.tar.gz",
+          "description": "解压gzip归档文件"
+        },
+        {
+          "command": "tar -tjf backup.tar.bz2",
+          "description": "列出bzip2归档文件内容"
+        },
+        {
+          "command": "tar -xf archive.tar -C /tmp",
+          "description": "解压到/tmp目录"
+        },
+        {
+          "command": "tar -czf project.tar.gz --exclude='*.log' project/",
+          "description": "打包项目目录，排除log文件"
+        },
+        {
+          "command": "tar -cf - . | ssh user@host 'cd /backup && tar -xf -'",
+          "description": "通过SSH传输并解压"
+        }
+      ],
+      "related_commands": [
+        "gzip",
+        "zip",
+        "7z",
+        "compress"
+      ],
+      "tags": [
+        "压缩",
+        "打包",
+        "归档",
+        "备份",
+        "gzip",
+        "bzip2"
+      ]
+    },
+    "gzip": {
+      "command": "gzip",
+      "description": "使用GNU zip算法压缩文件",
+      "syntax": "gzip [选项] [文件...]",
+      "category": "compression",
+      "options": [
+        {
+          "option": "-d",
+          "description": "解压缩文件(等同于gunzip)"
+        },
+        {
+          "option": "-r",
+          "description": "递归压缩目录中的所有文件"
+        },
+        {
+          "option": "-v",
+          "description": "显示压缩过程信息"
+        },
+        {
+          "option": "-1到-9",
+          "description": "压缩级别，1最快，9最小"
+        },
+        {
+          "option": "-k",
+          "description": "保留原文件"
+        },
+        {
+          "option": "-c",
+          "description": "输出到标准输出，保留原文件"
+        },
+        {
+          "option": "-t",
+          "description": "测试压缩文件完整性"
+        },
+        {
+          "option": "-l",
+          "description": "列出压缩文件信息"
+        }
+      ],
+      "examples": [
+        {
+          "command": "gzip file.txt",
+          "description": "压缩文件为file.txt.gz"
+        },
+        {
+          "command": "gzip -d file.txt.gz",
+          "description": "解压缩文件"
+        },
+        {
+          "command": "gzip -v *.txt",
+          "description": "压缩所有txt文件并显示信息"
+        },
+        {
+          "command": "gzip -9 large_file.txt",
+          "description": "最高压缩比压缩文件"
+        },
+        {
+          "command": "gzip -k important.txt",
+          "description": "压缩文件但保留原文件"
+        },
+        {
+          "command": "gzip -c file.txt > backup.gz",
+          "description": "压缩输出到指定文件"
+        },
+        {
+          "command": "gzip -l *.gz",
+          "description": "显示所有gz文件的压缩信息"
+        }
+      ],
+      "related_commands": [
+        "gunzip",
+        "tar",
+        "zip",
+        "bzip2"
+      ],
+      "tags": [
+        "压缩",
+        "gzip",
+        "解压",
+        "文件压缩"
+      ]
+    }
+  },
+  "metadata": {
+    "total_commands": 5,
+    "last_updated": "2025-08-01T12:27:19.436217",
+    "version": "2.0",
+    "migrated_from": "individual_files"
+  }
+}

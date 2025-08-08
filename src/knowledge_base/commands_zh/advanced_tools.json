@@ -1,0 +1,465 @@
+{
+  "category": "advanced_tools",
+  "category_name": "文件管理",
+  "description": "advanced_tools commands",
+  "commands": {
+    "screen": {
+      "command": "screen",
+      "description": "终端复用器，允许分离和重新连接终端会话",
+      "syntax": "screen [选项] [命令]",
+      "category": "advanced_tools",
+      "options": [
+        {
+          "option": "-S 会话名",
+          "description": "创建或连接到指定名称的会话"
+        },
+        {
+          "option": "-ls",
+          "description": "列出所有会话"
+        },
+        {
+          "option": "-r [会话]",
+          "description": "重新连接到会话"
+        },
+        {
+          "option": "-d [会话]",
+          "description": "分离指定会话"
+        },
+        {
+          "option": "-X 命令",
+          "description": "向会话发送命令"
+        },
+        {
+          "option": "-dm",
+          "description": "以分离模式启动"
+        },
+        {
+          "option": "-c 文件",
+          "description": "指定配置文件"
+        }
+      ],
+      "examples": [
+        {
+          "command": "screen",
+          "description": "启动新的screen会话"
+        },
+        {
+          "command": "screen -S work",
+          "description": "创建名为work的会话"
+        },
+        {
+          "command": "screen -ls",
+          "description": "列出所有screen会话"
+        },
+        {
+          "command": "screen -r work",
+          "description": "重新连接到work会话"
+        },
+        {
+          "command": "screen -d work",
+          "description": "分离work会话"
+        },
+        {
+          "command": "screen -dm -S backup backup_script.sh",
+          "description": "后台运行备份脚本"
+        }
+      ],
+      "key_bindings": [
+        {
+          "key": "Ctrl-a d",
+          "description": "分离当前会话"
+        },
+        {
+          "key": "Ctrl-a c",
+          "description": "创建新窗口"
+        },
+        {
+          "key": "Ctrl-a n/p",
+          "description": "切换到下一个/上一个窗口"
+        },
+        {
+          "key": "Ctrl-a 数字",
+          "description": "切换到指定编号的窗口"
+        },
+        {
+          "key": "Ctrl-a S",
+          "description": "水平分割屏幕"
+        },
+        {
+          "key": "Ctrl-a |",
+          "description": "垂直分割屏幕"
+        }
+      ],
+      "related_commands": [
+        "tmux",
+        "nohup",
+        "byobu"
+      ],
+      "tags": [
+        "终端复用",
+        "会话管理",
+        "后台运行",
+        "远程工作",
+        "分离会话"
+      ]
+    },
+    "tmux": {
+      "command": "tmux",
+      "description": "终端复用器，允许在单个终端中运行多个会话",
+      "syntax": "tmux [命令] [选项]",
+      "category": "advanced_tools",
+      "options": [
+        {
+          "option": "new-session -s 名称",
+          "description": "创建新会话"
+        },
+        {
+          "option": "list-sessions",
+          "description": "列出所有会话"
+        },
+        {
+          "option": "attach -t 会话",
+          "description": "连接到指定会话"
+        },
+        {
+          "option": "detach",
+          "description": "从当前会话分离"
+        },
+        {
+          "option": "kill-session -t 会话",
+          "description": "终止指定会话"
+        },
+        {
+          "option": "split-window",
+          "description": "分割窗口"
+        },
+        {
+          "option": "new-window",
+          "description": "创建新窗口"
+        }
+      ],
+      "examples": [
+        {
+          "command": "tmux",
+          "description": "启动新的tmux会话"
+        },
+        {
+          "command": "tmux new-session -s work",
+          "description": "创建名为work的会话"
+        },
+        {
+          "command": "tmux list-sessions",
+          "description": "列出所有会话"
+        },
+        {
+          "command": "tmux attach -t work",
+          "description": "连接到work会话"
+        },
+        {
+          "command": "tmux kill-session -t work",
+          "description": "终止work会话"
+        }
+      ],
+      "key_bindings": [
+        {
+          "key": "Ctrl-b d",
+          "description": "分离会话"
+        },
+        {
+          "key": "Ctrl-b c",
+          "description": "创建新窗口"
+        },
+        {
+          "key": "Ctrl-b %",
+          "description": "垂直分割窗口"
+        },
+        {
+          "key": "Ctrl-b \"",
+          "description": "水平分割窗口"
+        },
+        {
+          "key": "Ctrl-b 方向键",
+          "description": "切换面板"
+        },
+        {
+          "key": "Ctrl-b n/p",
+          "description": "切换到下一个/上一个窗口"
+        }
+      ],
+      "related_commands": [
+        "screen",
+        "byobu",
+        "zellij"
+      ],
+      "tags": [
+        "终端复用",
+        "会话管理",
+        "远程工作",
+        "多窗口",
+        "分屏"
+      ]
+    },
+    "htop": {
+      "command": "htop",
+      "description": "交互式系统进程监控工具，top的增强版本",
+      "syntax": "htop [选项]",
+      "category": "advanced_tools",
+      "options": [
+        {
+          "option": "-d 延迟",
+          "description": "设置刷新延迟时间(秒)"
+        },
+        {
+          "option": "-u 用户",
+          "description": "只显示指定用户的进程"
+        },
+        {
+          "option": "-p PID",
+          "description": "只显示指定PID的进程"
+        },
+        {
+          "option": "-s 列",
+          "description": "按指定列排序"
+        },
+        {
+          "option": "-C",
+          "description": "使用单色显示"
+        },
+        {
+          "option": "-h",
+          "description": "显示帮助信息"
+        }
+      ],
+      "examples": [
+        {
+          "command": "htop",
+          "description": "启动htop进程监控"
+        },
+        {
+          "command": "htop -u root",
+          "description": "只显示root用户的进程"
+        },
+        {
+          "command": "htop -d 5",
+          "description": "每5秒刷新一次"
+        },
+        {
+          "command": "htop -p 1234",
+          "description": "监控PID为1234的进程"
+        }
+      ],
+      "interactive_keys": [
+        {
+          "key": "F9或k",
+          "description": "终止进程"
+        },
+        {
+          "key": "F6或</>",
+          "description": "选择排序列"
+        },
+        {
+          "key": "F4或\\",
+          "description": "过滤进程"
+        },
+        {
+          "key": "F5或t",
+          "description": "树形显示"
+        },
+        {
+          "key": "Space",
+          "description": "标记进程"
+        },
+        {
+          "key": "u",
+          "description": "显示用户进程"
+        }
+      ],
+      "related_commands": [
+        "top",
+        "ps",
+        "pgrep",
+        "iotop"
+      ],
+      "tags": [
+        "进程监控",
+        "系统监控",
+        "交互式",
+        "性能",
+        "CPU",
+        "内存"
+      ]
+    },
+    "rsync": {
+      "command": "rsync",
+      "description": "高效的文件同步和传输工具",
+      "syntax": "rsync [选项] 源 目标",
+      "category": "network_tools",
+      "options": [
+        {
+          "option": "-a",
+          "description": "归档模式，保持文件属性(-rlptgoD)"
+        },
+        {
+          "option": "-v",
+          "description": "详细输出，显示传输的文件"
+        },
+        {
+          "option": "-z",
+          "description": "传输时压缩数据"
+        },
+        {
+          "option": "-r",
+          "description": "递归复制目录"
+        },
+        {
+          "option": "-u",
+          "description": "只更新较新的文件"
+        },
+        {
+          "option": "--delete",
+          "description": "删除目标中源没有的文件"
+        },
+        {
+          "option": "--exclude=模式",
+          "description": "排除匹配模式的文件"
+        },
+        {
+          "option": "--progress",
+          "description": "显示传输进度"
+        },
+        {
+          "option": "-n",
+          "description": "试运行，不实际传输"
+        },
+        {
+          "option": "-e ssh",
+          "description": "通过SSH传输"
+        }
+      ],
+      "examples": [
+        {
+          "command": "rsync -av source/ dest/",
+          "description": "同步目录，保持属性"
+        },
+        {
+          "command": "rsync -avz user@host:/path/ /local/",
+          "description": "从远程同步并压缩传输"
+        },
+        {
+          "command": "rsync -av --delete source/ dest/",
+          "description": "同步并删除多余文件"
+        },
+        {
+          "command": "rsync -av --exclude='*.log' project/ backup/",
+          "description": "同步项目但排除日志文件"
+        },
+        {
+          "command": "rsync -av --progress large_file remote:/path/",
+          "description": "传输大文件并显示进度"
+        },
+        {
+          "command": "rsync -avn source/ dest/",
+          "description": "试运行，查看将要同步的文件"
+        }
+      ],
+      "related_commands": [
+        "scp",
+        "cp",
+        "ssh",
+        "tar"
+      ],
+      "tags": [
+        "文件同步",
+        "远程传输",
+        "备份",
+        "增量同步",
+        "网络工具"
+      ]
+    },
+    "xargs": {
+      "command": "xargs",
+      "description": "从标准输入构建和执行命令行",
+      "syntax": "xargs [选项] [命令]",
+      "category": "advanced_tools",
+      "options": [
+        {
+          "option": "-I 替换字符串",
+          "description": "指定替换字符串"
+        },
+        {
+          "option": "-n 数量",
+          "description": "每次最多使用指定数量的参数"
+        },
+        {
+          "option": "-d 分隔符",
+          "description": "指定输入分隔符"
+        },
+        {
+          "option": "-p",
+          "description": "执行前询问确认"
+        },
+        {
+          "option": "-t",
+          "description": "执行前显示命令"
+        },
+        {
+          "option": "-0",
+          "description": "输入以null字符分隔"
+        },
+        {
+          "option": "-P 进程数",
+          "description": "并行运行指定数量的进程"
+        },
+        {
+          "option": "-r",
+          "description": "如果没有输入则不运行命令"
+        }
+      ],
+      "examples": [
+        {
+          "command": "find . -name '*.txt' | xargs rm",
+          "description": "删除所有txt文件"
+        },
+        {
+          "command": "echo 'file1 file2 file3' | xargs -n 1 ls -l",
+          "description": "对每个文件单独执行ls -l"
+        },
+        {
+          "command": "find . -name '*.log' | xargs -I {} cp {} /backup/",
+          "description": "复制所有log文件到备份目录"
+        },
+        {
+          "command": "ls *.jpg | xargs -n 1 -P 4 convert {} {}.png",
+          "description": "并行转换图片格式"
+        },
+        {
+          "command": "find . -name '*.c' -print0 | xargs -0 grep 'main'",
+          "description": "在C文件中搜索main函数"
+        },
+        {
+          "command": "echo 'dir1 dir2 dir3' | xargs mkdir",
+          "description": "批量创建目录"
+        }
+      ],
+      "related_commands": [
+        "find",
+        "grep",
+        "awk",
+        "parallel"
+      ],
+      "tags": [
+        "批处理",
+        "管道",
+        "参数构建",
+        "并行执行",
+        "命令组合"
+      ]
+    }
+  },
+  "metadata": {
+    "total_commands": 5,
+    "last_updated": "2025-08-01T12:27:19.435204",
+    "version": "2.0",
+    "migrated_from": "individual_files"
+  }
+}

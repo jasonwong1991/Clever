@@ -1,0 +1,523 @@
+{
+  "category": "text",
+  "category_name": "文件管理",
+  "description": "text commands",
+  "commands": {
+    "tr": {
+      "command": "tr",
+      "description": "转换或删除字符",
+      "syntax": "tr [选项] [字符集1] [字符集2]",
+      "category": "text_processing",
+      "options": [
+        {
+          "option": "-d",
+          "description": "删除指定字符集中的字符"
+        },
+        {
+          "option": "-s",
+          "description": "压缩连续重复的字符为一个"
+        },
+        {
+          "option": "-c",
+          "description": "使用字符集的补集"
+        },
+        {
+          "option": "-t",
+          "description": "将字符集1截断到字符集2的长度"
+        }
+      ],
+      "examples": [
+        {
+          "command": "echo 'hello' | tr 'a-z' 'A-Z'",
+          "description": "将小写字母转换为大写"
+        },
+        {
+          "command": "echo 'Hello World' | tr -d ' '",
+          "description": "删除所有空格"
+        },
+        {
+          "command": "echo 'hello   world' | tr -s ' '",
+          "description": "压缩多个连续空格为一个"
+        },
+        {
+          "command": "echo 'abc123def' | tr -d '0-9'",
+          "description": "删除所有数字"
+        },
+        {
+          "command": "echo 'hello' | tr 'el' '3L'",
+          "description": "将e替换为3，l替换为L"
+        },
+        {
+          "command": "cat file.txt | tr '\\n' ' '",
+          "description": "将换行符替换为空格"
+        },
+        {
+          "command": "echo 'Hello' | tr -c 'a-z' '*'",
+          "description": "将非小写字母替换为*"
+        }
+      ],
+      "related_commands": [
+        "sed",
+        "awk",
+        "cut",
+        "sort"
+      ],
+      "tags": [
+        "文本",
+        "转换",
+        "替换",
+        "删除",
+        "字符处理"
+      ]
+    },
+    "grep": {
+      "name": "grep",
+      "description": "在文件中搜索文本模式",
+      "category": "文本处理",
+      "usage": "grep [选项] 模式 [文件...]",
+      "options": [
+        {
+          "option": "-i",
+          "description": "忽略大小写"
+        },
+        {
+          "option": "-v",
+          "description": "显示不匹配的行"
+        },
+        {
+          "option": "-n",
+          "description": "显示行号"
+        },
+        {
+          "option": "-r",
+          "description": "递归搜索目录"
+        },
+        {
+          "option": "-l",
+          "description": "只显示包含匹配项的文件名"
+        },
+        {
+          "option": "-c",
+          "description": "只显示匹配行的数量"
+        }
+      ],
+      "examples": [
+        {
+          "command": "grep \"hello\" file.txt",
+          "description": "在file.txt中搜索包含\"hello\"的行"
+        },
+        {
+          "command": "grep -i \"error\" *.log",
+          "description": "忽略大小写搜索所有.log文件中的\"error\""
+        },
+        {
+          "command": "grep -rn \"function\" .",
+          "description": "递归搜索当前目录中包含\"function\"的行并显示行号"
+        },
+        {
+          "command": "ps aux | grep python",
+          "description": "搜索包含python的进程"
+        }
+      ],
+      "related_commands": [
+        "find",
+        "sed",
+        "awk",
+        "sort"
+      ],
+      "tags": [
+        "搜索",
+        "文本",
+        "模式",
+        "过滤"
+      ]
+    },
+    "uniq": {
+      "command": "uniq",
+      "description": "报告或过滤重复的行",
+      "syntax": "uniq [选项] [输入文件] [输出文件]",
+      "category": "text_processing",
+      "options": [
+        {
+          "option": "-c",
+          "description": "在每行前显示重复次数"
+        },
+        {
+          "option": "-d",
+          "description": "只显示重复的行"
+        },
+        {
+          "option": "-u",
+          "description": "只显示唯一的行(不重复的行)"
+        },
+        {
+          "option": "-i",
+          "description": "忽略大小写差异"
+        },
+        {
+          "option": "-f N",
+          "description": "忽略前N个字段"
+        },
+        {
+          "option": "-s N",
+          "description": "忽略前N个字符"
+        },
+        {
+          "option": "-w N",
+          "description": "只比较每行的前N个字符"
+        }
+      ],
+      "examples": [
+        {
+          "command": "sort file.txt | uniq",
+          "description": "去除重复行(需要先排序)"
+        },
+        {
+          "command": "sort file.txt | uniq -c",
+          "description": "显示每行的重复次数"
+        },
+        {
+          "command": "sort file.txt | uniq -d",
+          "description": "只显示重复的行"
+        },
+        {
+          "command": "sort file.txt | uniq -u",
+          "description": "只显示唯一的行"
+        },
+        {
+          "command": "sort names.txt | uniq -i",
+          "description": "忽略大小写去除重复"
+        },
+        {
+          "command": "uniq -c data.txt | sort -nr",
+          "description": "按重复次数降序排列"
+        },
+        {
+          "command": "history | cut -c8- | sort | uniq -c | sort -nr | head",
+          "description": "统计最常用的命令"
+        }
+      ],
+      "related_commands": [
+        "sort",
+        "cut",
+        "awk",
+        "grep"
+      ],
+      "tags": [
+        "文本",
+        "重复",
+        "唯一",
+        "去重",
+        "统计"
+      ]
+    },
+    "sed": {
+      "command": "sed",
+      "description": "流编辑器，用于文本替换、删除、插入等操作",
+      "syntax": "sed [选项] '命令' [文件...]",
+      "category": "text_processing",
+      "options": [
+        {
+          "option": "-i",
+          "description": "直接修改文件内容"
+        },
+        {
+          "option": "-e",
+          "description": "执行多个编辑命令"
+        },
+        {
+          "option": "-n",
+          "description": "静默模式，只输出匹配的行"
+        },
+        {
+          "option": "-r 或 -E",
+          "description": "使用扩展正则表达式"
+        },
+        {
+          "option": "-f 脚本文件",
+          "description": "从文件中读取sed命令"
+        }
+      ],
+      "examples": [
+        {
+          "command": "sed 's/old/new/g' file.txt",
+          "description": "将文件中所有old替换为new"
+        },
+        {
+          "command": "sed -i 's/old/new/g' file.txt",
+          "description": "直接修改文件，替换old为new"
+        },
+        {
+          "command": "sed '2d' file.txt",
+          "description": "删除第2行"
+        },
+        {
+          "command": "sed -n '1,5p' file.txt",
+          "description": "只打印第1到5行"
+        },
+        {
+          "command": "sed '/pattern/d' file.txt",
+          "description": "删除包含pattern的行"
+        },
+        {
+          "command": "sed '2i\\插入的文本' file.txt",
+          "description": "在第2行前插入文本"
+        },
+        {
+          "command": "sed 's/^/> /' file.txt",
+          "description": "在每行开头添加'> '"
+        }
+      ],
+      "related_commands": [
+        "awk",
+        "grep",
+        "tr",
+        "cut"
+      ],
+      "tags": [
+        "文本",
+        "替换",
+        "编辑",
+        "正则",
+        "流处理"
+      ]
+    },
+    "wc": {
+      "command": "wc",
+      "description": "统计文件的行数、词数、字符数",
+      "syntax": "wc [选项] [文件...]",
+      "category": "text_processing",
+      "options": [
+        {
+          "option": "-l",
+          "description": "只显示行数"
+        },
+        {
+          "option": "-w",
+          "description": "只显示词数"
+        },
+        {
+          "option": "-c",
+          "description": "只显示字节数"
+        },
+        {
+          "option": "-m",
+          "description": "只显示字符数"
+        },
+        {
+          "option": "-L",
+          "description": "显示最长行的长度"
+        }
+      ],
+      "examples": [
+        {
+          "command": "wc file.txt",
+          "description": "显示文件的行数、词数、字节数"
+        },
+        {
+          "command": "wc -l file.txt",
+          "description": "只统计行数"
+        },
+        {
+          "command": "wc -w file.txt",
+          "description": "只统计词数"
+        },
+        {
+          "command": "ls -1 | wc -l",
+          "description": "统计当前目录文件数量"
+        },
+        {
+          "command": "cat *.txt | wc -l",
+          "description": "统计所有txt文件的总行数"
+        },
+        {
+          "command": "ps aux | wc -l",
+          "description": "统计运行的进程数量"
+        },
+        {
+          "command": "wc -L file.txt",
+          "description": "显示最长行的字符数"
+        }
+      ],
+      "related_commands": [
+        "cat",
+        "grep",
+        "cut",
+        "sort"
+      ],
+      "tags": [
+        "文本",
+        "统计",
+        "行数",
+        "词数",
+        "字符数"
+      ]
+    },
+    "cut": {
+      "command": "cut",
+      "description": "从文件或标准输入中提取指定列或字段",
+      "syntax": "cut [选项] [文件...]",
+      "category": "text_processing",
+      "options": [
+        {
+          "option": "-c 列号",
+          "description": "按字符位置提取，如-c1-10"
+        },
+        {
+          "option": "-f 字段号",
+          "description": "按字段提取，如-f1,3,5"
+        },
+        {
+          "option": "-d 分隔符",
+          "description": "指定字段分隔符，默认为制表符"
+        },
+        {
+          "option": "-s",
+          "description": "不显示不包含分隔符的行"
+        },
+        {
+          "option": "--output-delimiter=字符",
+          "description": "指定输出分隔符"
+        },
+        {
+          "option": "--complement",
+          "description": "输出除指定字段外的所有字段"
+        }
+      ],
+      "examples": [
+        {
+          "command": "cut -c1-5 file.txt",
+          "description": "提取每行的第1到5个字符"
+        },
+        {
+          "command": "cut -f1,3 -d',' data.csv",
+          "description": "提取CSV文件的第1和第3列"
+        },
+        {
+          "command": "echo 'a:b:c:d' | cut -f2-3 -d':'",
+          "description": "提取用冒号分隔的第2到3个字段"
+        },
+        {
+          "command": "cut -f2- -d' ' file.txt",
+          "description": "提取从第2个字段到末尾的所有字段"
+        },
+        {
+          "command": "cut -f1 -d':' /etc/passwd",
+          "description": "提取系统用户名"
+        },
+        {
+          "command": "ps aux | cut -c1-20",
+          "description": "显示进程列表的前20个字符"
+        }
+      ],
+      "related_commands": [
+        "awk",
+        "sed",
+        "tr",
+        "sort",
+        "grep"
+      ],
+      "tags": [
+        "文本",
+        "提取",
+        "列",
+        "字段",
+        "CSV",
+        "分隔符"
+      ]
+    },
+    "sort": {
+      "command": "sort",
+      "description": "对文本文件的行进行排序",
+      "syntax": "sort [选项] [文件...]",
+      "category": "text_processing",
+      "options": [
+        {
+          "option": "-r",
+          "description": "逆序排序(降序)"
+        },
+        {
+          "option": "-n",
+          "description": "按数值排序"
+        },
+        {
+          "option": "-h",
+          "description": "按人类可读的数值排序(1K, 2M, 3G等)"
+        },
+        {
+          "option": "-k 字段",
+          "description": "按指定字段排序，如-k2,2"
+        },
+        {
+          "option": "-t 分隔符",
+          "description": "指定字段分隔符"
+        },
+        {
+          "option": "-u",
+          "description": "去除重复行(相当于sort | uniq)"
+        },
+        {
+          "option": "-f",
+          "description": "忽略大小写"
+        },
+        {
+          "option": "-o 文件",
+          "description": "将结果输出到指定文件"
+        },
+        {
+          "option": "-c",
+          "description": "检查文件是否已排序"
+        }
+      ],
+      "examples": [
+        {
+          "command": "sort file.txt",
+          "description": "按字母顺序排序文件内容"
+        },
+        {
+          "command": "sort -r file.txt",
+          "description": "逆序排序"
+        },
+        {
+          "command": "sort -n numbers.txt",
+          "description": "按数值大小排序"
+        },
+        {
+          "command": "sort -k2,2 -t',' data.csv",
+          "description": "按CSV文件第2列排序"
+        },
+        {
+          "command": "du -h * | sort -h",
+          "description": "按文件大小排序"
+        },
+        {
+          "command": "sort -u file.txt",
+          "description": "排序并去除重复行"
+        },
+        {
+          "command": "ps aux | sort -k3,3n",
+          "description": "按CPU使用率排序进程"
+        }
+      ],
+      "related_commands": [
+        "uniq",
+        "cut",
+        "awk",
+        "grep"
+      ],
+      "tags": [
+        "文本",
+        "排序",
+        "字母",
+        "数值",
+        "去重"
+      ]
+    }
+  },
+  "metadata": {
+    "total_commands": 7,
+    "last_updated": "2025-08-01T12:27:19.436686",
+    "version": "2.0",
+    "migrated_from": "individual_files"
+  }
+}
