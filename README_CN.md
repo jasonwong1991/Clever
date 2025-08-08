@@ -139,6 +139,23 @@ clever --stats              # 查看缓存统计和性能信息
 clever --help               # 显示帮助信息
 ```
 
+### 更多快速示例
+
+```bash
+# 使用简写别名替代完整命令
+clr ls
+clr -s 网络
+clr -c 进程管理
+
+# 对比输出（等价）
+clever -s docker
+clr -s docker
+
+# 分类模糊搜索（中英文都可）
+clever -c "file"
+clr -c "文件"
+```
+
 ## 当前支持的命令 (65个)
 
 ### 分类统计

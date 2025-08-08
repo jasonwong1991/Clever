@@ -138,6 +138,23 @@ clever --stats              # View cache statistics and performance info
 clever --help               # Show help information
 ```
 
+### More quick examples
+
+```bash
+# Use short alias instead of full command
+clr ls
+clr -s network
+clr -c process_management
+
+# Compare outputs
+clever -s docker
+clr -s docker
+
+# Category fuzzy search (both work)
+clever -c "file"
+clr -c "文件"
+```
+
 ## Currently Supported Commands (65 total)
 
 ### Category Statistics
