@@ -114,6 +114,6 @@ package() {
 ## Checksums
 
 For each uploaded asset, publish SHA256 sums and reference them in packaging.
-- clever-v1.0.1.tar.gz: <SHA256_OF_TARBALL>
-- clever-v1.0.1.zip: <SHA256_OF_ZIP>
+- clever-v1.0.1.tar.gz: c18dc8aa6f1b3f58e5c963c7c6608e4ca943719cea1dc4b765293a486377d0d3
+- clever-v1.0.1.zip: d9aedd8bef85c09b269910968e7d504c34213fdbbd46ea736a58f48d89fb6725
 
