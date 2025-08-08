@@ -25,48 +25,60 @@ Note on alias: The installer creates a short alias clr, which is a shorthand for
 ### Directory Structure
 ```
 project-root/
-├── src/                        # Source code directory
-│   ├── __init__.py            # Main program entry
-│   ├── cli/                   # CLI module
-│   │   ├── parser.py          # Command line argument parsing
-│   │   ├── formatter.py       # Output formatting
-│   │   └── interface.py       # CLI main interface
-│   ├── core/                  # Core module
-│   │   ├── command_loader.py  # Command loader
-│   │   ├── query_processor.py # Query processor
-│   │   └── search_engine.py   # Search engine
-│   ├── data/                  # Data management module
-│   │   └── data_manager.py    # Data manager and cache manager
-│   ├── utils/                 # Utilities module
-│   │   ├── file_utils.py      # File operation utilities
-│   │   ├── search_utils.py    # Search utility functions
-│   │   ├── display_utils.py   # Display utility functions
-│   │   └── i18n.py           # Internationalization manager
-│   └── knowledge_base/        # Knowledge base directory
-│       ├── commands_zh/       # Chinese command library
-│       │   ├── basic/        # Basic commands
-│       │   ├── advanced_tools/ # Advanced tools
-│       │   ├── tools/        # System tools
-│       │   ├── network/      # Network tools
-│       │   ├── system/       # System information
-│       │   ├── text/         # Text processing
-│       │   ├── compression/  # Compression tools
-│       │   ├── dev/          # Development tools
-│       │   ├── version/      # Version control
-│       │   └── container/    # Containerization
-│       ├── commands_en/       # English command library (same structure)
-│       ├── categories_zh.json # Chinese category configuration
-│       ├── categories_en.json # English category configuration
-│       ├── search_mappings_zh.json # Chinese search mappings
-│       ├── search_mappings_en.json # English search mappings
-│       ├── meta_zh.json      # Chinese metadata configuration
-│       ├── meta_en.json      # English metadata configuration
-│       └── i18n_config.json  # Internationalization configuration
-├── install.sh               # Smart installation script
-├── uninstall.sh            # Uninstallation script
-├── README.md               # English documentation
-├── README_CN.md            # Chinese documentation
-└── CLAUDE.md              # Project documentation
+├── src/
+│   ├── __init__.py
+│   ├── cli/
+│   │   ├── __init__.py
+│   │   ├── formatter.py
+│   │   ├── interface.py
+│   │   └── parser.py
+│   ├── core/
+│   │   ├── __init__.py
+│   │   ├── command_loader.py
+│   │   ├── query_processor.py
+│   │   └── search_engine.py
+│   ├── data/
+│   │   ├── __init__.py
+│   │   └── data_manager.py
+│   └── knowledge_base/
+│       ├── categories_en.json
+│       ├── categories_zh.json
+│       ├── commands_en/
+│       │   ├── advanced_tools.json
+│       │   ├── basic.json
+│       │   ├── compression.json
+│       │   ├── container.json
+│       │   ├── network.json
+│       │   ├── system.json
+│       │   ├── text.json
+│       │   └── tools.json
+│       ├── commands_zh/
+│       │   ├── advanced_tools.json
+│       │   ├── basic.json
+│       │   ├── compression.json
+│       │   ├── container.json
+│       │   ├── dev.json
+│       │   ├── network.json
+│       │   ├── system.json
+│       │   ├── text.json
+│       │   ├── tools.json
+│       │   └── version.json
+│       ├── i18n_config.json
+│       ├── meta_en.json
+│       ├── meta_zh.json
+│       ├── search_mappings_en.json
+│       └── search_mappings_zh.json
+├── install.sh
+├── uninstall.sh
+├── .github/
+│   └── workflows/
+│       └── ci.yml
+├── README.md
+├── README_CN.md
+├── CHANGELOG.md
+├── RELEASE_NOTES.md
+├── PACKAGING.md
+└── SHA256SUMS-v1.0.1.txt
 ```
 
 ### Core Components

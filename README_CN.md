@@ -25,48 +25,60 @@
 ### 目录结构
 ```
 project-root/
-├── src/                        # 源代码目录
-│   ├── __init__.py            # 主程序入口
-│   ├── cli/                   # CLI模块
-│   │   ├── parser.py          # 命令行参数解析
-│   │   ├── formatter.py       # 输出格式化
-│   │   └── interface.py       # CLI主界面
-│   ├── core/                  # 核心模块
-│   │   ├── command_loader.py  # 命令加载器
-│   │   ├── query_processor.py # 查询处理器
-│   │   └── search_engine.py   # 搜索引擎
-│   ├── data/                  # 数据管理模块
-│   │   └── data_manager.py    # 数据管理器和缓存管理器
-│   ├── utils/                 # 工具模块
-│   │   ├── file_utils.py      # 文件操作工具
-│   │   ├── search_utils.py    # 搜索工具函数
-│   │   ├── display_utils.py   # 显示工具函数
-│   │   └── i18n.py           # 国际化管理器
-│   └── knowledge_base/        # 知识库目录
-│       ├── commands_zh/       # 中文命令库
-│       │   ├── basic/        # 基础命令
-│       │   ├── advanced_tools/ # 高级工具
-│       │   ├── tools/        # 系统工具
-│       │   ├── network/      # 网络工具
-│       │   ├── system/       # 系统信息
-│       │   ├── text/         # 文本处理
-│       │   ├── compression/  # 压缩工具
-│       │   ├── dev/          # 开发工具
-│       │   ├── version/      # 版本控制
-│       │   └── container/    # 容器化
-│       ├── commands_en/       # 英文命令库 (结构同上)
-│       ├── categories_zh.json # 中文分类配置
-│       ├── categories_en.json # 英文分类配置
-│       ├── search_mappings_zh.json # 中文搜索映射
-│       ├── search_mappings_en.json # 英文搜索映射
-│       ├── meta_zh.json      # 中文元数据配置
-│       ├── meta_en.json      # 英文元数据配置
-│       └── i18n_config.json  # 国际化配置
-├── install.sh               # 智能安装脚本
-├── uninstall.sh            # 卸载脚本
-├── README.md               # 英文说明
-├── README_CN.md            # 中文说明
-└── CLAUDE.md              # 项目文档
+├── src/
+│   ├── __init__.py
+│   ├── cli/
+│   │   ├── __init__.py
+│   │   ├── formatter.py
+│   │   ├── interface.py
+│   │   └── parser.py
+│   ├── core/
+│   │   ├── __init__.py
+│   │   ├── command_loader.py
+│   │   ├── query_processor.py
+│   │   └── search_engine.py
+│   ├── data/
+│   │   ├── __init__.py
+│   │   └── data_manager.py
+│   └── knowledge_base/
+│       ├── categories_en.json
+│       ├── categories_zh.json
+│       ├── commands_en/
+│       │   ├── advanced_tools.json
+│       │   ├── basic.json
+│       │   ├── compression.json
+│       │   ├── container.json
+│       │   ├── network.json
+│       │   ├── system.json
+│       │   ├── text.json
+│       │   └── tools.json
+│       ├── commands_zh/
+│       │   ├── advanced_tools.json
+│       │   ├── basic.json
+│       │   ├── compression.json
+│       │   ├── container.json
+│       │   ├── dev.json
+│       │   ├── network.json
+│       │   ├── system.json
+│       │   ├── text.json
+│       │   ├── tools.json
+│       │   └── version.json
+│       ├── i18n_config.json
+│       ├── meta_en.json
+│       ├── meta_zh.json
+│       ├── search_mappings_en.json
+│       └── search_mappings_zh.json
+├── install.sh
+├── uninstall.sh
+├── .github/
+│   └── workflows/
+│       └── ci.yml
+├── README.md
+├── README_CN.md
+├── CHANGELOG.md
+├── RELEASE_NOTES.md
+├── PACKAGING.md
+└── SHA256SUMS-v1.0.1.txt
 ```
 
 ### 核心组件
