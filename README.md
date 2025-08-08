@@ -4,6 +4,8 @@
 
 A modern popular command query tool with bilingual support (Chinese/English) and a data-code separation architecture design.
 
+Note on alias: The installer creates a short alias clr, which is a shorthand for clever. After installation, you can use either clever or clr interchangeably.
+
 ## Features
 
 - 🔍 Query detailed information for specific commands
@@ -96,7 +98,7 @@ python3 src/__init__.py [options] [command]
 
 ## Usage
 
-After installation, you can use the `clever` command anywhere:
+After installation, you can use the `clever` command anywhere (short alias: `clr`):
 
 ```bash
 # Query specific commands
@@ -151,6 +153,31 @@ clever --help               # Show help information
 - **Version Control**: git
 - **Containerization**: docker, docker-compose, kubectl, podman
 - **Advanced Tools**: tmux, screen, xargs
+
+## Mainstream tools and how to install them
+
+Below are quick installation snippets for common tools referenced by this project’s knowledge base. Use the one that matches your OS/package manager.
+
+- Homebrew (macOS/Linux):
+  - Install Homebrew: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  - Update: brew update
+  - Examples: brew install wget curl git tmux htop jq ripgrep fzf
+- Debian/Ubuntu (apt):
+  - sudo apt update && sudo apt install -y wget curl git tmux htop jq ripgrep fzf python3 python3-pip docker.io docker-compose kubectl
+- Fedora/RHEL/CentOS (dnf/yum):
+  - sudo dnf install -y wget curl git tmux htop jq ripgrep fzf python3 python3-pip docker docker-compose kubectl || sudo yum install -y wget curl git tmux htop jq ripgrep fzf
+- Arch/Manjaro (pacman):
+  - sudo pacman -Syu --noconfirm wget curl git tmux htop jq ripgrep fzf python python-pip docker kubectl
+- openSUSE (zypper):
+  - sudo zypper install -y wget curl git tmux htop jq ripgrep fzf python3 python3-pip docker kubectl
+- Windows (Chocolatey):
+  - choco install -y git wget curl jq ripgrep fzf python docker-desktop kubernetes-cli
+- Windows (Winget):
+  - winget install --id Git.Git -e && winget install --id GnuWin32.Wget -e && winget install --id curl.curl -e && winget install --id jqlang.jq -e && winget install --id BurntSushi.ripgrep.MSVC -e && winget install --id fzf.fzf -e && winget install --id Python.Python.3 -e && winget install --id Docker.DockerDesktop -e && winget install --id Kubernetes.kubectl -e
+
+Notes:
+- Some tools (e.g., Docker, Docker Desktop) may require additional post-install steps and/or a system restart.
+- For Docker on Linux: ensure your user is added to the docker group and the service is enabled.
 
 ## Internationalization Features 🌍
 

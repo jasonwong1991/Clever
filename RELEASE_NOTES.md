@@ -1,18 +1,15 @@
-# Clever v1.0.0 – Initial public release
+# Clever v1.0.1 – Documentation updates
 
-This is the first public release of Clever, a modern bilingual (中文/English) command query tool with a code–data separation architecture.
+This release focuses on documentation clarity and usability.
 
-Highlights
-- Query detailed information for common commands
-- Search by keywords and tags; browse by categories
-- Smart fuzzy category search (supports Chinese/English)
-- Lazy loading + LRU cache + performance statistics
-- Pre-built search index for fast retrieval
-- Full i18n with intelligent language detection and switching
+Changes
+- Clarified that “clr” is the short alias for “clever” and that the installer creates /usr/local/bin/clr
+- Added a new section listing mainstream tools and installation commands (brew/apt/dnf/yum/pacman/zypper/choco/winget)
+- Fixed the Chinese README title to a proper Chinese title and noted the clr alias
 
-What’s included
-- 65 popular commands covered across categories (file, text, process, network, system, compression, dev tools, containers, VCS)
-- Modular structure: CLI, core engine, data manager, utilities, bilingual knowledge base
+Why this matters
+- Many users prefer the short alias “clr” in day-to-day usage; documenting it avoids confusion
+- Quick-install snippets help users get common tools ready on their systems
 
 Getting started
 - Install via script:
@@ -20,9 +17,5 @@ Getting started
 - Or run directly:
   - python3 src/__init__.py --help
 
-Commit summary
-- 6d60dd7 feat: 完成第一版~
-- 27e6343 feat: 完成第一阶段的开发，涉及大多数主流命令
-
 Notes
-- If upgrading from a pre-release/local copy, please re-install using the script to ensure proper language detection and symlink setup.
+- Some tools (e.g., Docker) may require post-install steps or a restart; see your distribution’s docs for details.

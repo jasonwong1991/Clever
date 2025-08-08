@@ -1,6 +1,8 @@
-# Popular Command Query Tool (clever)
+# 热门命令查询工具（clever）
 
 [English](README.md) | **中文**
+
+说明：安装脚本会创建一个简写别名 clr（即 clever 的缩写）。安装后，你可以使用 clever 或 clr 互换使用。
 
 一个现代化的热门命令查询工具，支持中英文双语界面，采用数据与代码分离的架构设计。
 
@@ -96,6 +98,8 @@ python3 src/__init__.py [选项] [命令]
 
 ## 使用方法
 
+提示：支持简写别名 clr，例如 clever ls 与 clr ls 等价。
+
 安装完成后，你可以在任何地方使用 `clever` 命令：
 
 ```bash
@@ -150,6 +154,31 @@ clever --help               # 显示帮助信息
 - **版本控制**: git
 - **容器化**: docker, docker-compose, kubectl, podman
 - **高级工具**: tmux, screen, xargs
+
+## 主流工具与安装方式
+
+以下是本项目知识库中涉及的常用工具及其快速安装示例，请根据你的系统选择对应的包管理器：
+
+- Homebrew（macOS/Linux）：
+  - 安装 Homebrew：/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  - 更新：brew update
+  - 示例：brew install wget curl git tmux htop jq ripgrep fzf
+- Debian/Ubuntu（apt）：
+  - sudo apt update && sudo apt install -y wget curl git tmux htop jq ripgrep fzf python3 python3-pip docker.io docker-compose kubectl
+- Fedora/RHEL/CentOS（dnf/yum）：
+  - sudo dnf install -y wget curl git tmux htop jq ripgrep fzf python3 python3-pip docker docker-compose kubectl || sudo yum install -y wget curl git tmux htop jq ripgrep fzf
+- Arch/Manjaro（pacman）：
+  - sudo pacman -Syu --noconfirm wget curl git tmux htop jq ripgrep fzf python python-pip docker kubectl
+- openSUSE（zypper）：
+  - sudo zypper install -y wget curl git tmux htop jq ripgrep fzf python3 python3-pip docker kubectl
+- Windows（Chocolatey）：
+  - choco install -y git wget curl jq ripgrep fzf python docker-desktop kubernetes-cli
+- Windows（Winget）：
+  - winget install --id Git.Git -e && winget install --id GnuWin32.Wget -e && winget install --id curl.curl -e && winget install --id jqlang.jq -e && winget install --id BurntSushi.ripgrep.MSVC -e && winget install --id fzf.fzf -e && winget install --id Python.Python.3 -e && winget install --id Docker.DockerDesktop -e && winget install --id Kubernetes.kubectl -e
+
+注意：
+- 部分工具（如 Docker、Docker Desktop）可能需要额外的安装后步骤和/或重启系统。
+- Linux 上使用 Docker 时，请确保将用户加入 docker 组并启用 docker 服务。
 
 ## 国际化特性 🌍
 
